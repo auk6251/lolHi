@@ -5,14 +5,14 @@
 <html>
 <head>
 <meta charset="EUC-KR">
-<title>게시물 리스트</title>
+<title>게시물 상세</title>
 </head>
 <body>
 
 
-	<h1>게시물 리스트</h1>
+	<h1>게시물 상세</h1>
 
-	<c:forEach items="${articles}" var="article">
+
 		<div>
 			번호 : ${article.id} <br /> 
 			작성날짜 : ${article.regDate} <br />
@@ -21,7 +21,7 @@
 			 내용 ${article.body}
 		</div>
 		<hr />
-	</c:forEach>
+
 
 </body>
 </html>

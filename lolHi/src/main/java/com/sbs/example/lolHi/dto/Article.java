@@ -5,7 +5,7 @@ import lombok.Data;
 
 @Data
 @AllArgsConstructor
-public class Article {	
+public class Article {
 	private int id;
 	private String regDate;
 	private String updateDate;
