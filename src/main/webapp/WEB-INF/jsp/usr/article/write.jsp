@@ -1,22 +1,22 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-	pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="EUC-KR">
-<title>°Ô½Ã¹° ÀÛ¼º</title>
+<title>ê²Œì‹œë¬¼ ìž‘ì„±</title>
 </head>
 <body>
 
 
 
-	<h1>°Ô½Ã¹° ÀÛ¼º</h1>
+	<h1>ê²Œì‹œë¬¼ ìž‘ì„±</h1>
 
 	<form action="doWrite">
-	<div>Á¦¸ñ : <input type="text" maxlength="30" placeholder="Á¦¸ñÀ» ÀÔ·ÂÇØÁÖ¼¼¿ä" name="title"/></div>
-	<div>³»¿ë : <input type="text" maxlength="30" placeholder="³»¿ëÀ» ÀÔ·ÂÇØÁÖ¼¼¿ä" name="body" /></div>
-	<div>Á¦Ãâ : <input type="submit" value="ÀÛ¼º" /></div>
+	<div>ì œëª© : <input type="text" maxlength="30" placeholder="ì œëª©ì„ ìž…ë ¥í•´ì£¼ì„¸ìš”" name="title"/></div>
+	<div>ë‚´ìš© : <input type="text" maxlength="30" placeholder="ë‚´ìš©ì„ ìž…ë ¥í•´ì£¼ì„¸ìš”" name="body" /></div>
+	<div>ì œì¶œ : <input type="submit" value="ìž‘ì„±" /></div>
 	</form>
 	<hr />
 

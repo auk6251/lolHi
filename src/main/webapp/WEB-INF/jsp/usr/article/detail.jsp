@@ -1,24 +1,24 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-	pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="EUC-KR">
-<title>°Ô½Ã¹° »ó¼¼</title>
+<title>ê²Œì‹œë¬¼ ìƒì„¸</title>
 </head>
 <body>
 
 
-	<h1>°Ô½Ã¹° »ó¼¼</h1>
+	<h1>ê²Œì‹œë¬¼ ìƒì„¸</h1>
 
 
 		<div>
-			¹øÈ£ : ${article.id} <br /> 
-			ÀÛ¼º³¯Â¥ : ${article.regDate} <br />
-			 °»½Å³¯Â¥ :${article.updateDate} <br />
-			 Á¦¸ñ : ${article.title} <br /> 
-			 ³»¿ë ${article.body}
+			ë²ˆí˜¸ : ${article.id} <br /> 
+			ì‘ì„±ë‚ ì§œ : ${article.regDate} <br />
+			 ê°±ì‹ ë‚ ì§œ : ${article.updateDate} <br />
+			 ì œëª© : ${article.title} <br /> 
+			 ë‚´ìš© : ${article.body}
 		</div>
 		<hr />
 
