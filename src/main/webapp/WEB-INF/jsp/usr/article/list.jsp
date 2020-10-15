@@ -13,13 +13,11 @@
 	<h1>게시물 리스트</h1>
 
 	<c:forEach items="${articles}" var="article">
-		<div>
-			번호 : ${article.id} <br /> 
-			작성날짜 : ${article.regDate} <br />
-			 갱신날짜 :${article.updateDate} <br />
-			 제목 : ${article.title} <br /> 
-			 내용 ${article.body}
-		</div>
+		<div>번호 : ${article.id }</div>
+		<div>작성날짜 : ${article.regDate }</div>
+		<div>수정날짜 : ${article.updateDate }</div>
+		<div>제목 : ${article.title}</div>
+		<div>내용 ${article.body}</div>
 		<hr />
 	</c:forEach>
 
