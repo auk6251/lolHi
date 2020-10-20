@@ -13,7 +13,7 @@
 	<h1>게시물 리스트</h1>
 
 	<div>총 게시물 수 :${totalCount}</div>
-	<br/>
+	<br />
 
 	<c:forEach items="${articles}" var="article">
 		<div>
@@ -29,6 +29,19 @@
 		</div>
 		<hr />
 	</c:forEach>
+	<div>
+		<a href="write">글쓰기</a>
+	</div>
 
+	<h2>페이지</h2>
+	<div>
+		<c:forEach var="i" begin="1" end="${totalPage}">
+<a href="?page=${i}">${i}</a>
+		</c:forEach>
+	</div>
 </body>
 </html>
+
+
+
+
