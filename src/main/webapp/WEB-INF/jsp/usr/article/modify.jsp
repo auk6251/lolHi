@@ -27,7 +27,11 @@
 		<div>
 			수정 : <input type="submit" value="수정" />
 		</div>
+		
 	</form>
+		<div>
+		<a href="list">리스트</a>
+	</div>
 	<hr />
 
 </body>

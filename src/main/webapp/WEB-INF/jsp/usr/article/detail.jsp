@@ -13,14 +13,19 @@
 	<h1>게시물 상세</h1>
 
 
-		<div>
-			번호 : ${article.id} <br /> 
-			작성날짜 : ${article.regDate} <br />
-			 갱신날짜 : ${article.updateDate} <br />
-			 제목 : ${article.title} <br /> 
-			 내용 : ${article.body}
-		</div>
-		<hr />
+	<div>번호 : ${article.id }</div>
+	<div>작성날짜 : ${article.regDate }</div>
+	<div>수정날짜 : ${article.updateDate }</div>
+	<div>제목 : ${article.title}</div>
+	<div>내용 ${article.body}</div>
+	<hr />
+	<div>
+		<a href="list">리스트</a> <a
+			onclick="if ( confirm('삭제하시겠습니까?') == false ) return false;"
+			href="doDelete?id=${article.id}">삭제</a> <a
+			href="modify?id=${article.id}">수정</a>
+	</div>
+
 
 
 </body>
