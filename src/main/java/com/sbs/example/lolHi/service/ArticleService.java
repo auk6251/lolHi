@@ -62,4 +62,9 @@ public class ArticleService {
 
 	}
 
+	public int getTotalCount() {
+		
+		return articledao.getTotalCount();
+	}
+
 }

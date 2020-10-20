@@ -12,7 +12,7 @@
 	<h1>게시물 수정</h1>
 
 	<form action="doModify" method="POST">
-	<input type="hidden" name="id" value="${article.id }" />
+		<input type="hidden" name="id" value="${article.id }" />
 		<div>번호 : ${article.id }</div>
 		<div>작성날짜 : ${article.regDate }</div>
 		<div>수정날짜 : ${article.updateDate }</div>
@@ -27,9 +27,9 @@
 		<div>
 			수정 : <input type="submit" value="수정" />
 		</div>
-		
+
 	</form>
-		<div>
+	<div>
 		<a href="list">리스트</a>
 	</div>
 	<hr />
