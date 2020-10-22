@@ -34,6 +34,7 @@
 				form.loginPwConfirm.focus();
 				return;
 			}
+			
 			if (form.loginPw.value != form.loginPwConfirm.value) {
 				alert('비밀번호가 일치 하지 않습니다.')
 				form.loginPwConfirm.focus();

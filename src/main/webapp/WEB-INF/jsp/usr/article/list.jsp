@@ -11,8 +11,13 @@
 
 
 	<h1>게시물 리스트</h1>
-
+	<div>
+		<a href="/usr/member/join">회원가입</a> <a href="/usr/member/login">로그인</a>
+	</div>
+	<br />
 	<div>총 게시물 수 :${totalCount}</div>
+
+
 	<br />
 
 	<c:forEach items="${articles}" var="article">
@@ -49,16 +54,16 @@
 			<a href="?page=1">◀</a>
 		</c:if>
 
-		<c:forEach var="i" begin="${pageMenuStart}" end="${pageMenuEnd}">			
+		<c:forEach var="i" begin="${pageMenuStart}" end="${pageMenuEnd}">
 			<c:set var="className" value="${i == page ? 'selected' : '' }" />
 			<a class="${className}" href="?page=${i}">${i}</a>
 
 			<c:if test="${i == totalPage}">
 				<c:set var="goLastBtnNeedToShow" value="false" />
-			</c:if>			
+			</c:if>
 		</c:forEach>
-		
-			<c:if test="${goLastBtnNeedToShow}">
+
+		<c:if test="${goLastBtnNeedToShow}">
 			<a href="?page=${totalPage }">▶</a>
 		</c:if>
 

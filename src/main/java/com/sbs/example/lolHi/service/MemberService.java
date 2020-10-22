@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.sbs.example.lolHi.dao.MemberDao;
+import com.sbs.example.lolHi.dto.Member;
 import com.sbs.example.lolHi.util.Util;
 
 @Service
@@ -20,6 +21,22 @@ public class MemberService {
 		int id = Util.getAsInt(param.get("id"));
 		
 		return id;
+	}
+
+	public Member getMemberByLoginId(String loginId) {
+		
+		return memberDao.getMemberByLoginId(loginId);
+	}
+
+	public boolean isJoinAvailableLoginId(String loginId) {
+		Member member = memberDao.getMemberByLoginId(loginId);
+		
+		if(member == null) {
+			return true;
+		}
+		
+		
+		return false;
 	}
 
 }
