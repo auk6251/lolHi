@@ -46,6 +46,7 @@ public class MemberController {
 		}
 
 		session.setAttribute("loginedMemberId", member.getId());
+		session.setAttribute("loginedMemberName", member.getName());
 
 		return String.format("<script>alert('%s님 환영합니다'); location.replace('/usr/article/list');</script>",
 				member.getName());
@@ -59,7 +60,7 @@ public class MemberController {
 
 	@RequestMapping("/usr/member/doJoin")
 	@ResponseBody
-	public String Join(@RequestParam Map<String, Object> param) {
+	public String Join(@RequestParam Map<String, Object> param ) {
 		String loginId = Util.getAsStr(param.get("loginId"), "");
 
 		if (loginId.length() == 0) {

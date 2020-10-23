@@ -1,13 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="EUC-KR">
-<title>로그인</title>
-</head>
-<body>
+
+<c:set var="title" value="로그인" />
+<%@ include file="../part/head.jspf"%>
+
 	<script>
 		var LoginFormSubmitDone = false;
 
@@ -35,7 +32,7 @@
 		}
 	</script>
 
-	<h1>로그인</h1>
+	
 
 	<form action="doLogin" onsubmit="LoginFormSubmit(this); return false;">
 		<div>
@@ -51,9 +48,9 @@
 		</div>
 	</form>
 	<div>
-		<a href="list">리스트</a>
+		<a href="../article/list">리스트</a>
 	</div>
 	<hr />
 
-</body>
-</html>
+
+<%@ include file="../part/foot.jspf"%>

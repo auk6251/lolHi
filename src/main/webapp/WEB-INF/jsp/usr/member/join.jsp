@@ -1,13 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="EUC-KR">
-<title>회원가입</title>
-</head>
-<body>
+
+<c:set var="title" value="회원가입" />
+<%@ include file="../part/head.jspf"%>
+
 	<script>
 		var joinFormSubmitDone = false;
 
@@ -52,7 +49,7 @@
 		}
 	</script>
 
-	<h1>회원가입</h1>
+	
 
 	<form action="doJoin" onsubmit="joinFormSubmit(this); return false;">
 		<div>
@@ -73,10 +70,11 @@
 			회원가입 : <input type="submit" value="가입" />
 		</div>
 	</form>
+	
 	<div>
-		<a href="list">리스트</a>
+		<a href="../article/list">리스트</a>
 	</div>
 	<hr />
 
-</body>
-</html>
+
+<%@ include file="../part/foot.jspf"%>
