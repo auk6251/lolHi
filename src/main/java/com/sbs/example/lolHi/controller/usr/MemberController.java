@@ -22,6 +22,33 @@ public class MemberController {
 	@Autowired
 	private MemberService memberService;
 
+		@RequestMapping("/usr/member/join")
+	public String MemberJoin() {
+
+		return "usr/member/join";
+	}
+
+	@RequestMapping("/usr/member/doJoin")
+	@ResponseBody
+	public String Join(@RequestParam Map<String, Object> param ) {
+		String loginId = Util.getAsStr(param.get("loginId"), "");
+
+		if (loginId.length() == 0) {
+			return String.format("<script>alert('로그인 아이디를 입력해주세요.'); history.back();</script>");
+		}
+
+		boolean isJoinAvailableLoginId = memberService.isJoinAvailableLoginId(loginId);
+
+		if (isJoinAvailableLoginId == false) {
+			return String.format("<script>alert('%s 은(는) 이미 사용중인 아이디 입니다.'); history.back();</script>", loginId);
+		}
+
+		int id = memberService.join(param);
+
+		return String.format("<script> alert('%d 번 회원님 가입을 축하합니다.'); location.replace('/usr/article/list');</script>",
+				id);
+	}
+	
 	@RequestMapping("/usr/member/login")
 	public String showLogin() {
 
@@ -52,31 +79,11 @@ public class MemberController {
 				member.getName());
 	}
 
-	@RequestMapping("/usr/member/join")
-	public String MemberJoin() {
-
-		return "usr/member/join";
-	}
-
-	@RequestMapping("/usr/member/doJoin")
+	@RequestMapping("/usr/member/doLogout")
 	@ResponseBody
-	public String Join(@RequestParam Map<String, Object> param ) {
-		String loginId = Util.getAsStr(param.get("loginId"), "");
+	public String doLogout(HttpSession session) {
 
-		if (loginId.length() == 0) {
-			return String.format("<script>alert('로그인 아이디를 입력해주세요.'); history.back();</script>");
-		}
-
-		boolean isJoinAvailableLoginId = memberService.isJoinAvailableLoginId(loginId);
-
-		if (isJoinAvailableLoginId == false) {
-			return String.format("<script>alert('%s 은(는) 이미 사용중인 아이디 입니다.'); history.back();</script>", loginId);
-		}
-
-		int id = memberService.join(param);
-
-		return String.format("<script> alert('%d 번 회원님 가입을 축하합니다.'); location.replace('/usr/article/list');</script>",
-				id);
+		session.removeAttribute("loginedMemberId");
+		return String.format("<script>location.replace('/usr/article/list');</script>");
 	}
-
 }
