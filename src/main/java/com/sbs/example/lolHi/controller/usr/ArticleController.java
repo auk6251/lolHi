@@ -3,6 +3,8 @@ package com.sbs.example.lolHi.controller.usr;
 import java.util.List;
 import java.util.Map;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -63,47 +65,73 @@ public class ArticleController {
 	}
 
 	@RequestMapping("/usr/article/doDelete")
-	@ResponseBody
-	public String showdoDelete(int id) {
+	public String showdoDelete(int id,Model model) {
 
 		articleService.deleteArticleById(id);
-
-		return String.format("<script> alert('%d 번 글을 삭제하였습니다.'); location.replace('/usr/article/list');</script>", id);
+		model.addAttribute("msg", String.format("%d 번 글이 삭제 하였습니다.", id));
+		model.addAttribute("replaceUri", String.format("/usr/article/list"));
+		
+		return "common/redirect";
 	}
 
 	@RequestMapping("/usr/article/modify")
-	public String showModify(Model model, int id) {
+	public String showModify(Model model, int id,HttpSession session) {
 		Article article = articleService.getArticleById(id);
 
 		model.addAttribute("article", article);
+
+		int loginedMemberId = 0;
+
+		if (session.getAttribute("loginedMemberId") != null) {
+			loginedMemberId = (int) session.getAttribute("loginedMemberId");
+		}
+
+		if (loginedMemberId == 0) {
+			model.addAttribute("msg", "로그인 후 이용해 주세요");
+			model.addAttribute("historyBack", true);
+			return "common/redirect";
+		}
 
 		return "usr/article/modify";
 	}
 
 	@RequestMapping("/usr/article/doModify")
-	@ResponseBody
-	public String doModify(int id, String title, String body) {
+	public String doModify(int id, String title, String body,HttpSession session,Model model) {
 
 		articleService.modifyArticle(id, title, body);
 
-		return String.format(
-				"<script> alert('%d 번 글을 수정하였습니다.'); location.replace('/usr/article/detail?id=%d');</script>", id, id);
+		model.addAttribute("msg", String.format("%d 번 글을 수정하였습니다.", id));
+		model.addAttribute("replaceUri", String.format("/usr/article/detail?id=%d", id));
+		
+		return "common/redirect";
 	}
 
 	@RequestMapping("/usr/article/write")
-	public String showWrite() {
+	public String showWrite(HttpSession session, Model model) {
+		int loginedMemberId = 0;
+
+		if (session.getAttribute("loginedMemberId") != null) {
+			loginedMemberId = (int) session.getAttribute("loginedMemberId");
+		}
+
+		if (loginedMemberId == 0) {
+			model.addAttribute("msg", "로그인 후 이용해 주세요");
+			model.addAttribute("replaceUri", String.format("/usr/member/join"));
+			return "common/redirect";
+		}
 
 		return "usr/article/write";
 	}
 
 	@RequestMapping("/usr/article/doWrite")
-	@ResponseBody
-	public String doWrite(@RequestParam Map<String, Object> param) {
+	public String doWrite(@RequestParam Map<String, Object> param, Model model) {
 
 		int id = articleService.writeArticle(param);
 
-		return String.format(
-				"<script> alert('%d 번 글을 생성하였습니다.'); location.replace('/usr/article/detail?id=%d');</script>", id, id);
+		model.addAttribute("msg", String.format("%d 번 글을 생성하였습니다.", id));
+		model.addAttribute("replaceUri", String.format("/usr/article/detail?id=%d", id));
+
+		return "common/redirect";
 	}
 
 }
