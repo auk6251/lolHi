@@ -65,7 +65,7 @@ public class ArticleController {
 	}
 
 	@RequestMapping("/usr/article/doDelete")
-	public String showdoDelete(int id, Model model,HttpSession session) {
+	public String showdoDelete(int id, Model model, HttpSession session) {
 		int loginedMemberId = 0;
 
 		if (session.getAttribute("loginedMemberId") != null) {
@@ -87,9 +87,6 @@ public class ArticleController {
 
 	@RequestMapping("/usr/article/modify")
 	public String showModify(Model model, int id, HttpSession session) {
-		Article article = articleService.getArticleById(id);
-
-		model.addAttribute("article", article);
 
 		int loginedMemberId = 0;
 
@@ -102,6 +99,16 @@ public class ArticleController {
 			model.addAttribute("historyBack", true);
 			return "common/redirect";
 		}
+
+		Article article = articleService.getArticleById(id);
+
+		if( article.getMemberId() != loginedMemberId ) {
+			model.addAttribute("msg", "권한이 없습니다.");
+			model.addAttribute("historyBack", true);
+			return "common/redirect";
+		}
+		
+		model.addAttribute("article", article);
 
 		return "usr/article/modify";
 	}
@@ -116,6 +123,14 @@ public class ArticleController {
 		}
 
 		if (loginedMemberId == 0) {
+			model.addAttribute("msg", "권한이 없습니다.");
+			model.addAttribute("historyBack", true);
+			return "common/redirect";
+		}
+		
+		Article article = articleService.getArticleById(id);
+
+		if( article.getMemberId() != loginedMemberId ) {
 			model.addAttribute("msg", "로그인 후 이용해 주세요");
 			model.addAttribute("historyBack", true);
 			return "common/redirect";
@@ -147,7 +162,7 @@ public class ArticleController {
 	}
 
 	@RequestMapping("/usr/article/doWrite")
-	public String doWrite(@RequestParam Map<String, Object> param, Model model,HttpSession session) {
+	public String doWrite(@RequestParam Map<String, Object> param, Model model, HttpSession session) {
 
 		int loginedMemberId = 0;
 
@@ -161,7 +176,6 @@ public class ArticleController {
 			return "common/redirect";
 		}
 
-		
 		param.put("memberId", loginedMemberId);
 		int id = articleService.writeArticle(param);
 
