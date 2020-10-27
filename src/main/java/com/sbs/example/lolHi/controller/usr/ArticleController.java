@@ -3,6 +3,7 @@ package com.sbs.example.lolHi.controller.usr;
 import java.util.List;
 import java.util.Map;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -65,14 +66,11 @@ public class ArticleController {
 	}
 
 	@RequestMapping("/usr/article/doDelete")
-	public String showdoDelete(int id, Model model, HttpSession session) {
-		int loginedMemberId = 0;
+	public String showdoDelete(int id, Model model, HttpServletRequest req) {
+		boolean isLogined = (boolean) req.getAttribute("isLogined");
+		int loginedMemberId = (int) req.getAttribute("loginedMemberId");
 
-		if (session.getAttribute("loginedMemberId") != null) {
-			loginedMemberId = (int) session.getAttribute("loginedMemberId");
-		}
-
-		if (loginedMemberId == 0) {
+		if (isLogined == false) {
 			model.addAttribute("msg", "로그인 후 이용해 주세요");
 			model.addAttribute("historyBack", true);
 			return "common/redirect";

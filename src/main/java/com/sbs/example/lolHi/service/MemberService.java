@@ -39,4 +39,9 @@ public class MemberService {
 		return false;
 	}
 
+	public Member getMemberById(int id) {
+		
+		return  memberDao.getMemberById(id);
+	}
+
 }
