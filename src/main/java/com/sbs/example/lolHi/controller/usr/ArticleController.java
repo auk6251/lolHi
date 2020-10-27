@@ -65,17 +65,28 @@ public class ArticleController {
 	}
 
 	@RequestMapping("/usr/article/doDelete")
-	public String showdoDelete(int id,Model model) {
+	public String showdoDelete(int id, Model model,HttpSession session) {
+		int loginedMemberId = 0;
+
+		if (session.getAttribute("loginedMemberId") != null) {
+			loginedMemberId = (int) session.getAttribute("loginedMemberId");
+		}
+
+		if (loginedMemberId == 0) {
+			model.addAttribute("msg", "로그인 후 이용해 주세요");
+			model.addAttribute("historyBack", true);
+			return "common/redirect";
+		}
 
 		articleService.deleteArticleById(id);
 		model.addAttribute("msg", String.format("%d 번 글이 삭제 하였습니다.", id));
 		model.addAttribute("replaceUri", String.format("/usr/article/list"));
-		
+
 		return "common/redirect";
 	}
 
 	@RequestMapping("/usr/article/modify")
-	public String showModify(Model model, int id,HttpSession session) {
+	public String showModify(Model model, int id, HttpSession session) {
 		Article article = articleService.getArticleById(id);
 
 		model.addAttribute("article", article);
@@ -96,13 +107,25 @@ public class ArticleController {
 	}
 
 	@RequestMapping("/usr/article/doModify")
-	public String doModify(int id, String title, String body,HttpSession session,Model model) {
+	public String doModify(int id, String title, String body, HttpSession session, Model model) {
+
+		int loginedMemberId = 0;
+
+		if (session.getAttribute("loginedMemberId") != null) {
+			loginedMemberId = (int) session.getAttribute("loginedMemberId");
+		}
+
+		if (loginedMemberId == 0) {
+			model.addAttribute("msg", "로그인 후 이용해 주세요");
+			model.addAttribute("historyBack", true);
+			return "common/redirect";
+		}
 
 		articleService.modifyArticle(id, title, body);
 
 		model.addAttribute("msg", String.format("%d 번 글을 수정하였습니다.", id));
 		model.addAttribute("replaceUri", String.format("/usr/article/detail?id=%d", id));
-		
+
 		return "common/redirect";
 	}
 
@@ -124,7 +147,19 @@ public class ArticleController {
 	}
 
 	@RequestMapping("/usr/article/doWrite")
-	public String doWrite(@RequestParam Map<String, Object> param, Model model) {
+	public String doWrite(@RequestParam Map<String, Object> param, Model model,HttpSession session) {
+
+		int loginedMemberId = 0;
+
+		if (session.getAttribute("loginedMemberId") != null) {
+			loginedMemberId = (int) session.getAttribute("loginedMemberId");
+		}
+
+		if (loginedMemberId == 0) {
+			model.addAttribute("msg", "로그인 후 이용해 주세요");
+			model.addAttribute("historyBack", true);
+			return "common/redirect";
+		}
 
 		int id = articleService.writeArticle(param);
 
