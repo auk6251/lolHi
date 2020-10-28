@@ -44,4 +44,9 @@ public class MemberService {
 		return  memberDao.getMemberById(id);
 	}
 
+	public void modify(Map<String, Object> param) {
+		memberDao.modify(param);
+		
+	}
+
 }
