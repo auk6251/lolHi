@@ -21,6 +21,9 @@
 			제목 : <a href="detail?id=${article.id}">${article.title}</a>
 		</div>
 		<div>
+			작성자 :${article.extra.writer}
+		</div>
+		<div>
 			작업 : <a onclick="if ( confirm('삭제하시겠습니까?') == false ) return false;"
 				href="doDelete?id=${article.id}">삭제</a> <a
 				href="modify?id=${article.id}">수정</a>

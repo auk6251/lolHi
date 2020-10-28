@@ -3,24 +3,30 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.sbs.example.lolHi.dao.ArticleDao">
-	<select id="getArticles" resultType="Article">
-		SELECT *
-		FROM article
-		ORDER BY id DESC
+	<select id="getArticles" resultMap="article">
+		SELECT A.*,
+		M.name AS extra__writer
+		FROM article AS A
+		INNER JOIN `member` AS M
+		ON A.memberId = M.id
+		ORDER BY A.id DESC
 		<if test="limitFrom != null and limitTake != null">
 			LIMIT #{limitFrom}, #{limitTake}
 		</if>
 	</select>
-	
+
 	<select id="getTotalCount" resultType="int">
-	SELECT COUNT(*)
-	FROM article
+		SELECT COUNT(*)
+		FROM article
 	</select>
 
-	<select id="getArticleById" resultType="Article">
-		SELECT *
-		FROM article
-		WHERE id = #{id}
+	<select id="getArticleById" resultMap="article">
+			SELECT A.*,
+		M.name AS extra__writer
+		FROM article AS A
+		INNER JOIN `member` AS M
+		ON A.memberId = M.id
+		WHERE A.id = #{id}
 	</select>
 
 	<delete id="deleteArticleById">
@@ -50,5 +56,17 @@
 		</set>
 
 	</insert>
+
+	<resultMap type="Article" id="article">
+		<id property="id" column="id" />
+		<id property="regDate" column="regDate" />
+		<id property="updateDate" column="updateDate" />
+		<id property="title" column="title" />
+		<id property="body" column="body" />
+		<id property="memberId" column="memberId" />
+		<association property="extra" javaType="map">
+			<id property="writer" column="extra__writer" />
+		</association>
+	</resultMap>
 
 </mapper>

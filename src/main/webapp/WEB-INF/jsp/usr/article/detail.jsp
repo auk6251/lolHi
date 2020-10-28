@@ -10,7 +10,8 @@
 	<div>작성날짜 : ${article.regDate }</div>
 	<div>수정날짜 : ${article.updateDate }</div>
 	<div>제목 : ${article.title}</div>
-	<div>내용 ${article.body}</div>
+	<div>내용 : ${article.body}</div>
+	<div>작성자 : ${article.extra.writer}</div>
 	<hr />
 	<div>
 		<a href="list">리스트</a> <a
