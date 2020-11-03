@@ -16,7 +16,7 @@ public class ArticleService {
 	@Autowired
 	private ArticleDao articledao;
 
-	public List<Article> getArticles(Map<String, Object> param) {
+	public List<Article> getForPrintArticles(Map<String, Object> param) {
 		int page = Util.getAsInt(param.get("page"), 1);
 
 		int itemsCountInAPage = Util.getAsInt(param.get("itemsCountInAPage"), 10);
@@ -33,7 +33,7 @@ public class ArticleService {
 		param.put("limitFrom", limitFrom);
 		param.put("limitTake", limitTake);
 
-		return articledao.getArticles(param);
+		return articledao.getForPrintArticles(param);
 		
 
 	}
@@ -62,9 +62,9 @@ public class ArticleService {
 
 	}
 
-	public int getTotalCount() {
+	public int getTotalCount(Map<String, Object> param) {
 		
-		return articledao.getTotalCount();
+		return articledao.getTotalCount(param);
 	}
 
 }

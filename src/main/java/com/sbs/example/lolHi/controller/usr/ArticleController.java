@@ -24,7 +24,7 @@ public class ArticleController {
 
 	@RequestMapping("/usr/article/list")
 	public String showList(Model model, @RequestParam Map<String, Object> param) {
-		int totalCount = articleService.getTotalCount();
+		int totalCount = articleService.getTotalCount(param);
 
 		int itemsCountInAPage = 10;
 		int totalPage = (int) Math.ceil(totalCount / (double) itemsCountInAPage);
@@ -42,7 +42,7 @@ public class ArticleController {
 
 		param.put("itemsCountInAPage", itemsCountInAPage);
 
-		List<Article> articles = articleService.getArticles(param);
+		List<Article> articles = articleService.getForPrintArticles(param);
 
 		model.addAttribute("totalCount", totalCount);
 		model.addAttribute("totalPage", totalPage);
