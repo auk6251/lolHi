@@ -2760,3 +2760,1971 @@ java.lang.IllegalArgumentException: Invalid character found in method name [0x04
 2020-11-03 14:38:14 [INFO ] o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
 2020-11-03 14:38:14 [INFO ] com.zaxxer.hikari.HikariDataSource - HikariPool-5 - Shutdown initiated...
 2020-11-03 14:38:14 [INFO ] com.zaxxer.hikari.HikariDataSource - HikariPool-5 - Shutdown completed.
+2020-11-03 14:38:14 [INFO ] c.sbs.example.lolHi.LolHiApplication - Starting LolHiApplication on wwifi-PC with PID 880 (C:\work\sts-4.7.0.RELEASE-workspace\lolHi\target\classes started by wwifi in C:\work\sts-4.7.0.RELEASE-workspace\lolHi)
+2020-11-03 14:38:14 [INFO ] c.sbs.example.lolHi.LolHiApplication - The following profiles are active: local
+2020-11-03 14:38:15 [INFO ] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-11-03 14:38:15 [INFO ] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-11-03 14:38:15 [INFO ] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2020-11-03 14:38:15 [INFO ] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.38]
+2020-11-03 14:38:15 [INFO ] org.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2020-11-03 14:38:15 [INFO ] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-11-03 14:38:15 [INFO ] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 266 ms
+2020-11-03 14:38:15 [INFO ] o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-11-03 14:38:15 [INFO ] o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-11-03 14:38:15 [INFO ] o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-11-03 14:38:15 [INFO ] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-11-03 14:38:15 [INFO ] c.sbs.example.lolHi.LolHiApplication - Started LolHiApplication in 0.448 seconds (JVM running for 2330.875)
+2020-11-03 14:38:15 [INFO ] o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2020-11-03 14:38:22 [INFO ] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-11-03 14:38:22 [INFO ] o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-11-03 14:38:22 [INFO ] o.s.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+2020-11-03 14:38:22 [INFO ] com.zaxxer.hikari.HikariDataSource - HikariPool-6 - Starting...
+2020-11-03 14:38:22 [INFO ] com.zaxxer.hikari.HikariDataSource - HikariPool-6 - Start completed.
+2020-11-03 14:38:22 [DEBUG] jdbc.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+51. SELECT COUNT(*)
+		FROM article
+		WHERE 1
+
+			AND title LIKE CONCAT('%','2','%')
+ {executed in 1 msec}
+2020-11-03 14:38:22 [INFO ] jdbc.resultsettable - 
+|---------|
+|count(*) |
+|---------|
+|225      |
+|---------|
+
+2020-11-03 14:38:22 [DEBUG] jdbc.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+51. SELECT A.*,
+		M.name AS extra__writer
+		FROM article AS A
+		INNER JOIN `member`
+		AS M
+		ON A.memberId = M.id
+		WHERE 1
+
+			AND A.title LIKE CONCAT('%','2','%')
+
+		ORDER BY A.id DESC
+
+			LIMIT 60, 10
+ {executed in 4 msec}
+2020-11-03 14:38:22 [INFO ] jdbc.resultsettable - 
+|----|--------------------|--------------------|---------|----------------------|----------------------|--------------|
+|id  |regdate             |updatedate          |memberid |title                 |body                  |extra__writer |
+|----|--------------------|--------------------|---------|----------------------|----------------------|--------------|
+|227 |2020-11-03 14:19:48 |2020-11-03 14:19:48 |2        |제목0.1117912308422767  |내용0.5719880746416637  |홍길순           |
+|226 |2020-11-03 14:19:48 |2020-11-03 14:19:48 |2        |제목0.668015951912865   |내용0.733274105687881   |홍길순           |
+|225 |2020-11-03 14:19:48 |2020-11-03 14:19:48 |1        |제목0.6788698711235727  |내용0.44777562883475386 |홍길동           |
+|224 |2020-11-03 14:19:48 |2020-11-03 14:19:48 |1        |제목0.2830213087452774  |내용0.632917696268221   |홍길동           |
+|223 |2020-11-03 14:19:48 |2020-11-03 14:19:48 |2        |제목0.33195690469067257 |내용0.7846533952137953  |홍길순           |
+|222 |2020-11-03 14:19:48 |2020-11-03 14:19:48 |2        |제목0.8990197283206691  |내용0.26442057477722    |홍길순           |
+|221 |2020-11-03 14:19:48 |2020-11-03 14:19:48 |1        |제목0.13294899848564434 |내용0.49514793278197566 |홍길동           |
+|220 |2020-11-03 14:19:48 |2020-11-03 14:19:48 |1        |제목0.8791445092103859  |내용0.6054598387381619  |홍길동           |
+|219 |2020-11-03 14:19:48 |2020-11-03 14:19:48 |2        |제목0.5629116050553616  |내용0.9237644727563155  |홍길순           |
+|218 |2020-11-03 14:19:48 |2020-11-03 14:19:48 |1        |제목0.5242142775321512  |내용0.9739147992561709  |홍길동           |
+|----|--------------------|--------------------|---------|----------------------|----------------------|--------------|
+
+2020-11-03 14:38:23 [DEBUG] jdbc.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+51. SELECT COUNT(*)
+		FROM article
+		WHERE 1
+ {executed in 1 msec}
+2020-11-03 14:38:23 [INFO ] jdbc.resultsettable - 
+|---------|
+|count(*) |
+|---------|
+|285      |
+|---------|
+
+2020-11-03 14:38:23 [DEBUG] jdbc.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+51. SELECT A.*,
+		M.name AS extra__writer
+		FROM article AS A
+		INNER JOIN `member`
+		AS M
+		ON A.memberId = M.id
+		WHERE 1
+
+		ORDER BY A.id DESC
+
+			LIMIT 0, 10
+ {executed in 6 msec}
+2020-11-03 14:38:23 [INFO ] jdbc.resultsettable - 
+|----|--------------------|--------------------|---------|----------------------|-----------------------|--------------|
+|id  |regdate             |updatedate          |memberid |title                 |body                   |extra__writer |
+|----|--------------------|--------------------|---------|----------------------|-----------------------|--------------|
+|298 |2020-11-03 14:19:51 |2020-11-03 14:19:51 |1        |제목0.6305766307102298  |내용0.028522001605967063 |홍길동           |
+|297 |2020-11-03 14:19:51 |2020-11-03 14:19:51 |1        |제목0.9732332331810456  |내용0.19223067927382018  |홍길동           |
+|296 |2020-11-03 14:19:51 |2020-11-03 14:19:51 |2        |제목0.9714105045156651  |내용0.16110866438700694  |홍길순           |
+|295 |2020-11-03 14:19:51 |2020-11-03 14:19:51 |2        |제목0.5088743972674705  |내용0.6183875581420842   |홍길순           |
+|294 |2020-11-03 14:19:51 |2020-11-03 14:19:51 |2        |제목0.8421682546307968  |내용0.23369991056034334  |홍길순           |
+|293 |2020-11-03 14:19:51 |2020-11-03 14:19:51 |2        |제목0.6986884285683636  |내용0.1510224772161082   |홍길순           |
+|292 |2020-11-03 14:19:51 |2020-11-03 14:19:51 |1        |제목0.11307065292547518 |내용0.29067036536584645  |홍길동           |
+|291 |2020-11-03 14:19:50 |2020-11-03 14:19:50 |2        |제목0.4572950149488589  |내용0.2260225314889313   |홍길순           |
+|290 |2020-11-03 14:19:50 |2020-11-03 14:19:50 |2        |제목0.9803900793012139  |내용0.3255975463665999   |홍길순           |
+|289 |2020-11-03 14:19:50 |2020-11-03 14:19:50 |2        |제목0.2953301084184368  |내용0.8822882509625407   |홍길순           |
+|----|--------------------|--------------------|---------|----------------------|-----------------------|--------------|
+
+2020-11-03 14:38:33 [DEBUG] jdbc.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+51. SELECT COUNT(*)
+		FROM article
+		WHERE 1
+
+			AND title LIKE CONCAT('%','제목1','%')
+ {executed in 1 msec}
+2020-11-03 14:38:33 [INFO ] jdbc.resultsettable - 
+|---------|
+|count(*) |
+|---------|
+|1        |
+|---------|
+
+2020-11-03 14:38:33 [DEBUG] jdbc.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+51. SELECT A.*,
+		M.name AS extra__writer
+		FROM article AS A
+		INNER JOIN `member`
+		AS M
+		ON A.memberId = M.id
+		WHERE 1
+
+			AND A.title LIKE CONCAT('%','제목1','%')
+
+		ORDER BY A.id DESC
+
+			LIMIT 0, 10
+ {executed in 4 msec}
+2020-11-03 14:38:33 [INFO ] jdbc.resultsettable - 
+|---|--------------------|--------------------|---------|------|-----|--------------|
+|id |regdate             |updatedate          |memberid |title |body |extra__writer |
+|---|--------------------|--------------------|---------|------|-----|--------------|
+|1  |2020-10-27 21:36:52 |2020-10-27 21:36:52 |1        |제목1   |내용1  |홍길동           |
+|---|--------------------|--------------------|---------|------|-----|--------------|
+
+2020-11-03 14:38:42 [DEBUG] jdbc.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+51. SELECT COUNT(*)
+		FROM article
+		WHERE 1
+
+			AND title LIKE CONCAT('%','3','%')
+ {executed in 1 msec}
+2020-11-03 14:38:42 [INFO ] jdbc.resultsettable - 
+|---------|
+|count(*) |
+|---------|
+|219      |
+|---------|
+
+2020-11-03 14:38:42 [DEBUG] jdbc.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+51. SELECT A.*,
+		M.name AS extra__writer
+		FROM article AS A
+		INNER JOIN `member`
+		AS M
+		ON A.memberId = M.id
+		WHERE 1
+
+			AND A.title LIKE CONCAT('%','3','%')
+
+		ORDER BY A.id DESC
+
+			LIMIT 0, 10
+ {executed in 5 msec}
+2020-11-03 14:38:42 [INFO ] jdbc.resultsettable - 
+|----|--------------------|--------------------|---------|----------------------|-----------------------|--------------|
+|id  |regdate             |updatedate          |memberid |title                 |body                   |extra__writer |
+|----|--------------------|--------------------|---------|----------------------|-----------------------|--------------|
+|298 |2020-11-03 14:19:51 |2020-11-03 14:19:51 |1        |제목0.6305766307102298  |내용0.028522001605967063 |홍길동           |
+|297 |2020-11-03 14:19:51 |2020-11-03 14:19:51 |1        |제목0.9732332331810456  |내용0.19223067927382018  |홍길동           |
+|295 |2020-11-03 14:19:51 |2020-11-03 14:19:51 |2        |제목0.5088743972674705  |내용0.6183875581420842   |홍길순           |
+|294 |2020-11-03 14:19:51 |2020-11-03 14:19:51 |2        |제목0.8421682546307968  |내용0.23369991056034334  |홍길순           |
+|293 |2020-11-03 14:19:51 |2020-11-03 14:19:51 |2        |제목0.6986884285683636  |내용0.1510224772161082   |홍길순           |
+|292 |2020-11-03 14:19:51 |2020-11-03 14:19:51 |1        |제목0.11307065292547518 |내용0.29067036536584645  |홍길동           |
+|290 |2020-11-03 14:19:50 |2020-11-03 14:19:50 |2        |제목0.9803900793012139  |내용0.3255975463665999   |홍길순           |
+|289 |2020-11-03 14:19:50 |2020-11-03 14:19:50 |2        |제목0.2953301084184368  |내용0.8822882509625407   |홍길순           |
+|288 |2020-11-03 14:19:50 |2020-11-03 14:19:50 |2        |제목0.7276303774934545  |내용0.009535708473562924 |홍길순           |
+|286 |2020-11-03 14:19:50 |2020-11-03 14:19:50 |2        |제목0.1996737422418536  |내용0.89189050895338     |홍길순           |
+|----|--------------------|--------------------|---------|----------------------|-----------------------|--------------|
+
+2020-11-03 14:38:47 [DEBUG] jdbc.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+51. SELECT COUNT(*)
+		FROM article
+		WHERE 1
+ {executed in 1 msec}
+2020-11-03 14:38:47 [INFO ] jdbc.resultsettable - 
+|---------|
+|count(*) |
+|---------|
+|285      |
+|---------|
+
+2020-11-03 14:38:47 [DEBUG] jdbc.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+51. SELECT A.*,
+		M.name AS extra__writer
+		FROM article AS A
+		INNER JOIN `member`
+		AS M
+		ON A.memberId = M.id
+		WHERE 1
+
+		ORDER BY A.id DESC
+
+			LIMIT 0, 10
+ {executed in 6 msec}
+2020-11-03 14:38:47 [INFO ] jdbc.resultsettable - 
+|----|--------------------|--------------------|---------|----------------------|-----------------------|--------------|
+|id  |regdate             |updatedate          |memberid |title                 |body                   |extra__writer |
+|----|--------------------|--------------------|---------|----------------------|-----------------------|--------------|
+|298 |2020-11-03 14:19:51 |2020-11-03 14:19:51 |1        |제목0.6305766307102298  |내용0.028522001605967063 |홍길동           |
+|297 |2020-11-03 14:19:51 |2020-11-03 14:19:51 |1        |제목0.9732332331810456  |내용0.19223067927382018  |홍길동           |
+|296 |2020-11-03 14:19:51 |2020-11-03 14:19:51 |2        |제목0.9714105045156651  |내용0.16110866438700694  |홍길순           |
+|295 |2020-11-03 14:19:51 |2020-11-03 14:19:51 |2        |제목0.5088743972674705  |내용0.6183875581420842   |홍길순           |
+|294 |2020-11-03 14:19:51 |2020-11-03 14:19:51 |2        |제목0.8421682546307968  |내용0.23369991056034334  |홍길순           |
+|293 |2020-11-03 14:19:51 |2020-11-03 14:19:51 |2        |제목0.6986884285683636  |내용0.1510224772161082   |홍길순           |
+|292 |2020-11-03 14:19:51 |2020-11-03 14:19:51 |1        |제목0.11307065292547518 |내용0.29067036536584645  |홍길동           |
+|291 |2020-11-03 14:19:50 |2020-11-03 14:19:50 |2        |제목0.4572950149488589  |내용0.2260225314889313   |홍길순           |
+|290 |2020-11-03 14:19:50 |2020-11-03 14:19:50 |2        |제목0.9803900793012139  |내용0.3255975463665999   |홍길순           |
+|289 |2020-11-03 14:19:50 |2020-11-03 14:19:50 |2        |제목0.2953301084184368  |내용0.8822882509625407   |홍길순           |
+|----|--------------------|--------------------|---------|----------------------|-----------------------|--------------|
+
+2020-11-03 14:38:49 [DEBUG] jdbc.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+51. SELECT COUNT(*)
+		FROM article
+		WHERE 1
+
+			AND title LIKE CONCAT('%','','%')
+ {executed in 1 msec}
+2020-11-03 14:38:49 [INFO ] jdbc.resultsettable - 
+|---------|
+|count(*) |
+|---------|
+|285      |
+|---------|
+
+2020-11-03 14:38:49 [DEBUG] jdbc.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+51. SELECT A.*,
+		M.name AS extra__writer
+		FROM article AS A
+		INNER JOIN `member`
+		AS M
+		ON A.memberId = M.id
+		WHERE 1
+
+			AND A.title LIKE CONCAT('%','','%')
+
+		ORDER BY A.id DESC
+
+			LIMIT 30, 10
+ {executed in 6 msec}
+2020-11-03 14:38:49 [INFO ] jdbc.resultsettable - 
+|----|--------------------|--------------------|---------|-----------------------|----------------------|--------------|
+|id  |regdate             |updatedate          |memberid |title                  |body                  |extra__writer |
+|----|--------------------|--------------------|---------|-----------------------|----------------------|--------------|
+|268 |2020-11-03 14:19:50 |2020-11-03 14:19:50 |1        |제목0.04520303667076215  |내용0.05826316499920857 |홍길동           |
+|267 |2020-11-03 14:19:50 |2020-11-03 14:19:50 |1        |제목0.14861112101805501  |내용0.9670168030699872  |홍길동           |
+|266 |2020-11-03 14:19:50 |2020-11-03 14:19:50 |2        |제목0.031247712700858445 |내용0.9371512103240482  |홍길순           |
+|265 |2020-11-03 14:19:50 |2020-11-03 14:19:50 |1        |제목0.6056002775259318   |내용0.7779659859630894  |홍길동           |
+|264 |2020-11-03 14:19:49 |2020-11-03 14:19:49 |2        |제목0.9413620773156751   |내용0.7148196024026904  |홍길순           |
+|263 |2020-11-03 14:19:49 |2020-11-03 14:19:49 |2        |제목0.4334580557732452   |내용0.7928742149778402  |홍길순           |
+|262 |2020-11-03 14:19:49 |2020-11-03 14:19:49 |2        |제목0.1383438512108697   |내용0.8413007108879282  |홍길순           |
+|261 |2020-11-03 14:19:49 |2020-11-03 14:19:49 |1        |제목0.39385376441651376  |내용0.09300682422985027 |홍길동           |
+|260 |2020-11-03 14:19:49 |2020-11-03 14:19:49 |1        |제목0.27296144075036183  |내용0.02219432687591233 |홍길동           |
+|259 |2020-11-03 14:19:49 |2020-11-03 14:19:49 |2        |제목0.7571504849541472   |내용0.2104644786663954  |홍길순           |
+|----|--------------------|--------------------|---------|-----------------------|----------------------|--------------|
+
+2020-11-03 14:38:54 [DEBUG] jdbc.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+51. SELECT COUNT(*)
+		FROM article
+		WHERE 1
+
+			AND title LIKE CONCAT('%','3','%')
+ {executed in 1 msec}
+2020-11-03 14:38:54 [INFO ] jdbc.resultsettable - 
+|---------|
+|count(*) |
+|---------|
+|219      |
+|---------|
+
+2020-11-03 14:38:54 [DEBUG] jdbc.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+51. SELECT A.*,
+		M.name AS extra__writer
+		FROM article AS A
+		INNER JOIN `member`
+		AS M
+		ON A.memberId = M.id
+		WHERE 1
+
+			AND A.title LIKE CONCAT('%','3','%')
+
+		ORDER BY A.id DESC
+
+			LIMIT 0, 10
+ {executed in 5 msec}
+2020-11-03 14:38:54 [INFO ] jdbc.resultsettable - 
+|----|--------------------|--------------------|---------|----------------------|-----------------------|--------------|
+|id  |regdate             |updatedate          |memberid |title                 |body                   |extra__writer |
+|----|--------------------|--------------------|---------|----------------------|-----------------------|--------------|
+|298 |2020-11-03 14:19:51 |2020-11-03 14:19:51 |1        |제목0.6305766307102298  |내용0.028522001605967063 |홍길동           |
+|297 |2020-11-03 14:19:51 |2020-11-03 14:19:51 |1        |제목0.9732332331810456  |내용0.19223067927382018  |홍길동           |
+|295 |2020-11-03 14:19:51 |2020-11-03 14:19:51 |2        |제목0.5088743972674705  |내용0.6183875581420842   |홍길순           |
+|294 |2020-11-03 14:19:51 |2020-11-03 14:19:51 |2        |제목0.8421682546307968  |내용0.23369991056034334  |홍길순           |
+|293 |2020-11-03 14:19:51 |2020-11-03 14:19:51 |2        |제목0.6986884285683636  |내용0.1510224772161082   |홍길순           |
+|292 |2020-11-03 14:19:51 |2020-11-03 14:19:51 |1        |제목0.11307065292547518 |내용0.29067036536584645  |홍길동           |
+|290 |2020-11-03 14:19:50 |2020-11-03 14:19:50 |2        |제목0.9803900793012139  |내용0.3255975463665999   |홍길순           |
+|289 |2020-11-03 14:19:50 |2020-11-03 14:19:50 |2        |제목0.2953301084184368  |내용0.8822882509625407   |홍길순           |
+|288 |2020-11-03 14:19:50 |2020-11-03 14:19:50 |2        |제목0.7276303774934545  |내용0.009535708473562924 |홍길순           |
+|286 |2020-11-03 14:19:50 |2020-11-03 14:19:50 |2        |제목0.1996737422418536  |내용0.89189050895338     |홍길순           |
+|----|--------------------|--------------------|---------|----------------------|-----------------------|--------------|
+
+2020-11-03 14:39:51 [DEBUG] jdbc.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+51. SELECT COUNT(*)
+		FROM article
+		WHERE 1
+
+			AND title LIKE CONCAT('%','3','%')
+ {executed in 1 msec}
+2020-11-03 14:39:51 [INFO ] jdbc.resultsettable - 
+|---------|
+|count(*) |
+|---------|
+|219      |
+|---------|
+
+2020-11-03 14:39:51 [DEBUG] jdbc.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+51. SELECT A.*,
+		M.name AS extra__writer
+		FROM article AS A
+		INNER JOIN `member`
+		AS M
+		ON A.memberId = M.id
+		WHERE 1
+
+			AND A.title LIKE CONCAT('%','3','%')
+
+		ORDER BY A.id DESC
+
+			LIMIT 60, 10
+ {executed in 6 msec}
+2020-11-03 14:39:51 [INFO ] jdbc.resultsettable - 
+|----|--------------------|--------------------|---------|----------------------|-----------------------|--------------|
+|id  |regdate             |updatedate          |memberid |title                 |body                   |extra__writer |
+|----|--------------------|--------------------|---------|----------------------|-----------------------|--------------|
+|218 |2020-11-03 14:19:48 |2020-11-03 14:19:48 |1        |제목0.5242142775321512  |내용0.9739147992561709   |홍길동           |
+|217 |2020-11-03 14:19:48 |2020-11-03 14:19:48 |2        |제목0.31015674798763987 |내용0.9625711505884036   |홍길순           |
+|216 |2020-11-03 14:19:48 |2020-11-03 14:19:48 |1        |제목0.5291973022084658  |내용0.5567325498505798   |홍길동           |
+|215 |2020-11-03 14:19:48 |2020-11-03 14:19:48 |2        |제목0.741689963957006   |내용0.9842975716891675   |홍길순           |
+|213 |2020-11-03 14:19:48 |2020-11-03 14:19:48 |1        |제목0.4848484597027753  |내용0.35718791685736545  |홍길동           |
+|212 |2020-11-03 14:19:48 |2020-11-03 14:19:48 |1        |제목0.00749892276478831 |내용0.20896964167148774  |홍길동           |
+|211 |2020-11-03 14:19:47 |2020-11-03 14:19:47 |2        |제목0.3005580355418455  |내용0.5689031487041183   |홍길순           |
+|210 |2020-11-03 14:19:47 |2020-11-03 14:19:47 |2        |제목0.2235979821752738  |내용0.5297512538076856   |홍길순           |
+|209 |2020-11-03 14:19:47 |2020-11-03 14:19:47 |2        |제목0.09582526431961476 |내용0.030044398298528417 |홍길순           |
+|208 |2020-11-03 14:19:47 |2020-11-03 14:19:47 |2        |제목0.49786758376086837 |내용0.6619926743786714   |홍길순           |
+|----|--------------------|--------------------|---------|----------------------|-----------------------|--------------|
+
+2020-11-03 14:39:53 [DEBUG] jdbc.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+51. SELECT COUNT(*)
+		FROM article
+		WHERE 1
+ {executed in 1 msec}
+2020-11-03 14:39:53 [INFO ] jdbc.resultsettable - 
+|---------|
+|count(*) |
+|---------|
+|285      |
+|---------|
+
+2020-11-03 14:39:53 [DEBUG] jdbc.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+51. SELECT A.*,
+		M.name AS extra__writer
+		FROM article AS A
+		INNER JOIN `member`
+		AS M
+		ON A.memberId = M.id
+		WHERE 1
+
+		ORDER BY A.id DESC
+
+			LIMIT 0, 10
+ {executed in 6 msec}
+2020-11-03 14:39:53 [INFO ] jdbc.resultsettable - 
+|----|--------------------|--------------------|---------|----------------------|-----------------------|--------------|
+|id  |regdate             |updatedate          |memberid |title                 |body                   |extra__writer |
+|----|--------------------|--------------------|---------|----------------------|-----------------------|--------------|
+|298 |2020-11-03 14:19:51 |2020-11-03 14:19:51 |1        |제목0.6305766307102298  |내용0.028522001605967063 |홍길동           |
+|297 |2020-11-03 14:19:51 |2020-11-03 14:19:51 |1        |제목0.9732332331810456  |내용0.19223067927382018  |홍길동           |
+|296 |2020-11-03 14:19:51 |2020-11-03 14:19:51 |2        |제목0.9714105045156651  |내용0.16110866438700694  |홍길순           |
+|295 |2020-11-03 14:19:51 |2020-11-03 14:19:51 |2        |제목0.5088743972674705  |내용0.6183875581420842   |홍길순           |
+|294 |2020-11-03 14:19:51 |2020-11-03 14:19:51 |2        |제목0.8421682546307968  |내용0.23369991056034334  |홍길순           |
+|293 |2020-11-03 14:19:51 |2020-11-03 14:19:51 |2        |제목0.6986884285683636  |내용0.1510224772161082   |홍길순           |
+|292 |2020-11-03 14:19:51 |2020-11-03 14:19:51 |1        |제목0.11307065292547518 |내용0.29067036536584645  |홍길동           |
+|291 |2020-11-03 14:19:50 |2020-11-03 14:19:50 |2        |제목0.4572950149488589  |내용0.2260225314889313   |홍길순           |
+|290 |2020-11-03 14:19:50 |2020-11-03 14:19:50 |2        |제목0.9803900793012139  |내용0.3255975463665999   |홍길순           |
+|289 |2020-11-03 14:19:50 |2020-11-03 14:19:50 |2        |제목0.2953301084184368  |내용0.8822882509625407   |홍길순           |
+|----|--------------------|--------------------|---------|----------------------|-----------------------|--------------|
+
+2020-11-03 14:39:56 [DEBUG] jdbc.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+51. SELECT COUNT(*)
+		FROM article
+		WHERE 1
+
+			AND title LIKE CONCAT('%','','%')
+ {executed in 1 msec}
+2020-11-03 14:39:56 [INFO ] jdbc.resultsettable - 
+|---------|
+|count(*) |
+|---------|
+|285      |
+|---------|
+
+2020-11-03 14:39:56 [DEBUG] jdbc.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+51. SELECT A.*,
+		M.name AS extra__writer
+		FROM article AS A
+		INNER JOIN `member`
+		AS M
+		ON A.memberId = M.id
+		WHERE 1
+
+			AND A.title LIKE CONCAT('%','','%')
+
+		ORDER BY A.id DESC
+
+			LIMIT 70, 10
+ {executed in 6 msec}
+2020-11-03 14:39:56 [INFO ] jdbc.resultsettable - 
+|----|--------------------|--------------------|---------|----------------------|----------------------|--------------|
+|id  |regdate             |updatedate          |memberid |title                 |body                  |extra__writer |
+|----|--------------------|--------------------|---------|----------------------|----------------------|--------------|
+|228 |2020-11-03 14:19:48 |2020-11-03 14:19:48 |1        |제목0.9068693638843199  |내용0.960646715909845   |홍길동           |
+|227 |2020-11-03 14:19:48 |2020-11-03 14:19:48 |2        |제목0.1117912308422767  |내용0.5719880746416637  |홍길순           |
+|226 |2020-11-03 14:19:48 |2020-11-03 14:19:48 |2        |제목0.668015951912865   |내용0.733274105687881   |홍길순           |
+|225 |2020-11-03 14:19:48 |2020-11-03 14:19:48 |1        |제목0.6788698711235727  |내용0.44777562883475386 |홍길동           |
+|224 |2020-11-03 14:19:48 |2020-11-03 14:19:48 |1        |제목0.2830213087452774  |내용0.632917696268221   |홍길동           |
+|223 |2020-11-03 14:19:48 |2020-11-03 14:19:48 |2        |제목0.33195690469067257 |내용0.7846533952137953  |홍길순           |
+|222 |2020-11-03 14:19:48 |2020-11-03 14:19:48 |2        |제목0.8990197283206691  |내용0.26442057477722    |홍길순           |
+|221 |2020-11-03 14:19:48 |2020-11-03 14:19:48 |1        |제목0.13294899848564434 |내용0.49514793278197566 |홍길동           |
+|220 |2020-11-03 14:19:48 |2020-11-03 14:19:48 |1        |제목0.8791445092103859  |내용0.6054598387381619  |홍길동           |
+|219 |2020-11-03 14:19:48 |2020-11-03 14:19:48 |2        |제목0.5629116050553616  |내용0.9237644727563155  |홍길순           |
+|----|--------------------|--------------------|---------|----------------------|----------------------|--------------|
+
+2020-11-03 14:39:59 [DEBUG] jdbc.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+51. SELECT COUNT(*)
+		FROM article
+		WHERE 1
+
+			AND title LIKE CONCAT('%','3','%')
+ {executed in 1 msec}
+2020-11-03 14:39:59 [INFO ] jdbc.resultsettable - 
+|---------|
+|count(*) |
+|---------|
+|219      |
+|---------|
+
+2020-11-03 14:39:59 [DEBUG] jdbc.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+51. SELECT A.*,
+		M.name AS extra__writer
+		FROM article AS A
+		INNER JOIN `member`
+		AS M
+		ON A.memberId = M.id
+		WHERE 1
+
+			AND A.title LIKE CONCAT('%','3','%')
+
+		ORDER BY A.id DESC
+
+			LIMIT 70, 10
+ {executed in 5 msec}
+2020-11-03 14:39:59 [INFO ] jdbc.resultsettable - 
+|----|--------------------|--------------------|---------|----------------------|----------------------|--------------|
+|id  |regdate             |updatedate          |memberid |title                 |body                  |extra__writer |
+|----|--------------------|--------------------|---------|----------------------|----------------------|--------------|
+|207 |2020-11-03 14:19:47 |2020-11-03 14:19:47 |1        |제목0.8419845568407183  |내용0.9603470796349897  |홍길동           |
+|206 |2020-11-03 14:19:47 |2020-11-03 14:19:47 |1        |제목0.43929253932022727 |내용0.7468805664655571  |홍길동           |
+|205 |2020-11-03 14:19:47 |2020-11-03 14:19:47 |1        |제목0.23338593284914821 |내용0.7700036976207082  |홍길동           |
+|204 |2020-11-03 14:19:47 |2020-11-03 14:19:47 |1        |제목0.34191050691708036 |내용0.6982746978274311  |홍길동           |
+|203 |2020-11-03 14:19:47 |2020-11-03 14:19:47 |1        |제목0.07849837846914155 |내용0.11451754543419698 |홍길동           |
+|202 |2020-11-03 14:19:47 |2020-11-03 14:19:47 |2        |제목0.8125170877319919  |내용0.23937520500214324 |홍길순           |
+|201 |2020-11-03 14:19:47 |2020-11-03 14:19:47 |1        |제목0.10825445326813911 |내용0.5198333501069186  |홍길동           |
+|200 |2020-11-03 14:19:47 |2020-11-03 14:19:47 |1        |제목0.10547558414328433 |내용0.5313812741370697  |홍길동           |
+|199 |2020-11-03 14:19:47 |2020-11-03 14:19:47 |2        |제목0.7899923657905239  |내용0.40706185848178517 |홍길순           |
+|197 |2020-11-03 14:19:47 |2020-11-03 14:19:47 |2        |제목0.5283723888251673  |내용0.23414937335452937 |홍길순           |
+|----|--------------------|--------------------|---------|----------------------|----------------------|--------------|
+
+2020-11-03 14:42:49 [INFO ] o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-11-03 14:42:49 [INFO ] com.zaxxer.hikari.HikariDataSource - HikariPool-6 - Shutdown initiated...
+2020-11-03 14:42:49 [INFO ] com.zaxxer.hikari.HikariDataSource - HikariPool-6 - Shutdown completed.
+2020-11-03 14:42:49 [INFO ] c.sbs.example.lolHi.LolHiApplication - Starting LolHiApplication on wwifi-PC with PID 880 (C:\work\sts-4.7.0.RELEASE-workspace\lolHi\target\classes started by wwifi in C:\work\sts-4.7.0.RELEASE-workspace\lolHi)
+2020-11-03 14:42:49 [INFO ] c.sbs.example.lolHi.LolHiApplication - The following profiles are active: local
+2020-11-03 14:42:49 [INFO ] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-11-03 14:42:49 [INFO ] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-11-03 14:42:49 [INFO ] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2020-11-03 14:42:49 [INFO ] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.38]
+2020-11-03 14:42:49 [INFO ] org.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2020-11-03 14:42:49 [INFO ] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-11-03 14:42:49 [INFO ] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 266 ms
+2020-11-03 14:42:50 [INFO ] o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-11-03 14:42:50 [WARN ] o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Invocation of init method failed; nested exception is java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'replyController' method 
+com.sbs.example.lolHi.controller.usr.ReplyController#showList(Model, Map)
+to { /usr/article/list}: There is already 'articleController' bean method
+com.sbs.example.lolHi.controller.usr.ArticleController#showList(Model, Map) mapped.
+2020-11-03 14:42:50 [INFO ] o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-11-03 14:42:50 [INFO ] o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2020-11-03 14:42:50 [INFO ] o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2020-11-03 14:42:50 [ERROR] o.s.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Invocation of init method failed; nested exception is java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'replyController' method 
+com.sbs.example.lolHi.controller.usr.ReplyController#showList(Model, Map)
+to { /usr/article/list}: There is already 'articleController' bean method
+com.sbs.example.lolHi.controller.usr.ArticleController#showList(Model, Map) mapped.
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1794)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:594)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:516)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:897)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:879)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:551)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:143)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:758)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:750)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1237)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
+	at com.sbs.example.lolHi.LolHiApplication.main(LolHiApplication.java:10)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'replyController' method 
+com.sbs.example.lolHi.controller.usr.ReplyController#showList(Model, Map)
+to { /usr/article/list}: There is already 'articleController' bean method
+com.sbs.example.lolHi.controller.usr.ArticleController#showList(Model, Map) mapped.
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.validateMethodMapping(AbstractHandlerMethodMapping.java:636)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:603)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(AbstractHandlerMethodMapping.java:318)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping.registerHandlerMethod(RequestMappingHandlerMapping.java:378)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping.registerHandlerMethod(RequestMappingHandlerMapping.java:75)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.lambda$detectHandlerMethods$1(AbstractHandlerMethodMapping.java:288)
+	at java.util.LinkedHashMap.forEach(LinkedHashMap.java:684)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.detectHandlerMethods(AbstractHandlerMethodMapping.java:286)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.processCandidateBean(AbstractHandlerMethodMapping.java:258)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.initHandlerMethods(AbstractHandlerMethodMapping.java:217)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.afterPropertiesSet(AbstractHandlerMethodMapping.java:205)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping.afterPropertiesSet(RequestMappingHandlerMapping.java:189)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1853)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1790)
+	... 22 common frames omitted
+2020-11-03 14:51:34 [INFO ] c.sbs.example.lolHi.LolHiApplication - Starting LolHiApplication on wwifi-PC with PID 880 (C:\work\sts-4.7.0.RELEASE-workspace\lolHi\target\classes started by wwifi in C:\work\sts-4.7.0.RELEASE-workspace\lolHi)
+2020-11-03 14:51:34 [INFO ] c.sbs.example.lolHi.LolHiApplication - The following profiles are active: local
+2020-11-03 14:51:34 [INFO ] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-11-03 14:51:34 [INFO ] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-11-03 14:51:34 [INFO ] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2020-11-03 14:51:34 [INFO ] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.38]
+2020-11-03 14:51:34 [INFO ] org.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2020-11-03 14:51:34 [INFO ] o.a.c.c.C.[Tomcat-1].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-11-03 14:51:34 [INFO ] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 258 ms
+2020-11-03 14:51:34 [INFO ] o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-11-03 14:51:34 [INFO ] o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-11-03 14:51:34 [INFO ] o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-11-03 14:51:34 [INFO ] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-11-03 14:51:34 [INFO ] c.sbs.example.lolHi.LolHiApplication - Started LolHiApplication in 0.451 seconds (JVM running for 3130.081)
+2020-11-03 14:51:34 [INFO ] o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2020-11-03 14:52:07 [INFO ] o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-11-03 14:52:07 [INFO ] c.sbs.example.lolHi.LolHiApplication - Starting LolHiApplication on wwifi-PC with PID 880 (C:\work\sts-4.7.0.RELEASE-workspace\lolHi\target\classes started by wwifi in C:\work\sts-4.7.0.RELEASE-workspace\lolHi)
+2020-11-03 14:52:07 [INFO ] c.sbs.example.lolHi.LolHiApplication - The following profiles are active: local
+2020-11-03 14:52:07 [INFO ] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-11-03 14:52:07 [INFO ] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-11-03 14:52:07 [INFO ] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2020-11-03 14:52:07 [INFO ] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.38]
+2020-11-03 14:52:07 [INFO ] org.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2020-11-03 14:52:07 [INFO ] o.a.c.c.C.[Tomcat-1].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-11-03 14:52:07 [INFO ] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 259 ms
+2020-11-03 14:52:07 [INFO ] o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-11-03 14:52:07 [INFO ] o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-11-03 14:52:07 [INFO ] o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-11-03 14:52:07 [INFO ] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-11-03 14:52:07 [INFO ] c.sbs.example.lolHi.LolHiApplication - Started LolHiApplication in 0.433 seconds (JVM running for 3163.358)
+2020-11-03 14:52:07 [INFO ] o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2020-11-03 14:52:14 [INFO ] o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-11-03 14:52:14 [INFO ] c.sbs.example.lolHi.LolHiApplication - Starting LolHiApplication on wwifi-PC with PID 880 (C:\work\sts-4.7.0.RELEASE-workspace\lolHi\target\classes started by wwifi in C:\work\sts-4.7.0.RELEASE-workspace\lolHi)
+2020-11-03 14:52:14 [INFO ] c.sbs.example.lolHi.LolHiApplication - The following profiles are active: local
+2020-11-03 14:52:14 [INFO ] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-11-03 14:52:14 [INFO ] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-11-03 14:52:14 [INFO ] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2020-11-03 14:52:14 [INFO ] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.38]
+2020-11-03 14:52:14 [INFO ] org.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2020-11-03 14:52:14 [INFO ] o.a.c.c.C.[Tomcat-1].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-11-03 14:52:14 [INFO ] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 266 ms
+2020-11-03 14:52:14 [INFO ] o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-11-03 14:52:14 [INFO ] o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-11-03 14:52:14 [INFO ] o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-11-03 14:52:14 [INFO ] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-11-03 14:52:14 [INFO ] c.sbs.example.lolHi.LolHiApplication - Started LolHiApplication in 0.461 seconds (JVM running for 3170.439)
+2020-11-03 14:52:14 [INFO ] o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2020-11-03 14:53:43 [INFO ] o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-11-03 14:53:43 [INFO ] c.sbs.example.lolHi.LolHiApplication - Starting LolHiApplication on wwifi-PC with PID 880 (C:\work\sts-4.7.0.RELEASE-workspace\lolHi\target\classes started by wwifi in C:\work\sts-4.7.0.RELEASE-workspace\lolHi)
+2020-11-03 14:53:43 [INFO ] c.sbs.example.lolHi.LolHiApplication - The following profiles are active: local
+2020-11-03 14:53:43 [INFO ] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-11-03 14:53:43 [INFO ] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-11-03 14:53:43 [INFO ] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2020-11-03 14:53:43 [INFO ] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.38]
+2020-11-03 14:53:43 [INFO ] org.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2020-11-03 14:53:43 [INFO ] o.a.c.c.C.[Tomcat-1].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-11-03 14:53:43 [INFO ] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 252 ms
+2020-11-03 14:53:43 [INFO ] o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-11-03 14:53:43 [INFO ] o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-11-03 14:53:43 [INFO ] o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-11-03 14:53:43 [INFO ] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-11-03 14:53:43 [INFO ] c.sbs.example.lolHi.LolHiApplication - Started LolHiApplication in 0.424 seconds (JVM running for 3259.049)
+2020-11-03 14:53:43 [INFO ] o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2020-11-03 14:53:50 [INFO ] o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-11-03 14:53:50 [INFO ] c.sbs.example.lolHi.LolHiApplication - Starting LolHiApplication on wwifi-PC with PID 880 (C:\work\sts-4.7.0.RELEASE-workspace\lolHi\target\classes started by wwifi in C:\work\sts-4.7.0.RELEASE-workspace\lolHi)
+2020-11-03 14:53:50 [INFO ] c.sbs.example.lolHi.LolHiApplication - The following profiles are active: local
+2020-11-03 14:53:50 [INFO ] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-11-03 14:53:50 [INFO ] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-11-03 14:53:50 [INFO ] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2020-11-03 14:53:50 [INFO ] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.38]
+2020-11-03 14:53:50 [INFO ] org.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2020-11-03 14:53:50 [INFO ] o.a.c.c.C.[Tomcat-1].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-11-03 14:53:50 [INFO ] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 303 ms
+2020-11-03 14:53:50 [INFO ] o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-11-03 14:53:50 [INFO ] o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-11-03 14:53:50 [INFO ] o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-11-03 14:53:50 [INFO ] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-11-03 14:53:50 [INFO ] c.sbs.example.lolHi.LolHiApplication - Started LolHiApplication in 0.487 seconds (JVM running for 3266.123)
+2020-11-03 14:53:50 [INFO ] o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2020-11-03 14:53:52 [INFO ] o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-11-03 14:53:52 [INFO ] c.sbs.example.lolHi.LolHiApplication - Starting LolHiApplication on wwifi-PC with PID 880 (C:\work\sts-4.7.0.RELEASE-workspace\lolHi\target\classes started by wwifi in C:\work\sts-4.7.0.RELEASE-workspace\lolHi)
+2020-11-03 14:53:52 [INFO ] c.sbs.example.lolHi.LolHiApplication - The following profiles are active: local
+2020-11-03 14:53:52 [INFO ] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-11-03 14:53:52 [INFO ] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-11-03 14:53:52 [INFO ] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2020-11-03 14:53:52 [INFO ] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.38]
+2020-11-03 14:53:52 [INFO ] org.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2020-11-03 14:53:52 [INFO ] o.a.c.c.C.[Tomcat-1].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-11-03 14:53:52 [INFO ] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 255 ms
+2020-11-03 14:53:52 [INFO ] o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-11-03 14:53:52 [INFO ] o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-11-03 14:53:52 [INFO ] o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-11-03 14:53:52 [INFO ] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-11-03 14:53:52 [INFO ] c.sbs.example.lolHi.LolHiApplication - Started LolHiApplication in 0.425 seconds (JVM running for 3268.141)
+2020-11-03 14:53:52 [INFO ] o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2020-11-03 14:53:57 [INFO ] o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-11-03 14:53:57 [INFO ] c.sbs.example.lolHi.LolHiApplication - Starting LolHiApplication on wwifi-PC with PID 880 (C:\work\sts-4.7.0.RELEASE-workspace\lolHi\target\classes started by wwifi in C:\work\sts-4.7.0.RELEASE-workspace\lolHi)
+2020-11-03 14:53:57 [INFO ] c.sbs.example.lolHi.LolHiApplication - The following profiles are active: local
+2020-11-03 14:53:57 [INFO ] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-11-03 14:53:57 [INFO ] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-11-03 14:53:57 [INFO ] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2020-11-03 14:53:57 [INFO ] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.38]
+2020-11-03 14:53:57 [INFO ] org.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2020-11-03 14:53:57 [INFO ] o.a.c.c.C.[Tomcat-1].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-11-03 14:53:57 [INFO ] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 252 ms
+2020-11-03 14:53:57 [INFO ] o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-11-03 14:53:57 [INFO ] o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-11-03 14:53:57 [INFO ] o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-11-03 14:53:57 [INFO ] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-11-03 14:53:57 [INFO ] c.sbs.example.lolHi.LolHiApplication - Started LolHiApplication in 0.428 seconds (JVM running for 3273.153)
+2020-11-03 14:53:57 [INFO ] o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2020-11-03 14:54:55 [INFO ] o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-11-03 14:54:55 [INFO ] c.sbs.example.lolHi.LolHiApplication - Starting LolHiApplication on wwifi-PC with PID 880 (C:\work\sts-4.7.0.RELEASE-workspace\lolHi\target\classes started by wwifi in C:\work\sts-4.7.0.RELEASE-workspace\lolHi)
+2020-11-03 14:54:55 [INFO ] c.sbs.example.lolHi.LolHiApplication - The following profiles are active: local
+2020-11-03 14:54:55 [INFO ] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-11-03 14:54:55 [INFO ] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-11-03 14:54:55 [INFO ] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2020-11-03 14:54:55 [INFO ] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.38]
+2020-11-03 14:54:55 [INFO ] org.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2020-11-03 14:54:55 [INFO ] o.a.c.c.C.[Tomcat-1].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-11-03 14:54:55 [INFO ] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 276 ms
+2020-11-03 14:54:56 [ERROR] o.m.spring.mapper.MapperFactoryBean - Error while adding the mapper 'interface com.sbs.example.lolHi.dao.ReplyDao' to configuration.
+org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'com/sbs/example/lolHi/dao/ReplyDao.xml'. Cause: org.apache.ibatis.builder.BuilderException: Wrong namespace. Expected 'com.sbs.example.lolHi.dao.ReplyDao' but found 'com.sbs.example.lolHi.dao.ArticleDao'.
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.configurationElement(XMLMapperBuilder.java:123)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.parse(XMLMapperBuilder.java:95)
+	at org.apache.ibatis.builder.annotation.MapperAnnotationBuilder.loadXmlResource(MapperAnnotationBuilder.java:179)
+	at org.apache.ibatis.builder.annotation.MapperAnnotationBuilder.parse(MapperAnnotationBuilder.java:118)
+	at org.apache.ibatis.binding.MapperRegistry.addMapper(MapperRegistry.java:72)
+	at org.apache.ibatis.session.Configuration.addMapper(Configuration.java:819)
+	at org.mybatis.spring.mapper.MapperFactoryBean.checkDaoConfig(MapperFactoryBean.java:80)
+	at org.springframework.dao.support.DaoSupport.afterPropertiesSet(DaoSupport.java:44)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1853)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1790)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:594)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:516)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1307)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1227)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:640)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:130)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1420)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:593)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:516)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1307)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1227)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:640)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:130)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1420)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:593)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:516)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:897)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:879)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:551)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:143)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:758)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:750)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1237)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
+	at com.sbs.example.lolHi.LolHiApplication.main(LolHiApplication.java:10)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: org.apache.ibatis.builder.BuilderException: Wrong namespace. Expected 'com.sbs.example.lolHi.dao.ReplyDao' but found 'com.sbs.example.lolHi.dao.ArticleDao'.
+	at org.apache.ibatis.builder.MapperBuilderAssistant.setCurrentNamespace(MapperBuilderAssistant.java:78)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.configurationElement(XMLMapperBuilder.java:115)
+	... 57 common frames omitted
+2020-11-03 14:54:56 [WARN ] o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'replyController': Unsatisfied dependency expressed through field 'replyService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'replyService': Unsatisfied dependency expressed through field 'replyDao'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'replyDao' defined in file [C:\work\sts-4.7.0.RELEASE-workspace\lolHi\target\classes\com\sbs\example\lolHi\dao\ReplyDao.class]: Invocation of init method failed; nested exception is java.lang.IllegalArgumentException: org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'com/sbs/example/lolHi/dao/ReplyDao.xml'. Cause: org.apache.ibatis.builder.BuilderException: Wrong namespace. Expected 'com.sbs.example.lolHi.dao.ReplyDao' but found 'com.sbs.example.lolHi.dao.ArticleDao'.
+2020-11-03 14:54:56 [INFO ] o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2020-11-03 14:54:56 [INFO ] o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2020-11-03 14:54:56 [ERROR] o.s.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'replyController': Unsatisfied dependency expressed through field 'replyService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'replyService': Unsatisfied dependency expressed through field 'replyDao'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'replyDao' defined in file [C:\work\sts-4.7.0.RELEASE-workspace\lolHi\target\classes\com\sbs\example\lolHi\dao\ReplyDao.class]: Invocation of init method failed; nested exception is java.lang.IllegalArgumentException: org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'com/sbs/example/lolHi/dao/ReplyDao.xml'. Cause: org.apache.ibatis.builder.BuilderException: Wrong namespace. Expected 'com.sbs.example.lolHi.dao.ReplyDao' but found 'com.sbs.example.lolHi.dao.ArticleDao'.
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:643)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:130)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1420)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:593)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:516)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:897)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:879)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:551)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:143)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:758)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:750)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1237)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
+	at com.sbs.example.lolHi.LolHiApplication.main(LolHiApplication.java:10)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'replyService': Unsatisfied dependency expressed through field 'replyDao'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'replyDao' defined in file [C:\work\sts-4.7.0.RELEASE-workspace\lolHi\target\classes\com\sbs\example\lolHi\dao\ReplyDao.class]: Invocation of init method failed; nested exception is java.lang.IllegalArgumentException: org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'com/sbs/example/lolHi/dao/ReplyDao.xml'. Cause: org.apache.ibatis.builder.BuilderException: Wrong namespace. Expected 'com.sbs.example.lolHi.dao.ReplyDao' but found 'com.sbs.example.lolHi.dao.ArticleDao'.
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:643)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:130)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1420)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:593)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:516)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1307)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1227)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:640)
+	... 25 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'replyDao' defined in file [C:\work\sts-4.7.0.RELEASE-workspace\lolHi\target\classes\com\sbs\example\lolHi\dao\ReplyDao.class]: Invocation of init method failed; nested exception is java.lang.IllegalArgumentException: org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'com/sbs/example/lolHi/dao/ReplyDao.xml'. Cause: org.apache.ibatis.builder.BuilderException: Wrong namespace. Expected 'com.sbs.example.lolHi.dao.ReplyDao' but found 'com.sbs.example.lolHi.dao.ArticleDao'.
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1794)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:594)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:516)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1307)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1227)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:640)
+	... 38 common frames omitted
+Caused by: java.lang.IllegalArgumentException: org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'com/sbs/example/lolHi/dao/ReplyDao.xml'. Cause: org.apache.ibatis.builder.BuilderException: Wrong namespace. Expected 'com.sbs.example.lolHi.dao.ReplyDao' but found 'com.sbs.example.lolHi.dao.ArticleDao'.
+	at org.mybatis.spring.mapper.MapperFactoryBean.checkDaoConfig(MapperFactoryBean.java:83)
+	at org.springframework.dao.support.DaoSupport.afterPropertiesSet(DaoSupport.java:44)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1853)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1790)
+	... 48 common frames omitted
+Caused by: org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'com/sbs/example/lolHi/dao/ReplyDao.xml'. Cause: org.apache.ibatis.builder.BuilderException: Wrong namespace. Expected 'com.sbs.example.lolHi.dao.ReplyDao' but found 'com.sbs.example.lolHi.dao.ArticleDao'.
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.configurationElement(XMLMapperBuilder.java:123)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.parse(XMLMapperBuilder.java:95)
+	at org.apache.ibatis.builder.annotation.MapperAnnotationBuilder.loadXmlResource(MapperAnnotationBuilder.java:179)
+	at org.apache.ibatis.builder.annotation.MapperAnnotationBuilder.parse(MapperAnnotationBuilder.java:118)
+	at org.apache.ibatis.binding.MapperRegistry.addMapper(MapperRegistry.java:72)
+	at org.apache.ibatis.session.Configuration.addMapper(Configuration.java:819)
+	at org.mybatis.spring.mapper.MapperFactoryBean.checkDaoConfig(MapperFactoryBean.java:80)
+	... 51 common frames omitted
+Caused by: org.apache.ibatis.builder.BuilderException: Wrong namespace. Expected 'com.sbs.example.lolHi.dao.ReplyDao' but found 'com.sbs.example.lolHi.dao.ArticleDao'.
+	at org.apache.ibatis.builder.MapperBuilderAssistant.setCurrentNamespace(MapperBuilderAssistant.java:78)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.configurationElement(XMLMapperBuilder.java:115)
+	... 57 common frames omitted
+2020-11-03 14:55:13 [INFO ] c.sbs.example.lolHi.LolHiApplication - Starting LolHiApplication on wwifi-PC with PID 880 (C:\work\sts-4.7.0.RELEASE-workspace\lolHi\target\classes started by wwifi in C:\work\sts-4.7.0.RELEASE-workspace\lolHi)
+2020-11-03 14:55:13 [INFO ] c.sbs.example.lolHi.LolHiApplication - The following profiles are active: local
+2020-11-03 14:55:13 [INFO ] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-11-03 14:55:13 [INFO ] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-11-03 14:55:13 [INFO ] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2020-11-03 14:55:13 [INFO ] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.38]
+2020-11-03 14:55:13 [INFO ] org.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2020-11-03 14:55:13 [INFO ] o.a.c.c.C.[Tomcat-2].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-11-03 14:55:13 [INFO ] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 254 ms
+2020-11-03 14:55:13 [INFO ] o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-11-03 14:55:13 [INFO ] o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-11-03 14:55:13 [INFO ] o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-11-03 14:55:13 [INFO ] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-11-03 14:55:13 [INFO ] c.sbs.example.lolHi.LolHiApplication - Started LolHiApplication in 0.442 seconds (JVM running for 3349.52)
+2020-11-03 14:55:13 [INFO ] o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2020-11-03 14:56:39 [INFO ] o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-11-03 14:56:39 [INFO ] c.sbs.example.lolHi.LolHiApplication - Starting LolHiApplication on wwifi-PC with PID 880 (C:\work\sts-4.7.0.RELEASE-workspace\lolHi\target\classes started by wwifi in C:\work\sts-4.7.0.RELEASE-workspace\lolHi)
+2020-11-03 14:56:39 [INFO ] c.sbs.example.lolHi.LolHiApplication - The following profiles are active: local
+2020-11-03 14:56:39 [INFO ] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-11-03 14:56:39 [INFO ] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-11-03 14:56:39 [INFO ] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2020-11-03 14:56:39 [INFO ] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.38]
+2020-11-03 14:56:39 [INFO ] org.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2020-11-03 14:56:39 [INFO ] o.a.c.c.C.[Tomcat-2].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-11-03 14:56:39 [INFO ] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 253 ms
+2020-11-03 14:56:39 [INFO ] o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-11-03 14:56:39 [INFO ] o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-11-03 14:56:39 [INFO ] o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-11-03 14:56:39 [INFO ] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-11-03 14:56:39 [INFO ] c.sbs.example.lolHi.LolHiApplication - Started LolHiApplication in 0.435 seconds (JVM running for 3435.198)
+2020-11-03 14:56:39 [INFO ] o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2020-11-03 14:56:50 [INFO ] o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-11-03 14:56:50 [INFO ] c.sbs.example.lolHi.LolHiApplication - Starting LolHiApplication on wwifi-PC with PID 880 (C:\work\sts-4.7.0.RELEASE-workspace\lolHi\target\classes started by wwifi in C:\work\sts-4.7.0.RELEASE-workspace\lolHi)
+2020-11-03 14:56:50 [INFO ] c.sbs.example.lolHi.LolHiApplication - The following profiles are active: local
+2020-11-03 14:56:50 [INFO ] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-11-03 14:56:50 [INFO ] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-11-03 14:56:50 [INFO ] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2020-11-03 14:56:50 [INFO ] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.38]
+2020-11-03 14:56:50 [INFO ] org.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2020-11-03 14:56:50 [INFO ] o.a.c.c.C.[Tomcat-2].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-11-03 14:56:50 [INFO ] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 250 ms
+2020-11-03 14:56:50 [INFO ] o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-11-03 14:56:50 [INFO ] o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-11-03 14:56:50 [INFO ] o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-11-03 14:56:50 [INFO ] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-11-03 14:56:50 [INFO ] c.sbs.example.lolHi.LolHiApplication - Started LolHiApplication in 0.435 seconds (JVM running for 3446.292)
+2020-11-03 14:56:50 [INFO ] o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2020-11-03 14:58:42 [INFO ] o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-11-03 14:58:42 [INFO ] c.sbs.example.lolHi.LolHiApplication - Starting LolHiApplication on wwifi-PC with PID 880 (C:\work\sts-4.7.0.RELEASE-workspace\lolHi\target\classes started by wwifi in C:\work\sts-4.7.0.RELEASE-workspace\lolHi)
+2020-11-03 14:58:42 [INFO ] c.sbs.example.lolHi.LolHiApplication - The following profiles are active: local
+2020-11-03 14:58:42 [INFO ] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-11-03 14:58:42 [INFO ] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-11-03 14:58:42 [INFO ] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2020-11-03 14:58:42 [INFO ] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.38]
+2020-11-03 14:58:42 [INFO ] org.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2020-11-03 14:58:42 [INFO ] o.a.c.c.C.[Tomcat-2].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-11-03 14:58:42 [INFO ] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 259 ms
+2020-11-03 14:58:42 [INFO ] o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-11-03 14:58:42 [INFO ] o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-11-03 14:58:42 [INFO ] o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-11-03 14:58:42 [INFO ] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-11-03 14:58:42 [INFO ] c.sbs.example.lolHi.LolHiApplication - Started LolHiApplication in 0.43 seconds (JVM running for 3558.158)
+2020-11-03 14:58:42 [INFO ] o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2020-11-03 15:02:34 [INFO ] o.a.c.c.C.[Tomcat-2].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-11-03 15:02:34 [INFO ] o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-11-03 15:02:34 [INFO ] o.s.web.servlet.DispatcherServlet - Completed initialization in 4 ms
+2020-11-03 15:02:34 [INFO ] com.zaxxer.hikari.HikariDataSource - HikariPool-7 - Starting...
+2020-11-03 15:02:34 [INFO ] com.zaxxer.hikari.HikariDataSource - HikariPool-7 - Start completed.
+2020-11-03 15:02:34 [DEBUG] jdbc.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+61. SELECT COUNT(*)
+		FROM article
+		WHERE 1
+
+			AND title LIKE CONCAT('%','3','%')
+ {executed in 1 msec}
+2020-11-03 15:02:34 [INFO ] jdbc.resultsettable - 
+|---------|
+|count(*) |
+|---------|
+|219      |
+|---------|
+
+2020-11-03 15:02:34 [DEBUG] jdbc.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+61. SELECT A.*,
+		M.name AS extra__writer
+		FROM article AS A
+		INNER JOIN `member`
+		AS M
+		ON A.memberId = M.id
+		WHERE 1
+
+			AND A.title LIKE CONCAT('%','3','%')
+
+		ORDER BY A.id DESC
+
+			LIMIT 70, 10
+ {executed in 4 msec}
+2020-11-03 15:02:34 [INFO ] jdbc.resultsettable - 
+|----|--------------------|--------------------|---------|----------------------|----------------------|--------------|
+|id  |regdate             |updatedate          |memberid |title                 |body                  |extra__writer |
+|----|--------------------|--------------------|---------|----------------------|----------------------|--------------|
+|207 |2020-11-03 14:19:47 |2020-11-03 14:19:47 |1        |제목0.8419845568407183  |내용0.9603470796349897  |홍길동           |
+|206 |2020-11-03 14:19:47 |2020-11-03 14:19:47 |1        |제목0.43929253932022727 |내용0.7468805664655571  |홍길동           |
+|205 |2020-11-03 14:19:47 |2020-11-03 14:19:47 |1        |제목0.23338593284914821 |내용0.7700036976207082  |홍길동           |
+|204 |2020-11-03 14:19:47 |2020-11-03 14:19:47 |1        |제목0.34191050691708036 |내용0.6982746978274311  |홍길동           |
+|203 |2020-11-03 14:19:47 |2020-11-03 14:19:47 |1        |제목0.07849837846914155 |내용0.11451754543419698 |홍길동           |
+|202 |2020-11-03 14:19:47 |2020-11-03 14:19:47 |2        |제목0.8125170877319919  |내용0.23937520500214324 |홍길순           |
+|201 |2020-11-03 14:19:47 |2020-11-03 14:19:47 |1        |제목0.10825445326813911 |내용0.5198333501069186  |홍길동           |
+|200 |2020-11-03 14:19:47 |2020-11-03 14:19:47 |1        |제목0.10547558414328433 |내용0.5313812741370697  |홍길동           |
+|199 |2020-11-03 14:19:47 |2020-11-03 14:19:47 |2        |제목0.7899923657905239  |내용0.40706185848178517 |홍길순           |
+|197 |2020-11-03 14:19:47 |2020-11-03 14:19:47 |2        |제목0.5283723888251673  |내용0.23414937335452937 |홍길순           |
+|----|--------------------|--------------------|---------|----------------------|----------------------|--------------|
+
+2020-11-03 15:02:36 [DEBUG] jdbc.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+61. SELECT COUNT(*)
+		FROM article
+		WHERE 1
+ {executed in 1 msec}
+2020-11-03 15:02:36 [INFO ] jdbc.resultsettable - 
+|---------|
+|count(*) |
+|---------|
+|285      |
+|---------|
+
+2020-11-03 15:02:36 [DEBUG] jdbc.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+61. SELECT A.*,
+		M.name AS extra__writer
+		FROM article AS A
+		INNER JOIN `member`
+		AS M
+		ON A.memberId = M.id
+		WHERE 1
+
+		ORDER BY A.id DESC
+
+			LIMIT 0, 10
+ {executed in 5 msec}
+2020-11-03 15:02:36 [INFO ] jdbc.resultsettable - 
+|----|--------------------|--------------------|---------|----------------------|-----------------------|--------------|
+|id  |regdate             |updatedate          |memberid |title                 |body                   |extra__writer |
+|----|--------------------|--------------------|---------|----------------------|-----------------------|--------------|
+|298 |2020-11-03 14:19:51 |2020-11-03 14:19:51 |1        |제목0.6305766307102298  |내용0.028522001605967063 |홍길동           |
+|297 |2020-11-03 14:19:51 |2020-11-03 14:19:51 |1        |제목0.9732332331810456  |내용0.19223067927382018  |홍길동           |
+|296 |2020-11-03 14:19:51 |2020-11-03 14:19:51 |2        |제목0.9714105045156651  |내용0.16110866438700694  |홍길순           |
+|295 |2020-11-03 14:19:51 |2020-11-03 14:19:51 |2        |제목0.5088743972674705  |내용0.6183875581420842   |홍길순           |
+|294 |2020-11-03 14:19:51 |2020-11-03 14:19:51 |2        |제목0.8421682546307968  |내용0.23369991056034334  |홍길순           |
+|293 |2020-11-03 14:19:51 |2020-11-03 14:19:51 |2        |제목0.6986884285683636  |내용0.1510224772161082   |홍길순           |
+|292 |2020-11-03 14:19:51 |2020-11-03 14:19:51 |1        |제목0.11307065292547518 |내용0.29067036536584645  |홍길동           |
+|291 |2020-11-03 14:19:50 |2020-11-03 14:19:50 |2        |제목0.4572950149488589  |내용0.2260225314889313   |홍길순           |
+|290 |2020-11-03 14:19:50 |2020-11-03 14:19:50 |2        |제목0.9803900793012139  |내용0.3255975463665999   |홍길순           |
+|289 |2020-11-03 14:19:50 |2020-11-03 14:19:50 |2        |제목0.2953301084184368  |내용0.8822882509625407   |홍길순           |
+|----|--------------------|--------------------|---------|----------------------|-----------------------|--------------|
+
+2020-11-03 15:02:39 [DEBUG] jdbc.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+61. SELECT A.*,
+		M.name AS extra__writer
+		FROM article AS A
+		INNER JOIN `member` AS M
+		ON A.memberId = M.id
+		WHERE A.id = 298
+ {executed in 0 msec}
+2020-11-03 15:02:39 [INFO ] jdbc.resultsettable - 
+|----|--------------------|--------------------|---------|---------------------|-----------------------|--------------|
+|id  |regdate             |updatedate          |memberid |title                |body                   |extra__writer |
+|----|--------------------|--------------------|---------|---------------------|-----------------------|--------------|
+|298 |2020-11-03 14:19:51 |2020-11-03 14:19:51 |1        |제목0.6305766307102298 |내용0.028522001605967063 |홍길동           |
+|----|--------------------|--------------------|---------|---------------------|-----------------------|--------------|
+
+2020-11-03 15:02:47 [DEBUG] jdbc.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+61. SELECT *
+		FROM member
+		WHERE loginId = 'ss'
+ {executed in 1 msec}
+2020-11-03 15:02:47 [INFO ] jdbc.resultsettable - 
+|---|--------------------|--------------------|--------|--------|-----|
+|id |regdate             |updatedate          |loginid |loginpw |name |
+|---|--------------------|--------------------|--------|--------|-----|
+|4  |2020-11-03 13:59:53 |2020-11-03 13:59:53 |ss      |ss      |이재홍  |
+|---|--------------------|--------------------|--------|--------|-----|
+
+2020-11-03 15:02:48 [DEBUG] jdbc.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+61. SELECT *
+		FROM member
+		WHERE
+		id = 4
+ {executed in 0 msec}
+2020-11-03 15:02:48 [INFO ] jdbc.resultsettable - 
+|---|--------------------|--------------------|--------|--------|-----|
+|id |regdate             |updatedate          |loginid |loginpw |name |
+|---|--------------------|--------------------|--------|--------|-----|
+|4  |2020-11-03 13:59:53 |2020-11-03 13:59:53 |ss      |ss      |이재홍  |
+|---|--------------------|--------------------|--------|--------|-----|
+
+2020-11-03 15:02:48 [DEBUG] jdbc.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+61. SELECT COUNT(*)
+		FROM article
+		WHERE 1
+ {executed in 0 msec}
+2020-11-03 15:02:48 [INFO ] jdbc.resultsettable - 
+|---------|
+|count(*) |
+|---------|
+|285      |
+|---------|
+
+2020-11-03 15:02:48 [DEBUG] jdbc.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+61. SELECT A.*,
+		M.name AS extra__writer
+		FROM article AS A
+		INNER JOIN `member`
+		AS M
+		ON A.memberId = M.id
+		WHERE 1
+
+		ORDER BY A.id DESC
+
+			LIMIT 0, 10
+ {executed in 6 msec}
+2020-11-03 15:02:48 [INFO ] jdbc.resultsettable - 
+|----|--------------------|--------------------|---------|----------------------|-----------------------|--------------|
+|id  |regdate             |updatedate          |memberid |title                 |body                   |extra__writer |
+|----|--------------------|--------------------|---------|----------------------|-----------------------|--------------|
+|298 |2020-11-03 14:19:51 |2020-11-03 14:19:51 |1        |제목0.6305766307102298  |내용0.028522001605967063 |홍길동           |
+|297 |2020-11-03 14:19:51 |2020-11-03 14:19:51 |1        |제목0.9732332331810456  |내용0.19223067927382018  |홍길동           |
+|296 |2020-11-03 14:19:51 |2020-11-03 14:19:51 |2        |제목0.9714105045156651  |내용0.16110866438700694  |홍길순           |
+|295 |2020-11-03 14:19:51 |2020-11-03 14:19:51 |2        |제목0.5088743972674705  |내용0.6183875581420842   |홍길순           |
+|294 |2020-11-03 14:19:51 |2020-11-03 14:19:51 |2        |제목0.8421682546307968  |내용0.23369991056034334  |홍길순           |
+|293 |2020-11-03 14:19:51 |2020-11-03 14:19:51 |2        |제목0.6986884285683636  |내용0.1510224772161082   |홍길순           |
+|292 |2020-11-03 14:19:51 |2020-11-03 14:19:51 |1        |제목0.11307065292547518 |내용0.29067036536584645  |홍길동           |
+|291 |2020-11-03 14:19:50 |2020-11-03 14:19:50 |2        |제목0.4572950149488589  |내용0.2260225314889313   |홍길순           |
+|290 |2020-11-03 14:19:50 |2020-11-03 14:19:50 |2        |제목0.9803900793012139  |내용0.3255975463665999   |홍길순           |
+|289 |2020-11-03 14:19:50 |2020-11-03 14:19:50 |2        |제목0.2953301084184368  |내용0.8822882509625407   |홍길순           |
+|----|--------------------|--------------------|---------|----------------------|-----------------------|--------------|
+
+2020-11-03 15:02:48 [DEBUG] jdbc.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+61. SELECT *
+		FROM member
+		WHERE
+		id = 4
+ {executed in 0 msec}
+2020-11-03 15:02:48 [INFO ] jdbc.resultsettable - 
+|---|--------------------|--------------------|--------|--------|-----|
+|id |regdate             |updatedate          |loginid |loginpw |name |
+|---|--------------------|--------------------|--------|--------|-----|
+|4  |2020-11-03 13:59:53 |2020-11-03 13:59:53 |ss      |ss      |이재홍  |
+|---|--------------------|--------------------|--------|--------|-----|
+
+2020-11-03 15:02:52 [DEBUG] jdbc.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+61. SELECT *
+		FROM member
+		WHERE
+		id = 4
+ {executed in 1 msec}
+2020-11-03 15:02:52 [INFO ] jdbc.resultsettable - 
+|---|--------------------|--------------------|--------|--------|-----|
+|id |regdate             |updatedate          |loginid |loginpw |name |
+|---|--------------------|--------------------|--------|--------|-----|
+|4  |2020-11-03 13:59:53 |2020-11-03 13:59:53 |ss      |ss      |이재홍  |
+|---|--------------------|--------------------|--------|--------|-----|
+
+2020-11-03 15:02:52 [DEBUG] jdbc.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+61. SELECT A.*,
+		M.name AS extra__writer
+		FROM article AS A
+		INNER JOIN `member` AS M
+		ON A.memberId = M.id
+		WHERE A.id = 298
+ {executed in 0 msec}
+2020-11-03 15:02:52 [INFO ] jdbc.resultsettable - 
+|----|--------------------|--------------------|---------|---------------------|-----------------------|--------------|
+|id  |regdate             |updatedate          |memberid |title                |body                   |extra__writer |
+|----|--------------------|--------------------|---------|---------------------|-----------------------|--------------|
+|298 |2020-11-03 14:19:51 |2020-11-03 14:19:51 |1        |제목0.6305766307102298 |내용0.028522001605967063 |홍길동           |
+|----|--------------------|--------------------|---------|---------------------|-----------------------|--------------|
+
+2020-11-03 15:02:53 [DEBUG] jdbc.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+61. SELECT *
+		FROM member
+		WHERE
+		id = 4
+ {executed in 0 msec}
+2020-11-03 15:02:53 [INFO ] jdbc.resultsettable - 
+|---|--------------------|--------------------|--------|--------|-----|
+|id |regdate             |updatedate          |loginid |loginpw |name |
+|---|--------------------|--------------------|--------|--------|-----|
+|4  |2020-11-03 13:59:53 |2020-11-03 13:59:53 |ss      |ss      |이재홍  |
+|---|--------------------|--------------------|--------|--------|-----|
+
+2020-11-03 15:03:15 [INFO ] o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-11-03 15:03:15 [INFO ] com.zaxxer.hikari.HikariDataSource - HikariPool-7 - Shutdown initiated...
+2020-11-03 15:03:15 [INFO ] com.zaxxer.hikari.HikariDataSource - HikariPool-7 - Shutdown completed.
+2020-11-03 15:03:15 [INFO ] c.sbs.example.lolHi.LolHiApplication - Starting LolHiApplication on wwifi-PC with PID 880 (C:\work\sts-4.7.0.RELEASE-workspace\lolHi\target\classes started by wwifi in C:\work\sts-4.7.0.RELEASE-workspace\lolHi)
+2020-11-03 15:03:15 [INFO ] c.sbs.example.lolHi.LolHiApplication - The following profiles are active: local
+2020-11-03 15:03:15 [INFO ] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-11-03 15:03:15 [INFO ] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-11-03 15:03:15 [INFO ] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2020-11-03 15:03:15 [INFO ] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.38]
+2020-11-03 15:03:15 [INFO ] org.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2020-11-03 15:03:15 [INFO ] o.a.c.c.C.[Tomcat-2].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-11-03 15:03:15 [INFO ] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 260 ms
+2020-11-03 15:03:15 [INFO ] o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-11-03 15:03:15 [INFO ] o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-11-03 15:03:15 [INFO ] o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-11-03 15:03:15 [INFO ] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-11-03 15:03:15 [INFO ] c.sbs.example.lolHi.LolHiApplication - Started LolHiApplication in 0.441 seconds (JVM running for 3831.174)
+2020-11-03 15:03:15 [INFO ] o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2020-11-03 15:03:22 [INFO ] o.a.c.c.C.[Tomcat-2].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-11-03 15:03:22 [INFO ] o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-11-03 15:03:22 [INFO ] o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2020-11-03 15:03:22 [INFO ] com.zaxxer.hikari.HikariDataSource - HikariPool-8 - Starting...
+2020-11-03 15:03:22 [INFO ] com.zaxxer.hikari.HikariDataSource - HikariPool-8 - Start completed.
+2020-11-03 15:03:22 [DEBUG] jdbc.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+71. SELECT *
+		FROM member
+		WHERE
+		id = 4
+ {executed in 1 msec}
+2020-11-03 15:03:22 [INFO ] jdbc.resultsettable - 
+|---|--------------------|--------------------|--------|--------|-----|
+|id |regdate             |updatedate          |loginid |loginpw |name |
+|---|--------------------|--------------------|--------|--------|-----|
+|4  |2020-11-03 13:59:53 |2020-11-03 13:59:53 |ss      |ss      |이재홍  |
+|---|--------------------|--------------------|--------|--------|-----|
+
+2020-11-03 15:03:22 [ERROR] jdbc.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+71. INSERT INTO reply
+		 SET regDate = NOW(),
+			updateDate = NOW(),
+			 `body` = 'ssss',
+			 ` memberId ` = 4,			
+			 `relId` = '298',
+			 `relTypeCode` = 'article'
+ {FAILED after 0 msec}
+java.sql.SQLSyntaxErrorException: Unknown column ' memberId ' in 'field list'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:370)
+	at net.sf.log4jdbc.sql.jdbcapi.PreparedStatementSpy.execute(PreparedStatementSpy.java:443)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.execute(HikariProxyPreparedStatement.java)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.update(PreparedStatementHandler.java:47)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.update(RoutingStatementHandler.java:74)
+	at org.apache.ibatis.executor.SimpleExecutor.doUpdate(SimpleExecutor.java:50)
+	at org.apache.ibatis.executor.BaseExecutor.update(BaseExecutor.java:117)
+	at org.apache.ibatis.executor.CachingExecutor.update(CachingExecutor.java:76)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.update(DefaultSqlSession.java:197)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.insert(DefaultSqlSession.java:184)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:426)
+	at com.sun.proxy.$Proxy51.insert(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.insert(SqlSessionTemplate.java:271)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:62)
+	at org.apache.ibatis.binding.MapperProxy$PlainMethodInvoker.invoke(MapperProxy.java:152)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:85)
+	at com.sun.proxy.$Proxy118.writeReply(Unknown Source)
+	at com.sbs.example.lolHi.service.ReplyService.writeReply(ReplyService.java:18)
+	at com.sbs.example.lolHi.controller.usr.ReplyController.doWrite(ReplyController.java:35)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:105)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:878)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:792)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:652)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:374)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1590)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2020-11-03 15:03:22 [ERROR] o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.jdbc.BadSqlGrammarException: 
+### Error updating database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column ' memberId ' in 'field list'
+### The error may exist in com/sbs/example/lolHi/dao/ReplyDao.xml
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: INSERT INTO reply    SET regDate = NOW(),    updateDate = NOW(),     `body` = ?,     ` memberId ` = ?,        `relId` = ?,     `relTypeCode` = ?
+### Cause: java.sql.SQLSyntaxErrorException: Unknown column ' memberId ' in 'field list'
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Unknown column ' memberId ' in 'field list'] with root cause
+java.sql.SQLSyntaxErrorException: Unknown column ' memberId ' in 'field list'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:370)
+	at net.sf.log4jdbc.sql.jdbcapi.PreparedStatementSpy.execute(PreparedStatementSpy.java:443)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.execute(HikariProxyPreparedStatement.java)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.update(PreparedStatementHandler.java:47)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.update(RoutingStatementHandler.java:74)
+	at org.apache.ibatis.executor.SimpleExecutor.doUpdate(SimpleExecutor.java:50)
+	at org.apache.ibatis.executor.BaseExecutor.update(BaseExecutor.java:117)
+	at org.apache.ibatis.executor.CachingExecutor.update(CachingExecutor.java:76)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.update(DefaultSqlSession.java:197)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.insert(DefaultSqlSession.java:184)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:426)
+	at com.sun.proxy.$Proxy51.insert(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.insert(SqlSessionTemplate.java:271)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:62)
+	at org.apache.ibatis.binding.MapperProxy$PlainMethodInvoker.invoke(MapperProxy.java:152)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:85)
+	at com.sun.proxy.$Proxy118.writeReply(Unknown Source)
+	at com.sbs.example.lolHi.service.ReplyService.writeReply(ReplyService.java:18)
+	at com.sbs.example.lolHi.controller.usr.ReplyController.doWrite(ReplyController.java:35)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:105)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:878)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:792)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:652)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:374)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1590)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2020-11-03 15:03:26 [DEBUG] jdbc.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+71. SELECT *
+		FROM member
+		WHERE
+		id = 4
+ {executed in 1 msec}
+2020-11-03 15:03:26 [INFO ] jdbc.resultsettable - 
+|---|--------------------|--------------------|--------|--------|-----|
+|id |regdate             |updatedate          |loginid |loginpw |name |
+|---|--------------------|--------------------|--------|--------|-----|
+|4  |2020-11-03 13:59:53 |2020-11-03 13:59:53 |ss      |ss      |이재홍  |
+|---|--------------------|--------------------|--------|--------|-----|
+
+2020-11-03 15:03:26 [DEBUG] jdbc.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+71. SELECT A.*,
+		M.name AS extra__writer
+		FROM article AS A
+		INNER JOIN `member` AS M
+		ON A.memberId = M.id
+		WHERE A.id = 298
+ {executed in 0 msec}
+2020-11-03 15:03:26 [INFO ] jdbc.resultsettable - 
+|----|--------------------|--------------------|---------|---------------------|-----------------------|--------------|
+|id  |regdate             |updatedate          |memberid |title                |body                   |extra__writer |
+|----|--------------------|--------------------|---------|---------------------|-----------------------|--------------|
+|298 |2020-11-03 14:19:51 |2020-11-03 14:19:51 |1        |제목0.6305766307102298 |내용0.028522001605967063 |홍길동           |
+|----|--------------------|--------------------|---------|---------------------|-----------------------|--------------|
+
+2020-11-03 15:03:28 [DEBUG] jdbc.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+71. SELECT *
+		FROM member
+		WHERE
+		id = 4
+ {executed in 0 msec}
+2020-11-03 15:03:28 [INFO ] jdbc.resultsettable - 
+|---|--------------------|--------------------|--------|--------|-----|
+|id |regdate             |updatedate          |loginid |loginpw |name |
+|---|--------------------|--------------------|--------|--------|-----|
+|4  |2020-11-03 13:59:53 |2020-11-03 13:59:53 |ss      |ss      |이재홍  |
+|---|--------------------|--------------------|--------|--------|-----|
+
+2020-11-03 15:03:28 [ERROR] jdbc.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+71. INSERT INTO reply
+		 SET regDate = NOW(),
+			updateDate = NOW(),
+			 `body` = 's',
+			 ` memberId ` = 4,			
+			 `relId` = '298',
+			 `relTypeCode` = 'article'
+ {FAILED after 1 msec}
+java.sql.SQLSyntaxErrorException: Unknown column ' memberId ' in 'field list'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:370)
+	at net.sf.log4jdbc.sql.jdbcapi.PreparedStatementSpy.execute(PreparedStatementSpy.java:443)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.execute(HikariProxyPreparedStatement.java)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.update(PreparedStatementHandler.java:47)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.update(RoutingStatementHandler.java:74)
+	at org.apache.ibatis.executor.SimpleExecutor.doUpdate(SimpleExecutor.java:50)
+	at org.apache.ibatis.executor.BaseExecutor.update(BaseExecutor.java:117)
+	at org.apache.ibatis.executor.CachingExecutor.update(CachingExecutor.java:76)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.update(DefaultSqlSession.java:197)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.insert(DefaultSqlSession.java:184)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:426)
+	at com.sun.proxy.$Proxy51.insert(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.insert(SqlSessionTemplate.java:271)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:62)
+	at org.apache.ibatis.binding.MapperProxy$PlainMethodInvoker.invoke(MapperProxy.java:152)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:85)
+	at com.sun.proxy.$Proxy118.writeReply(Unknown Source)
+	at com.sbs.example.lolHi.service.ReplyService.writeReply(ReplyService.java:18)
+	at com.sbs.example.lolHi.controller.usr.ReplyController.doWrite(ReplyController.java:35)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:105)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:878)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:792)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:652)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:374)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1590)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2020-11-03 15:03:28 [ERROR] o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.jdbc.BadSqlGrammarException: 
+### Error updating database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column ' memberId ' in 'field list'
+### The error may exist in com/sbs/example/lolHi/dao/ReplyDao.xml
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: INSERT INTO reply    SET regDate = NOW(),    updateDate = NOW(),     `body` = ?,     ` memberId ` = ?,        `relId` = ?,     `relTypeCode` = ?
+### Cause: java.sql.SQLSyntaxErrorException: Unknown column ' memberId ' in 'field list'
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Unknown column ' memberId ' in 'field list'] with root cause
+java.sql.SQLSyntaxErrorException: Unknown column ' memberId ' in 'field list'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:370)
+	at net.sf.log4jdbc.sql.jdbcapi.PreparedStatementSpy.execute(PreparedStatementSpy.java:443)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.execute(HikariProxyPreparedStatement.java)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.update(PreparedStatementHandler.java:47)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.update(RoutingStatementHandler.java:74)
+	at org.apache.ibatis.executor.SimpleExecutor.doUpdate(SimpleExecutor.java:50)
+	at org.apache.ibatis.executor.BaseExecutor.update(BaseExecutor.java:117)
+	at org.apache.ibatis.executor.CachingExecutor.update(CachingExecutor.java:76)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.update(DefaultSqlSession.java:197)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.insert(DefaultSqlSession.java:184)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:426)
+	at com.sun.proxy.$Proxy51.insert(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.insert(SqlSessionTemplate.java:271)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:62)
+	at org.apache.ibatis.binding.MapperProxy$PlainMethodInvoker.invoke(MapperProxy.java:152)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:85)
+	at com.sun.proxy.$Proxy118.writeReply(Unknown Source)
+	at com.sbs.example.lolHi.service.ReplyService.writeReply(ReplyService.java:18)
+	at com.sbs.example.lolHi.controller.usr.ReplyController.doWrite(ReplyController.java:35)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:105)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:878)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:792)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:652)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:374)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1590)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2020-11-03 15:03:50 [DEBUG] jdbc.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+71. SELECT *
+		FROM member
+		WHERE
+		id = 4
+ {executed in 0 msec}
+2020-11-03 15:03:50 [INFO ] jdbc.resultsettable - 
+|---|--------------------|--------------------|--------|--------|-----|
+|id |regdate             |updatedate          |loginid |loginpw |name |
+|---|--------------------|--------------------|--------|--------|-----|
+|4  |2020-11-03 13:59:53 |2020-11-03 13:59:53 |ss      |ss      |이재홍  |
+|---|--------------------|--------------------|--------|--------|-----|
+
+2020-11-03 15:03:50 [ERROR] jdbc.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+71. INSERT INTO reply
+		 SET regDate = NOW(),
+			updateDate = NOW(),
+			 `body` = 's',
+			 ` memberId ` = 4,			
+			 `relId` = '298',
+			 `relTypeCode` = 'article'
+ {FAILED after 1 msec}
+java.sql.SQLSyntaxErrorException: Unknown column ' memberId ' in 'field list'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:370)
+	at net.sf.log4jdbc.sql.jdbcapi.PreparedStatementSpy.execute(PreparedStatementSpy.java:443)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.execute(HikariProxyPreparedStatement.java)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.update(PreparedStatementHandler.java:47)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.update(RoutingStatementHandler.java:74)
+	at org.apache.ibatis.executor.SimpleExecutor.doUpdate(SimpleExecutor.java:50)
+	at org.apache.ibatis.executor.BaseExecutor.update(BaseExecutor.java:117)
+	at org.apache.ibatis.executor.CachingExecutor.update(CachingExecutor.java:76)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.update(DefaultSqlSession.java:197)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.insert(DefaultSqlSession.java:184)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:426)
+	at com.sun.proxy.$Proxy51.insert(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.insert(SqlSessionTemplate.java:271)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:62)
+	at org.apache.ibatis.binding.MapperProxy$PlainMethodInvoker.invoke(MapperProxy.java:152)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:85)
+	at com.sun.proxy.$Proxy118.writeReply(Unknown Source)
+	at com.sbs.example.lolHi.service.ReplyService.writeReply(ReplyService.java:18)
+	at com.sbs.example.lolHi.controller.usr.ReplyController.doWrite(ReplyController.java:35)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:105)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:878)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:792)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:652)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:374)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1590)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2020-11-03 15:03:50 [ERROR] o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.jdbc.BadSqlGrammarException: 
+### Error updating database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column ' memberId ' in 'field list'
+### The error may exist in com/sbs/example/lolHi/dao/ReplyDao.xml
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: INSERT INTO reply    SET regDate = NOW(),    updateDate = NOW(),     `body` = ?,     ` memberId ` = ?,        `relId` = ?,     `relTypeCode` = ?
+### Cause: java.sql.SQLSyntaxErrorException: Unknown column ' memberId ' in 'field list'
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Unknown column ' memberId ' in 'field list'] with root cause
+java.sql.SQLSyntaxErrorException: Unknown column ' memberId ' in 'field list'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:370)
+	at net.sf.log4jdbc.sql.jdbcapi.PreparedStatementSpy.execute(PreparedStatementSpy.java:443)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.execute(HikariProxyPreparedStatement.java)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.update(PreparedStatementHandler.java:47)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.update(RoutingStatementHandler.java:74)
+	at org.apache.ibatis.executor.SimpleExecutor.doUpdate(SimpleExecutor.java:50)
+	at org.apache.ibatis.executor.BaseExecutor.update(BaseExecutor.java:117)
+	at org.apache.ibatis.executor.CachingExecutor.update(CachingExecutor.java:76)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.update(DefaultSqlSession.java:197)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.insert(DefaultSqlSession.java:184)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:426)
+	at com.sun.proxy.$Proxy51.insert(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.insert(SqlSessionTemplate.java:271)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:62)
+	at org.apache.ibatis.binding.MapperProxy$PlainMethodInvoker.invoke(MapperProxy.java:152)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:85)
+	at com.sun.proxy.$Proxy118.writeReply(Unknown Source)
+	at com.sbs.example.lolHi.service.ReplyService.writeReply(ReplyService.java:18)
+	at com.sbs.example.lolHi.controller.usr.ReplyController.doWrite(ReplyController.java:35)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:105)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:878)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:792)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:652)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:374)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1590)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2020-11-03 15:03:53 [DEBUG] jdbc.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+71. SELECT *
+		FROM member
+		WHERE
+		id = 4
+ {executed in 0 msec}
+2020-11-03 15:03:53 [INFO ] jdbc.resultsettable - 
+|---|--------------------|--------------------|--------|--------|-----|
+|id |regdate             |updatedate          |loginid |loginpw |name |
+|---|--------------------|--------------------|--------|--------|-----|
+|4  |2020-11-03 13:59:53 |2020-11-03 13:59:53 |ss      |ss      |이재홍  |
+|---|--------------------|--------------------|--------|--------|-----|
+
+2020-11-03 15:03:53 [DEBUG] jdbc.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+71. SELECT A.*,
+		M.name AS extra__writer
+		FROM article AS A
+		INNER JOIN `member` AS M
+		ON A.memberId = M.id
+		WHERE A.id = 298
+ {executed in 0 msec}
+2020-11-03 15:03:53 [INFO ] jdbc.resultsettable - 
+|----|--------------------|--------------------|---------|---------------------|-----------------------|--------------|
+|id  |regdate             |updatedate          |memberid |title                |body                   |extra__writer |
+|----|--------------------|--------------------|---------|---------------------|-----------------------|--------------|
+|298 |2020-11-03 14:19:51 |2020-11-03 14:19:51 |1        |제목0.6305766307102298 |내용0.028522001605967063 |홍길동           |
+|----|--------------------|--------------------|---------|---------------------|-----------------------|--------------|
+
+2020-11-03 15:03:55 [DEBUG] jdbc.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+71. SELECT *
+		FROM member
+		WHERE
+		id = 4
+ {executed in 0 msec}
+2020-11-03 15:03:55 [INFO ] jdbc.resultsettable - 
+|---|--------------------|--------------------|--------|--------|-----|
+|id |regdate             |updatedate          |loginid |loginpw |name |
+|---|--------------------|--------------------|--------|--------|-----|
+|4  |2020-11-03 13:59:53 |2020-11-03 13:59:53 |ss      |ss      |이재홍  |
+|---|--------------------|--------------------|--------|--------|-----|
+
+2020-11-03 15:03:55 [ERROR] jdbc.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+71. INSERT INTO reply
+		 SET regDate = NOW(),
+			updateDate = NOW(),
+			 `body` = 'sss',
+			 ` memberId ` = 4,			
+			 `relId` = '298',
+			 `relTypeCode` = 'article'
+ {FAILED after 0 msec}
+java.sql.SQLSyntaxErrorException: Unknown column ' memberId ' in 'field list'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:370)
+	at net.sf.log4jdbc.sql.jdbcapi.PreparedStatementSpy.execute(PreparedStatementSpy.java:443)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.execute(HikariProxyPreparedStatement.java)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.update(PreparedStatementHandler.java:47)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.update(RoutingStatementHandler.java:74)
+	at org.apache.ibatis.executor.SimpleExecutor.doUpdate(SimpleExecutor.java:50)
+	at org.apache.ibatis.executor.BaseExecutor.update(BaseExecutor.java:117)
+	at org.apache.ibatis.executor.CachingExecutor.update(CachingExecutor.java:76)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.update(DefaultSqlSession.java:197)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.insert(DefaultSqlSession.java:184)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:426)
+	at com.sun.proxy.$Proxy51.insert(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.insert(SqlSessionTemplate.java:271)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:62)
+	at org.apache.ibatis.binding.MapperProxy$PlainMethodInvoker.invoke(MapperProxy.java:152)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:85)
+	at com.sun.proxy.$Proxy118.writeReply(Unknown Source)
+	at com.sbs.example.lolHi.service.ReplyService.writeReply(ReplyService.java:18)
+	at com.sbs.example.lolHi.controller.usr.ReplyController.doWrite(ReplyController.java:35)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:105)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:878)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:792)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:626)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:374)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1590)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2020-11-03 15:03:55 [ERROR] o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.jdbc.BadSqlGrammarException: 
+### Error updating database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column ' memberId ' in 'field list'
+### The error may exist in com/sbs/example/lolHi/dao/ReplyDao.xml
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: INSERT INTO reply    SET regDate = NOW(),    updateDate = NOW(),     `body` = ?,     ` memberId ` = ?,        `relId` = ?,     `relTypeCode` = ?
+### Cause: java.sql.SQLSyntaxErrorException: Unknown column ' memberId ' in 'field list'
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Unknown column ' memberId ' in 'field list'] with root cause
+java.sql.SQLSyntaxErrorException: Unknown column ' memberId ' in 'field list'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:370)
+	at net.sf.log4jdbc.sql.jdbcapi.PreparedStatementSpy.execute(PreparedStatementSpy.java:443)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.execute(HikariProxyPreparedStatement.java)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.update(PreparedStatementHandler.java:47)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.update(RoutingStatementHandler.java:74)
+	at org.apache.ibatis.executor.SimpleExecutor.doUpdate(SimpleExecutor.java:50)
+	at org.apache.ibatis.executor.BaseExecutor.update(BaseExecutor.java:117)
+	at org.apache.ibatis.executor.CachingExecutor.update(CachingExecutor.java:76)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.update(DefaultSqlSession.java:197)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.insert(DefaultSqlSession.java:184)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:426)
+	at com.sun.proxy.$Proxy51.insert(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.insert(SqlSessionTemplate.java:271)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:62)
+	at org.apache.ibatis.binding.MapperProxy$PlainMethodInvoker.invoke(MapperProxy.java:152)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:85)
+	at com.sun.proxy.$Proxy118.writeReply(Unknown Source)
+	at com.sbs.example.lolHi.service.ReplyService.writeReply(ReplyService.java:18)
+	at com.sbs.example.lolHi.controller.usr.ReplyController.doWrite(ReplyController.java:35)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:105)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:878)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:792)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:626)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:374)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1590)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2020-11-03 15:04:42 [INFO ] o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-11-03 15:04:42 [INFO ] com.zaxxer.hikari.HikariDataSource - HikariPool-8 - Shutdown initiated...
+2020-11-03 15:04:42 [INFO ] com.zaxxer.hikari.HikariDataSource - HikariPool-8 - Shutdown completed.
+2020-11-03 15:04:42 [INFO ] c.sbs.example.lolHi.LolHiApplication - Starting LolHiApplication on wwifi-PC with PID 880 (C:\work\sts-4.7.0.RELEASE-workspace\lolHi\target\classes started by wwifi in C:\work\sts-4.7.0.RELEASE-workspace\lolHi)
+2020-11-03 15:04:42 [INFO ] c.sbs.example.lolHi.LolHiApplication - The following profiles are active: local
+2020-11-03 15:04:43 [INFO ] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-11-03 15:04:43 [INFO ] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-11-03 15:04:43 [INFO ] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2020-11-03 15:04:43 [INFO ] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.38]
+2020-11-03 15:04:43 [INFO ] org.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2020-11-03 15:04:43 [INFO ] o.a.c.c.C.[Tomcat-2].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-11-03 15:04:43 [INFO ] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 252 ms
+2020-11-03 15:04:43 [INFO ] o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-11-03 15:04:43 [INFO ] o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-11-03 15:04:43 [INFO ] o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-11-03 15:04:43 [INFO ] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-11-03 15:04:43 [INFO ] c.sbs.example.lolHi.LolHiApplication - Started LolHiApplication in 0.431 seconds (JVM running for 3918.822)
+2020-11-03 15:04:43 [INFO ] o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2020-11-03 15:05:38 [INFO ] o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'

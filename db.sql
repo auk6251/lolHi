@@ -52,3 +52,17 @@ ALTER TABLE article ADD COLUMN memberId INT(10) UNSIGNED NOT NULL AFTER updateDa
 UPDATE article SET memberId = 1 WHERE memberId = 0;
 
 SELECT * FROM article; 
+
+
+
+CREATE TABLE reply (
+    id INT(10) UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    regDate DATETIME NOT NULL,
+    updateDate DATETIME NOT NULL,
+    `body` TEXT NOT NULL,
+    memberId INT(10) UNSIGNED NOT NULL,
+    relId INT(10) UNSIGNED NOT NULL, # 관련 데이터 ID
+    relTypeCode CHAR(50) NOT NULL # 관련 데이터 타입
+);
+
+SELECT * FROM reply; 
