@@ -3,67 +3,74 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 
-<c:set var="title" value="게시물 리스트"/>
+<c:set var="title" value="게시물 리스트" />
 <%@ include file="../part/head.jspf"%>
 
 
 
-	<div>총 게시물 수 :${totalCount}</div>
+<div>총 게시물 수 :${totalCount}</div>
+
+<div>
+	<form>
+	
+		<input type="text" name="searchKeyword" placeholder="검색어를 입력해주세요"
+			value="${param.searchKeyword}" /> <input type="submit" value="검색" />
+	</form>
+</div>
 
 
-	<br />
+<br />
 
-	<c:forEach items="${articles}" var="article">
-		<div>
-			번호 : <a href="detail?id=${article.id}">${article.id}</a>
-		</div>
-		<div>
-			제목 : <a href="detail?id=${article.id}">${article.title}</a>
-		</div>
-		<div>
-			작성자 :${article.extra.writer}
-		</div>
-		<div>
-			작업 : <a onclick="if ( confirm('삭제하시겠습니까?') == false ) return false;"
-				href="doDelete?id=${article.id}">삭제</a> <a
-				href="modify?id=${article.id}">수정</a>
-		</div>
-		<hr />
-	</c:forEach>
+<c:forEach items="${articles}" var="article">
 	<div>
-		<a href="write">글쓰기</a>
+		번호 : <a href="detail?id=${article.id}">${article.id}</a>
 	</div>
+	<div>
+		제목 : <a href="detail?id=${article.id}">${article.title}</a>
+	</div>
+	<div>작성자 :${article.extra.writer}</div>
+	<div>
+		작업 : <a onclick="if ( confirm('삭제하시겠습니까?') == false ) return false;"
+			href="doDelete?id=${article.id}">삭제</a> <a
+			href="modify?id=${article.id}">수정</a>
+	</div>
+	<hr />
+</c:forEach>
+<div>
+	<a href="write">글쓰기</a>
+</div>
 
-	<style>
+<style>
 .selected {
 	color: red;
 }
 </style>
 
-	<h2>페이지</h2>
-	<div>
-		<c:set var="goFirstBtnNeedShow" value="${page>pageMenuArmSize+1}" />
+<h2>페이지</h2>
+<div>
+	<c:set var="goFirstBtnNeedShow" value="${page>pageMenuArmSize+1}" />
 
-		<c:set var="goLastBtnNeedToShow" value="true" />
+	<c:set var="goLastBtnNeedToShow" value="true" />
 
-		<c:if test="${goFirstBtnNeedShow}">
-			<a href="?page=1&searchKeyword=${param.searchKeyword}">◀</a>
+	<c:if test="${goFirstBtnNeedShow}">
+		<a href="?page=1&searchKeyword=${param.searchKeyword}">◀</a>
+	</c:if>
+
+	<c:forEach var="i" begin="${pageMenuStart}" end="${pageMenuEnd}">
+		<c:set var="className" value="${i == page ? 'selected' : '' }" />
+		<a class="${className}"
+			href="?page=${i}&searchKeyword=${param.searchKeyword}">${i}</a>
+
+		<c:if test="${i == totalPage}">
+			<c:set var="goLastBtnNeedToShow" value="false" />
 		</c:if>
+	</c:forEach>
 
-		<c:forEach var="i" begin="${pageMenuStart}" end="${pageMenuEnd}">
-			<c:set var="className" value="${i == page ? 'selected' : '' }" />
-			<a class="${className}" href="?page=${i}&searchKeyword=${param.searchKeyword}">${i}</a>
+	<c:if test="${goLastBtnNeedToShow}">
+		<a href="?page=${totalPage }&searchKeyword=${param.searchKeyword}">▶</a>
+	</c:if>
 
-			<c:if test="${i == totalPage}">
-				<c:set var="goLastBtnNeedToShow" value="false" />
-			</c:if>
-		</c:forEach>
-
-		<c:if test="${goLastBtnNeedToShow}">
-			<a href="?page=${totalPage }&searchKeyword=${param.searchKeyword}">▶</a>
-		</c:if>
-
-	</div>
+</div>
 <%@ include file="../part/foot.jspf"%>
 
 
