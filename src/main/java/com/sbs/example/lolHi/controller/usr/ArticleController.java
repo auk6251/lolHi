@@ -14,13 +14,17 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.sbs.example.lolHi.dto.Article;
+import com.sbs.example.lolHi.dto.Reply;
 import com.sbs.example.lolHi.service.ArticleService;
+import com.sbs.example.lolHi.service.ReplyService;
 import com.sbs.example.lolHi.util.Util;
 
 @Controller
 public class ArticleController {
 	@Autowired
 	private ArticleService articleService;
+	@Autowired
+	private ReplyService replyService;
 
 	@RequestMapping("/usr/article/list")
 	public String showList(Model model, @RequestParam Map<String, Object> param) {
@@ -61,6 +65,10 @@ public class ArticleController {
 		Article article = articleService.getArticleById(id);
 
 		model.addAttribute("article", article);
+		
+		List<Reply> replies = replyService.getForPrintReplies("article",id);
+		
+		model.addAttribute("replies", replies);
 
 		return "usr/article/detail";
 	}

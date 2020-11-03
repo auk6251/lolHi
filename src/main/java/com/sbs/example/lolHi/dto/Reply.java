@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 
 @Data
 @AllArgsConstructor
+@NoArgsConstructor
 public class Reply {
 	private int id;
 	private String regDate;
@@ -18,5 +19,5 @@ public class Reply {
 	private String relTypeCode;
 	
 	
-	
+	private Map<String, Object> extra;
 }

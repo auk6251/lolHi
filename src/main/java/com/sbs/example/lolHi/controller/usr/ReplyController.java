@@ -38,7 +38,7 @@ public class ReplyController {
 		int relId = Util.getAsInt(param.get("relId"));
 
 		model.addAttribute("msg", String.format("%d 번 댓글을 생성하였습니다.", id));
-		model.addAttribute("replaceUri", String.format("/usr/article/detail?id=%d", id));
+		model.addAttribute("replaceUri", String.format("/usr/article/detail?id=%d",relId));
 
 		return "common/redirect";
 	}
