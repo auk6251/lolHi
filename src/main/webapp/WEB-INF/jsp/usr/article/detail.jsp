@@ -43,6 +43,10 @@
 	<div>수정날짜 : ${reply.updateDate }</div>
 	<div>내용 : ${reply.body}</div>
 	<div>작성자 : ${reply.memberId}</div>
+	<div>
+		<a href="/usr/reply/doDelete?id=${reply.id}">삭제</a>
+	</div>
+	<hr />
 	<hr />
 </c:forEach>
 
