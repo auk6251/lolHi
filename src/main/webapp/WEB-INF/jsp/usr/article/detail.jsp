@@ -42,7 +42,7 @@
 	<div>작성날짜 : ${reply.regDate }</div>
 	<div>수정날짜 : ${reply.updateDate }</div>
 	<div>내용 : ${reply.body}</div>
-	<div>작성자 : ${reply.memberId}</div>
+	<div>작성자 : ${reply.extra.writer}</div>
 	<div>
 		<a href="/usr/reply/doDelete?id=${reply.id}">삭제</a>
 	</div>
