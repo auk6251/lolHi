@@ -22,11 +22,12 @@
 <br />
 
 <c:forEach items="${articles}" var="article">
+	<c:set var="detailUri" value="/usr/article/detail?id=${article.id}&listUrl=${edcodedCurrentUri}"/>
 	<div>
-		번호 : <a href="detail?id=${article.id}">${article.id}</a>
+		번호 : <a href="${detailUri}">${article.id}</a>
 	</div>
 	<div>
-		제목 : <a href="detail?id=${article.id}">${article.title}</a>
+		제목 : <a href="${detailUri}">${article.title}</a>
 	</div>
 	<div>작성자 :${article.extra.writer}</div>
 	<div>

@@ -14,7 +14,7 @@
 <div>작성자 : ${article.extra.writer}</div>
 <hr />
 <div>
-	<a href="list">리스트</a> <a
+	<a href="${listUrl}">리스트</a> <a
 		onclick="if ( confirm('삭제하시겠습니까?') == false ) return false;"
 		href="doDelete?id=${article.id}">삭제</a> <a
 		href="modify?id=${article.id}">수정</a>

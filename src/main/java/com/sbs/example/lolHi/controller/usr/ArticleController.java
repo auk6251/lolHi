@@ -60,16 +60,20 @@ public class ArticleController {
 	}
 
 	@RequestMapping("/usr/article/detail")
-	public String showDetail(Model model, int id) {
+	public String showDetail(Model model, int id, String listUrl) {
 
 		Article article = articleService.getArticleById(id);
-
 		model.addAttribute("article", article);
 		
-		List<Reply> replies = replyService.getForPrintReplies("article",id);
-		
+		List<Reply> replies = replyService.getForPrintReplies("article",id);		
 		model.addAttribute("replies", replies);
+		
+		if(listUrl == null) {
+			listUrl = "/usr/article/list";
+		}
 
+		model.addAttribute("listUrl", listUrl);
+		
 		return "usr/article/detail";
 	}
 
