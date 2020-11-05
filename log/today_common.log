@@ -2038,3 +2038,1354 @@
 2020-11-05 15:13:24 [INFO ] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
 2020-11-05 15:13:24 [INFO ] c.sbs.example.lolHi.LolHiApplication - Started LolHiApplication in 0.428 seconds (JVM running for 1489.395)
 2020-11-05 15:13:24 [INFO ] o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2020-11-05 15:14:00 [INFO ] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-11-05 15:14:00 [INFO ] o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-11-05 15:14:00 [INFO ] o.s.web.servlet.DispatcherServlet - Completed initialization in 6 ms
+2020-11-05 15:14:00 [INFO ] com.zaxxer.hikari.HikariDataSource - HikariPool-4 - Starting...
+2020-11-05 15:14:00 [INFO ] com.zaxxer.hikari.HikariDataSource - HikariPool-4 - Start completed.
+2020-11-05 15:14:00 [DEBUG] jdbc.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+31. SELECT *
+		FROM member
+		WHERE
+		id = 4
+ {executed in 1 msec}
+2020-11-05 15:14:00 [INFO ] jdbc.resultsettable - 
+|---|--------------------|--------------------|--------|--------|-----|
+|id |regdate             |updatedate          |loginid |loginpw |name |
+|---|--------------------|--------------------|--------|--------|-----|
+|4  |2020-11-03 13:59:53 |2020-11-03 13:59:53 |ss      |ss      |이재홍  |
+|---|--------------------|--------------------|--------|--------|-----|
+
+2020-11-05 15:14:00 [DEBUG] jdbc.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+31. SELECT A.*,
+		M.name AS extra__writer
+		FROM article AS A
+		INNER JOIN `member` AS M
+		ON A.memberId = M.id
+		WHERE A.id = 212
+ {executed in 0 msec}
+2020-11-05 15:14:00 [INFO ] jdbc.resultsettable - 
+|----|--------------------|--------------------|---------|----------------------|----------------------|--------------|
+|id  |regdate             |updatedate          |memberid |title                 |body                  |extra__writer |
+|----|--------------------|--------------------|---------|----------------------|----------------------|--------------|
+|212 |2020-11-03 14:19:48 |2020-11-03 14:19:48 |1        |제목0.00749892276478831 |내용0.20896964167148774 |홍길동           |
+|----|--------------------|--------------------|---------|----------------------|----------------------|--------------|
+
+2020-11-05 15:14:00 [DEBUG] jdbc.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+31. SELECT RE.*,
+		M.name AS extra__writer		
+		FROM reply AS RE
+		INNER JOIN member AS M
+		ON RE.memberId = M.id
+		WHERE relTypeCode = 'article'
+		AND relId = 212
+		ORDER BY id DESC
+ {executed in 2 msec}
+2020-11-05 15:14:00 [INFO ] jdbc.resultsettable - 
+|---|--------|-----------|-----|---------|------|------------|--------------|
+|id |regdate |updatedate |body |memberid |relid |reltypecode |extra__writer |
+|---|--------|-----------|-----|---------|------|------------|--------------|
+|---|--------|-----------|-----|---------|------|------------|--------------|
+
+2020-11-05 15:14:04 [DEBUG] jdbc.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+31. SELECT *
+		FROM member
+		WHERE
+		id = 4
+ {executed in 1 msec}
+2020-11-05 15:14:04 [INFO ] jdbc.resultsettable - 
+|---|--------------------|--------------------|--------|--------|-----|
+|id |regdate             |updatedate          |loginid |loginpw |name |
+|---|--------------------|--------------------|--------|--------|-----|
+|4  |2020-11-03 13:59:53 |2020-11-03 13:59:53 |ss      |ss      |이재홍  |
+|---|--------------------|--------------------|--------|--------|-----|
+
+2020-11-05 15:14:04 [DEBUG] jdbc.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+31. SELECT COUNT(*)
+		FROM article
+		WHERE 1
+
+			AND title LIKE CONCAT('%','2','%')
+ {executed in 1 msec}
+2020-11-05 15:14:04 [INFO ] jdbc.resultsettable - 
+|---------|
+|count(*) |
+|---------|
+|225      |
+|---------|
+
+2020-11-05 15:14:04 [DEBUG] jdbc.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+31. SELECT A.*,
+		M.name AS extra__writer
+		FROM article AS A
+		INNER JOIN `member`
+		AS M
+		ON A.memberId = M.id
+		WHERE 1
+
+			AND A.title LIKE CONCAT('%','2','%')
+
+		ORDER BY A.id DESC
+
+			LIMIT 0, 10
+ {executed in 5 msec}
+2020-11-05 15:14:04 [INFO ] jdbc.resultsettable - 
+|----|--------------------|--------------------|---------|----------------------|-----------------------|--------------|
+|id  |regdate             |updatedate          |memberid |title                 |body                   |extra__writer |
+|----|--------------------|--------------------|---------|----------------------|-----------------------|--------------|
+|298 |2020-11-03 14:19:51 |2020-11-03 14:19:51 |1        |제목0.6305766307102298  |내용0.028522001605967063 |홍길동           |
+|297 |2020-11-03 14:19:51 |2020-11-03 14:19:51 |1        |제목0.9732332331810456  |내용0.19223067927382018  |홍길동           |
+|295 |2020-11-03 14:19:51 |2020-11-03 14:19:51 |2        |제목0.5088743972674705  |내용0.6183875581420842   |홍길순           |
+|294 |2020-11-03 14:19:51 |2020-11-03 14:19:51 |2        |제목0.8421682546307968  |내용0.23369991056034334  |홍길순           |
+|293 |2020-11-03 14:19:51 |2020-11-03 14:19:51 |2        |제목0.6986884285683636  |내용0.1510224772161082   |홍길순           |
+|292 |2020-11-03 14:19:51 |2020-11-03 14:19:51 |1        |제목0.11307065292547518 |내용0.29067036536584645  |홍길동           |
+|291 |2020-11-03 14:19:50 |2020-11-03 14:19:50 |2        |제목0.4572950149488589  |내용0.2260225314889313   |홍길순           |
+|290 |2020-11-03 14:19:50 |2020-11-03 14:19:50 |2        |제목0.9803900793012139  |내용0.3255975463665999   |홍길순           |
+|289 |2020-11-03 14:19:50 |2020-11-03 14:19:50 |2        |제목0.2953301084184368  |내용0.8822882509625407   |홍길순           |
+|288 |2020-11-03 14:19:50 |2020-11-03 14:19:50 |2        |제목0.7276303774934545  |내용0.009535708473562924 |홍길순           |
+|----|--------------------|--------------------|---------|----------------------|-----------------------|--------------|
+
+2020-11-05 15:14:06 [DEBUG] jdbc.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+31. SELECT *
+		FROM member
+		WHERE
+		id = 4
+ {executed in 1 msec}
+2020-11-05 15:14:06 [INFO ] jdbc.resultsettable - 
+|---|--------------------|--------------------|--------|--------|-----|
+|id |regdate             |updatedate          |loginid |loginpw |name |
+|---|--------------------|--------------------|--------|--------|-----|
+|4  |2020-11-03 13:59:53 |2020-11-03 13:59:53 |ss      |ss      |이재홍  |
+|---|--------------------|--------------------|--------|--------|-----|
+
+2020-11-05 15:14:06 [DEBUG] jdbc.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+31. SELECT A.*,
+		M.name AS extra__writer
+		FROM article AS A
+		INNER JOIN `member` AS M
+		ON A.memberId = M.id
+		WHERE A.id = 298
+ {executed in 1 msec}
+2020-11-05 15:14:06 [INFO ] jdbc.resultsettable - 
+|----|--------------------|--------------------|---------|---------------------|-----------------------|--------------|
+|id  |regdate             |updatedate          |memberid |title                |body                   |extra__writer |
+|----|--------------------|--------------------|---------|---------------------|-----------------------|--------------|
+|298 |2020-11-03 14:19:51 |2020-11-03 14:19:51 |1        |제목0.6305766307102298 |내용0.028522001605967063 |홍길동           |
+|----|--------------------|--------------------|---------|---------------------|-----------------------|--------------|
+
+2020-11-05 15:14:06 [DEBUG] jdbc.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+31. SELECT RE.*,
+		M.name AS extra__writer		
+		FROM reply AS RE
+		INNER JOIN member AS M
+		ON RE.memberId = M.id
+		WHERE relTypeCode = 'article'
+		AND relId = 298
+		ORDER BY id DESC
+ {executed in 3 msec}
+2020-11-05 15:14:06 [INFO ] jdbc.resultsettable - 
+|---|--------------------|--------------------|-----|---------|------|------------|--------------|
+|id |regdate             |updatedate          |body |memberid |relid |reltypecode |extra__writer |
+|---|--------------------|--------------------|-----|---------|------|------------|--------------|
+|6  |2020-11-05 14:49:52 |2020-11-05 14:49:52 |ss   |4        |298   |article     |이재홍           |
+|3  |2020-11-03 15:23:24 |2020-11-03 15:23:24 |ss   |4        |298   |article     |이재홍           |
+|1  |2020-11-03 15:05:41 |2020-11-03 15:05:41 |s    |4        |298   |article     |이재홍           |
+|---|--------------------|--------------------|-----|---------|------|------------|--------------|
+
+2020-11-05 15:14:08 [DEBUG] jdbc.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+31. SELECT *
+		FROM member
+		WHERE
+		id = 4
+ {executed in 1 msec}
+2020-11-05 15:14:08 [INFO ] jdbc.resultsettable - 
+|---|--------------------|--------------------|--------|--------|-----|
+|id |regdate             |updatedate          |loginid |loginpw |name |
+|---|--------------------|--------------------|--------|--------|-----|
+|4  |2020-11-03 13:59:53 |2020-11-03 13:59:53 |ss      |ss      |이재홍  |
+|---|--------------------|--------------------|--------|--------|-----|
+
+2020-11-05 15:14:08 [DEBUG] jdbc.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+31. SELECT COUNT(*)
+		FROM article
+		WHERE 1
+
+			AND title LIKE CONCAT('%','2','%')
+ {executed in 1 msec}
+2020-11-05 15:14:08 [INFO ] jdbc.resultsettable - 
+|---------|
+|count(*) |
+|---------|
+|225      |
+|---------|
+
+2020-11-05 15:14:08 [DEBUG] jdbc.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+31. SELECT A.*,
+		M.name AS extra__writer
+		FROM article AS A
+		INNER JOIN `member`
+		AS M
+		ON A.memberId = M.id
+		WHERE 1
+
+			AND A.title LIKE CONCAT('%','2','%')
+
+		ORDER BY A.id DESC
+
+			LIMIT 0, 10
+ {executed in 5 msec}
+2020-11-05 15:14:08 [INFO ] jdbc.resultsettable - 
+|----|--------------------|--------------------|---------|----------------------|-----------------------|--------------|
+|id  |regdate             |updatedate          |memberid |title                 |body                   |extra__writer |
+|----|--------------------|--------------------|---------|----------------------|-----------------------|--------------|
+|298 |2020-11-03 14:19:51 |2020-11-03 14:19:51 |1        |제목0.6305766307102298  |내용0.028522001605967063 |홍길동           |
+|297 |2020-11-03 14:19:51 |2020-11-03 14:19:51 |1        |제목0.9732332331810456  |내용0.19223067927382018  |홍길동           |
+|295 |2020-11-03 14:19:51 |2020-11-03 14:19:51 |2        |제목0.5088743972674705  |내용0.6183875581420842   |홍길순           |
+|294 |2020-11-03 14:19:51 |2020-11-03 14:19:51 |2        |제목0.8421682546307968  |내용0.23369991056034334  |홍길순           |
+|293 |2020-11-03 14:19:51 |2020-11-03 14:19:51 |2        |제목0.6986884285683636  |내용0.1510224772161082   |홍길순           |
+|292 |2020-11-03 14:19:51 |2020-11-03 14:19:51 |1        |제목0.11307065292547518 |내용0.29067036536584645  |홍길동           |
+|291 |2020-11-03 14:19:50 |2020-11-03 14:19:50 |2        |제목0.4572950149488589  |내용0.2260225314889313   |홍길순           |
+|290 |2020-11-03 14:19:50 |2020-11-03 14:19:50 |2        |제목0.9803900793012139  |내용0.3255975463665999   |홍길순           |
+|289 |2020-11-03 14:19:50 |2020-11-03 14:19:50 |2        |제목0.2953301084184368  |내용0.8822882509625407   |홍길순           |
+|288 |2020-11-03 14:19:50 |2020-11-03 14:19:50 |2        |제목0.7276303774934545  |내용0.009535708473562924 |홍길순           |
+|----|--------------------|--------------------|---------|----------------------|-----------------------|--------------|
+
+2020-11-05 15:14:45 [DEBUG] jdbc.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+31. SELECT *
+		FROM member
+		WHERE
+		id = 4
+ {executed in 1 msec}
+2020-11-05 15:14:45 [INFO ] jdbc.resultsettable - 
+|---|--------------------|--------------------|--------|--------|-----|
+|id |regdate             |updatedate          |loginid |loginpw |name |
+|---|--------------------|--------------------|--------|--------|-----|
+|4  |2020-11-03 13:59:53 |2020-11-03 13:59:53 |ss      |ss      |이재홍  |
+|---|--------------------|--------------------|--------|--------|-----|
+
+2020-11-05 15:14:45 [DEBUG] jdbc.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+31. SELECT COUNT(*)
+		FROM article
+		WHERE 1
+
+			AND title LIKE CONCAT('%','1','%')
+ {executed in 1 msec}
+2020-11-05 15:14:45 [INFO ] jdbc.resultsettable - 
+|---------|
+|count(*) |
+|---------|
+|233      |
+|---------|
+
+2020-11-05 15:14:45 [DEBUG] jdbc.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+31. SELECT A.*,
+		M.name AS extra__writer
+		FROM article AS A
+		INNER JOIN `member`
+		AS M
+		ON A.memberId = M.id
+		WHERE 1
+
+			AND A.title LIKE CONCAT('%','1','%')
+
+		ORDER BY A.id DESC
+
+			LIMIT 0, 10
+ {executed in 5 msec}
+2020-11-05 15:14:45 [INFO ] jdbc.resultsettable - 
+|----|--------------------|--------------------|---------|----------------------|-----------------------|--------------|
+|id  |regdate             |updatedate          |memberid |title                 |body                   |extra__writer |
+|----|--------------------|--------------------|---------|----------------------|-----------------------|--------------|
+|298 |2020-11-03 14:19:51 |2020-11-03 14:19:51 |1        |제목0.6305766307102298  |내용0.028522001605967063 |홍길동           |
+|297 |2020-11-03 14:19:51 |2020-11-03 14:19:51 |1        |제목0.9732332331810456  |내용0.19223067927382018  |홍길동           |
+|296 |2020-11-03 14:19:51 |2020-11-03 14:19:51 |2        |제목0.9714105045156651  |내용0.16110866438700694  |홍길순           |
+|294 |2020-11-03 14:19:51 |2020-11-03 14:19:51 |2        |제목0.8421682546307968  |내용0.23369991056034334  |홍길순           |
+|292 |2020-11-03 14:19:51 |2020-11-03 14:19:51 |1        |제목0.11307065292547518 |내용0.29067036536584645  |홍길동           |
+|291 |2020-11-03 14:19:50 |2020-11-03 14:19:50 |2        |제목0.4572950149488589  |내용0.2260225314889313   |홍길순           |
+|290 |2020-11-03 14:19:50 |2020-11-03 14:19:50 |2        |제목0.9803900793012139  |내용0.3255975463665999   |홍길순           |
+|289 |2020-11-03 14:19:50 |2020-11-03 14:19:50 |2        |제목0.2953301084184368  |내용0.8822882509625407   |홍길순           |
+|286 |2020-11-03 14:19:50 |2020-11-03 14:19:50 |2        |제목0.1996737422418536  |내용0.89189050895338     |홍길순           |
+|284 |2020-11-03 14:19:50 |2020-11-03 14:19:50 |1        |제목0.5259288209731959  |내용0.7968831367761671   |홍길동           |
+|----|--------------------|--------------------|---------|----------------------|-----------------------|--------------|
+
+2020-11-05 15:14:47 [DEBUG] jdbc.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+31. SELECT *
+		FROM member
+		WHERE
+		id = 4
+ {executed in 0 msec}
+2020-11-05 15:14:47 [INFO ] jdbc.resultsettable - 
+|---|--------------------|--------------------|--------|--------|-----|
+|id |regdate             |updatedate          |loginid |loginpw |name |
+|---|--------------------|--------------------|--------|--------|-----|
+|4  |2020-11-03 13:59:53 |2020-11-03 13:59:53 |ss      |ss      |이재홍  |
+|---|--------------------|--------------------|--------|--------|-----|
+
+2020-11-05 15:14:47 [DEBUG] jdbc.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+31. SELECT COUNT(*)
+		FROM article
+		WHERE 1
+
+			AND title LIKE CONCAT('%','1','%')
+ {executed in 1 msec}
+2020-11-05 15:14:47 [INFO ] jdbc.resultsettable - 
+|---------|
+|count(*) |
+|---------|
+|233      |
+|---------|
+
+2020-11-05 15:14:47 [DEBUG] jdbc.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+31. SELECT A.*,
+		M.name AS extra__writer
+		FROM article AS A
+		INNER JOIN `member`
+		AS M
+		ON A.memberId = M.id
+		WHERE 1
+
+			AND A.title LIKE CONCAT('%','1','%')
+
+		ORDER BY A.id DESC
+
+			LIMIT 0, 10
+ {executed in 3 msec}
+2020-11-05 15:14:47 [INFO ] jdbc.resultsettable - 
+|----|--------------------|--------------------|---------|----------------------|-----------------------|--------------|
+|id  |regdate             |updatedate          |memberid |title                 |body                   |extra__writer |
+|----|--------------------|--------------------|---------|----------------------|-----------------------|--------------|
+|298 |2020-11-03 14:19:51 |2020-11-03 14:19:51 |1        |제목0.6305766307102298  |내용0.028522001605967063 |홍길동           |
+|297 |2020-11-03 14:19:51 |2020-11-03 14:19:51 |1        |제목0.9732332331810456  |내용0.19223067927382018  |홍길동           |
+|296 |2020-11-03 14:19:51 |2020-11-03 14:19:51 |2        |제목0.9714105045156651  |내용0.16110866438700694  |홍길순           |
+|294 |2020-11-03 14:19:51 |2020-11-03 14:19:51 |2        |제목0.8421682546307968  |내용0.23369991056034334  |홍길순           |
+|292 |2020-11-03 14:19:51 |2020-11-03 14:19:51 |1        |제목0.11307065292547518 |내용0.29067036536584645  |홍길동           |
+|291 |2020-11-03 14:19:50 |2020-11-03 14:19:50 |2        |제목0.4572950149488589  |내용0.2260225314889313   |홍길순           |
+|290 |2020-11-03 14:19:50 |2020-11-03 14:19:50 |2        |제목0.9803900793012139  |내용0.3255975463665999   |홍길순           |
+|289 |2020-11-03 14:19:50 |2020-11-03 14:19:50 |2        |제목0.2953301084184368  |내용0.8822882509625407   |홍길순           |
+|286 |2020-11-03 14:19:50 |2020-11-03 14:19:50 |2        |제목0.1996737422418536  |내용0.89189050895338     |홍길순           |
+|284 |2020-11-03 14:19:50 |2020-11-03 14:19:50 |1        |제목0.5259288209731959  |내용0.7968831367761671   |홍길동           |
+|----|--------------------|--------------------|---------|----------------------|-----------------------|--------------|
+
+2020-11-05 15:14:49 [DEBUG] jdbc.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+31. SELECT *
+		FROM member
+		WHERE
+		id = 4
+ {executed in 1 msec}
+2020-11-05 15:14:49 [INFO ] jdbc.resultsettable - 
+|---|--------------------|--------------------|--------|--------|-----|
+|id |regdate             |updatedate          |loginid |loginpw |name |
+|---|--------------------|--------------------|--------|--------|-----|
+|4  |2020-11-03 13:59:53 |2020-11-03 13:59:53 |ss      |ss      |이재홍  |
+|---|--------------------|--------------------|--------|--------|-----|
+
+2020-11-05 15:14:49 [DEBUG] jdbc.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+31. SELECT COUNT(*)
+		FROM article
+		WHERE 1
+
+			AND title LIKE CONCAT('%','1','%')
+ {executed in 1 msec}
+2020-11-05 15:14:49 [INFO ] jdbc.resultsettable - 
+|---------|
+|count(*) |
+|---------|
+|233      |
+|---------|
+
+2020-11-05 15:14:49 [DEBUG] jdbc.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+31. SELECT A.*,
+		M.name AS extra__writer
+		FROM article AS A
+		INNER JOIN `member`
+		AS M
+		ON A.memberId = M.id
+		WHERE 1
+
+			AND A.title LIKE CONCAT('%','1','%')
+
+		ORDER BY A.id DESC
+
+			LIMIT 90, 10
+ {executed in 6 msec}
+2020-11-05 15:14:49 [INFO ] jdbc.resultsettable - 
+|----|--------------------|--------------------|---------|----------------------|-----------------------|--------------|
+|id  |regdate             |updatedate          |memberid |title                 |body                   |extra__writer |
+|----|--------------------|--------------------|---------|----------------------|-----------------------|--------------|
+|188 |2020-11-03 14:19:47 |2020-11-03 14:19:47 |2        |제목0.2437184725363911  |내용0.26903293493113756  |홍길순           |
+|187 |2020-11-03 14:19:47 |2020-11-03 14:19:47 |1        |제목0.19387154578591842 |내용0.7796268852237862   |홍길동           |
+|186 |2020-11-03 14:19:47 |2020-11-03 14:19:47 |1        |제목0.0468891403143193  |내용0.04078220300449264  |홍길동           |
+|185 |2020-11-03 14:19:47 |2020-11-03 14:19:47 |2        |제목0.20582449175959872 |내용0.8697389241957468   |홍길순           |
+|184 |2020-11-03 14:19:46 |2020-11-03 14:19:46 |2        |제목0.645150807355671   |내용0.13104938262239973  |홍길순           |
+|183 |2020-11-03 14:19:46 |2020-11-03 14:19:46 |1        |제목0.7187496924016156  |내용0.837563454953547    |홍길동           |
+|182 |2020-11-03 14:19:46 |2020-11-03 14:19:46 |2        |제목0.14277134010826362 |내용0.4027418004374409   |홍길순           |
+|181 |2020-11-03 14:19:46 |2020-11-03 14:19:46 |1        |제목0.8778873746077412  |내용0.014140080673750565 |홍길동           |
+|180 |2020-11-03 14:19:46 |2020-11-03 14:19:46 |2        |제목0.5588229713577991  |내용0.6936468982078572   |홍길순           |
+|179 |2020-11-03 14:19:46 |2020-11-03 14:19:46 |1        |제목0.14177599748761952 |내용0.7584301249668283   |홍길동           |
+|----|--------------------|--------------------|---------|----------------------|-----------------------|--------------|
+
+2020-11-05 15:14:50 [DEBUG] jdbc.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+31. SELECT *
+		FROM member
+		WHERE
+		id = 4
+ {executed in 1 msec}
+2020-11-05 15:14:50 [INFO ] jdbc.resultsettable - 
+|---|--------------------|--------------------|--------|--------|-----|
+|id |regdate             |updatedate          |loginid |loginpw |name |
+|---|--------------------|--------------------|--------|--------|-----|
+|4  |2020-11-03 13:59:53 |2020-11-03 13:59:53 |ss      |ss      |이재홍  |
+|---|--------------------|--------------------|--------|--------|-----|
+
+2020-11-05 15:14:50 [DEBUG] jdbc.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+31. SELECT A.*,
+		M.name AS extra__writer
+		FROM article AS A
+		INNER JOIN `member` AS M
+		ON A.memberId = M.id
+		WHERE A.id = 179
+ {executed in 1 msec}
+2020-11-05 15:14:50 [INFO ] jdbc.resultsettable - 
+|----|--------------------|--------------------|---------|----------------------|---------------------|--------------|
+|id  |regdate             |updatedate          |memberid |title                 |body                 |extra__writer |
+|----|--------------------|--------------------|---------|----------------------|---------------------|--------------|
+|179 |2020-11-03 14:19:46 |2020-11-03 14:19:46 |1        |제목0.14177599748761952 |내용0.7584301249668283 |홍길동           |
+|----|--------------------|--------------------|---------|----------------------|---------------------|--------------|
+
+2020-11-05 15:14:50 [DEBUG] jdbc.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+31. SELECT RE.*,
+		M.name AS extra__writer		
+		FROM reply AS RE
+		INNER JOIN member AS M
+		ON RE.memberId = M.id
+		WHERE relTypeCode = 'article'
+		AND relId = 179
+		ORDER BY id DESC
+ {executed in 3 msec}
+2020-11-05 15:14:50 [INFO ] jdbc.resultsettable - 
+|---|--------|-----------|-----|---------|------|------------|--------------|
+|id |regdate |updatedate |body |memberid |relid |reltypecode |extra__writer |
+|---|--------|-----------|-----|---------|------|------------|--------------|
+|---|--------|-----------|-----|---------|------|------------|--------------|
+
+2020-11-05 15:14:54 [DEBUG] jdbc.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+31. SELECT *
+		FROM member
+		WHERE
+		id = 4
+ {executed in 0 msec}
+2020-11-05 15:14:54 [INFO ] jdbc.resultsettable - 
+|---|--------------------|--------------------|--------|--------|-----|
+|id |regdate             |updatedate          |loginid |loginpw |name |
+|---|--------------------|--------------------|--------|--------|-----|
+|4  |2020-11-03 13:59:53 |2020-11-03 13:59:53 |ss      |ss      |이재홍  |
+|---|--------------------|--------------------|--------|--------|-----|
+
+2020-11-05 15:14:54 [DEBUG] jdbc.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+31. SELECT COUNT(*)
+		FROM article
+		WHERE 1
+
+			AND title LIKE CONCAT('%','1','%')
+ {executed in 1 msec}
+2020-11-05 15:14:54 [INFO ] jdbc.resultsettable - 
+|---------|
+|count(*) |
+|---------|
+|233      |
+|---------|
+
+2020-11-05 15:14:54 [DEBUG] jdbc.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+31. SELECT A.*,
+		M.name AS extra__writer
+		FROM article AS A
+		INNER JOIN `member`
+		AS M
+		ON A.memberId = M.id
+		WHERE 1
+
+			AND A.title LIKE CONCAT('%','1','%')
+
+		ORDER BY A.id DESC
+
+			LIMIT 90, 10
+ {executed in 5 msec}
+2020-11-05 15:14:54 [INFO ] jdbc.resultsettable - 
+|----|--------------------|--------------------|---------|----------------------|-----------------------|--------------|
+|id  |regdate             |updatedate          |memberid |title                 |body                   |extra__writer |
+|----|--------------------|--------------------|---------|----------------------|-----------------------|--------------|
+|188 |2020-11-03 14:19:47 |2020-11-03 14:19:47 |2        |제목0.2437184725363911  |내용0.26903293493113756  |홍길순           |
+|187 |2020-11-03 14:19:47 |2020-11-03 14:19:47 |1        |제목0.19387154578591842 |내용0.7796268852237862   |홍길동           |
+|186 |2020-11-03 14:19:47 |2020-11-03 14:19:47 |1        |제목0.0468891403143193  |내용0.04078220300449264  |홍길동           |
+|185 |2020-11-03 14:19:47 |2020-11-03 14:19:47 |2        |제목0.20582449175959872 |내용0.8697389241957468   |홍길순           |
+|184 |2020-11-03 14:19:46 |2020-11-03 14:19:46 |2        |제목0.645150807355671   |내용0.13104938262239973  |홍길순           |
+|183 |2020-11-03 14:19:46 |2020-11-03 14:19:46 |1        |제목0.7187496924016156  |내용0.837563454953547    |홍길동           |
+|182 |2020-11-03 14:19:46 |2020-11-03 14:19:46 |2        |제목0.14277134010826362 |내용0.4027418004374409   |홍길순           |
+|181 |2020-11-03 14:19:46 |2020-11-03 14:19:46 |1        |제목0.8778873746077412  |내용0.014140080673750565 |홍길동           |
+|180 |2020-11-03 14:19:46 |2020-11-03 14:19:46 |2        |제목0.5588229713577991  |내용0.6936468982078572   |홍길순           |
+|179 |2020-11-03 14:19:46 |2020-11-03 14:19:46 |1        |제목0.14177599748761952 |내용0.7584301249668283   |홍길동           |
+|----|--------------------|--------------------|---------|----------------------|-----------------------|--------------|
+
+2020-11-05 15:14:57 [DEBUG] jdbc.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+31. SELECT *
+		FROM member
+		WHERE
+		id = 4
+ {executed in 1 msec}
+2020-11-05 15:14:57 [INFO ] jdbc.resultsettable - 
+|---|--------------------|--------------------|--------|--------|-----|
+|id |regdate             |updatedate          |loginid |loginpw |name |
+|---|--------------------|--------------------|--------|--------|-----|
+|4  |2020-11-03 13:59:53 |2020-11-03 13:59:53 |ss      |ss      |이재홍  |
+|---|--------------------|--------------------|--------|--------|-----|
+
+2020-11-05 15:14:57 [DEBUG] jdbc.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+31. SELECT A.*,
+		M.name AS extra__writer
+		FROM article AS A
+		INNER JOIN `member` AS M
+		ON A.memberId = M.id
+		WHERE A.id = 179
+ {executed in 0 msec}
+2020-11-05 15:14:57 [INFO ] jdbc.resultsettable - 
+|----|--------------------|--------------------|---------|----------------------|---------------------|--------------|
+|id  |regdate             |updatedate          |memberid |title                 |body                 |extra__writer |
+|----|--------------------|--------------------|---------|----------------------|---------------------|--------------|
+|179 |2020-11-03 14:19:46 |2020-11-03 14:19:46 |1        |제목0.14177599748761952 |내용0.7584301249668283 |홍길동           |
+|----|--------------------|--------------------|---------|----------------------|---------------------|--------------|
+
+2020-11-05 15:14:57 [DEBUG] jdbc.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+31. SELECT RE.*,
+		M.name AS extra__writer		
+		FROM reply AS RE
+		INNER JOIN member AS M
+		ON RE.memberId = M.id
+		WHERE relTypeCode = 'article'
+		AND relId = 179
+		ORDER BY id DESC
+ {executed in 3 msec}
+2020-11-05 15:14:57 [INFO ] jdbc.resultsettable - 
+|---|--------|-----------|-----|---------|------|------------|--------------|
+|id |regdate |updatedate |body |memberid |relid |reltypecode |extra__writer |
+|---|--------|-----------|-----|---------|------|------------|--------------|
+|---|--------|-----------|-----|---------|------|------------|--------------|
+
+2020-11-05 15:14:59 [DEBUG] jdbc.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+31. SELECT *
+		FROM member
+		WHERE
+		id = 4
+ {executed in 1 msec}
+2020-11-05 15:14:59 [INFO ] jdbc.resultsettable - 
+|---|--------------------|--------------------|--------|--------|-----|
+|id |regdate             |updatedate          |loginid |loginpw |name |
+|---|--------------------|--------------------|--------|--------|-----|
+|4  |2020-11-03 13:59:53 |2020-11-03 13:59:53 |ss      |ss      |이재홍  |
+|---|--------------------|--------------------|--------|--------|-----|
+
+2020-11-05 15:14:59 [DEBUG] jdbc.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+31. INSERT INTO reply
+		 SET regDate = NOW(),
+			updateDate = NOW(),
+			 `body` = 'ㄴㄴㄴ',
+			 memberId = 4,
+			 `relId` = '179',
+			 `relTypeCode` = 'article'
+ {executed in 5 msec}
+2020-11-05 15:14:59 [DEBUG] jdbc.sqltiming -  com.zaxxer.hikari.pool.ProxyStatement.getGeneratedKeys(ProxyStatement.java:230)
+31. getGeneratedKeys on query: INSERT INTO reply
+		 SET regDate = NOW(),
+			updateDate = NOW(),
+			 `body` = 'ㄴㄴㄴ',
+			 memberId = 4,
+			 `relId` = '179',
+			 `relTypeCode` = 'article'
+ {executed in 0 msec}
+2020-11-05 15:14:59 [INFO ] jdbc.resultsettable - 
+|--------------|
+|generated_key |
+|--------------|
+|8             |
+|--------------|
+
+2020-11-05 15:15:00 [DEBUG] jdbc.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+31. SELECT *
+		FROM member
+		WHERE
+		id = 4
+ {executed in 1 msec}
+2020-11-05 15:15:00 [INFO ] jdbc.resultsettable - 
+|---|--------------------|--------------------|--------|--------|-----|
+|id |regdate             |updatedate          |loginid |loginpw |name |
+|---|--------------------|--------------------|--------|--------|-----|
+|4  |2020-11-03 13:59:53 |2020-11-03 13:59:53 |ss      |ss      |이재홍  |
+|---|--------------------|--------------------|--------|--------|-----|
+
+2020-11-05 15:15:00 [DEBUG] jdbc.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+31. SELECT A.*,
+		M.name AS extra__writer
+		FROM article AS A
+		INNER JOIN `member` AS M
+		ON A.memberId = M.id
+		WHERE A.id = 179
+ {executed in 1 msec}
+2020-11-05 15:15:00 [INFO ] jdbc.resultsettable - 
+|----|--------------------|--------------------|---------|----------------------|---------------------|--------------|
+|id  |regdate             |updatedate          |memberid |title                 |body                 |extra__writer |
+|----|--------------------|--------------------|---------|----------------------|---------------------|--------------|
+|179 |2020-11-03 14:19:46 |2020-11-03 14:19:46 |1        |제목0.14177599748761952 |내용0.7584301249668283 |홍길동           |
+|----|--------------------|--------------------|---------|----------------------|---------------------|--------------|
+
+2020-11-05 15:15:00 [DEBUG] jdbc.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+31. SELECT RE.*,
+		M.name AS extra__writer		
+		FROM reply AS RE
+		INNER JOIN member AS M
+		ON RE.memberId = M.id
+		WHERE relTypeCode = 'article'
+		AND relId = 179
+		ORDER BY id DESC
+ {executed in 5 msec}
+2020-11-05 15:15:00 [INFO ] jdbc.resultsettable - 
+|---|--------------------|--------------------|-----|---------|------|------------|--------------|
+|id |regdate             |updatedate          |body |memberid |relid |reltypecode |extra__writer |
+|---|--------------------|--------------------|-----|---------|------|------------|--------------|
+|8  |2020-11-05 15:14:59 |2020-11-05 15:14:59 |ㄴㄴㄴ  |4        |179   |article     |이재홍           |
+|---|--------------------|--------------------|-----|---------|------|------------|--------------|
+
+2020-11-05 15:15:03 [DEBUG] jdbc.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+31. SELECT *
+		FROM member
+		WHERE
+		id = 4
+ {executed in 1 msec}
+2020-11-05 15:15:03 [INFO ] jdbc.resultsettable - 
+|---|--------------------|--------------------|--------|--------|-----|
+|id |regdate             |updatedate          |loginid |loginpw |name |
+|---|--------------------|--------------------|--------|--------|-----|
+|4  |2020-11-03 13:59:53 |2020-11-03 13:59:53 |ss      |ss      |이재홍  |
+|---|--------------------|--------------------|--------|--------|-----|
+
+2020-11-05 15:15:03 [DEBUG] jdbc.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+31. SELECT COUNT(*)
+		FROM article
+		WHERE 1
+ {executed in 1 msec}
+2020-11-05 15:15:03 [INFO ] jdbc.resultsettable - 
+|---------|
+|count(*) |
+|---------|
+|285      |
+|---------|
+
+2020-11-05 15:15:03 [DEBUG] jdbc.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+31. SELECT A.*,
+		M.name AS extra__writer
+		FROM article AS A
+		INNER JOIN `member`
+		AS M
+		ON A.memberId = M.id
+		WHERE 1
+
+		ORDER BY A.id DESC
+
+			LIMIT 0, 10
+ {executed in 6 msec}
+2020-11-05 15:15:03 [INFO ] jdbc.resultsettable - 
+|----|--------------------|--------------------|---------|----------------------|-----------------------|--------------|
+|id  |regdate             |updatedate          |memberid |title                 |body                   |extra__writer |
+|----|--------------------|--------------------|---------|----------------------|-----------------------|--------------|
+|298 |2020-11-03 14:19:51 |2020-11-03 14:19:51 |1        |제목0.6305766307102298  |내용0.028522001605967063 |홍길동           |
+|297 |2020-11-03 14:19:51 |2020-11-03 14:19:51 |1        |제목0.9732332331810456  |내용0.19223067927382018  |홍길동           |
+|296 |2020-11-03 14:19:51 |2020-11-03 14:19:51 |2        |제목0.9714105045156651  |내용0.16110866438700694  |홍길순           |
+|295 |2020-11-03 14:19:51 |2020-11-03 14:19:51 |2        |제목0.5088743972674705  |내용0.6183875581420842   |홍길순           |
+|294 |2020-11-03 14:19:51 |2020-11-03 14:19:51 |2        |제목0.8421682546307968  |내용0.23369991056034334  |홍길순           |
+|293 |2020-11-03 14:19:51 |2020-11-03 14:19:51 |2        |제목0.6986884285683636  |내용0.1510224772161082   |홍길순           |
+|292 |2020-11-03 14:19:51 |2020-11-03 14:19:51 |1        |제목0.11307065292547518 |내용0.29067036536584645  |홍길동           |
+|291 |2020-11-03 14:19:50 |2020-11-03 14:19:50 |2        |제목0.4572950149488589  |내용0.2260225314889313   |홍길순           |
+|290 |2020-11-03 14:19:50 |2020-11-03 14:19:50 |2        |제목0.9803900793012139  |내용0.3255975463665999   |홍길순           |
+|289 |2020-11-03 14:19:50 |2020-11-03 14:19:50 |2        |제목0.2953301084184368  |내용0.8822882509625407   |홍길순           |
+|----|--------------------|--------------------|---------|----------------------|-----------------------|--------------|
+
+2020-11-05 15:18:21 [INFO ] o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-11-05 15:18:21 [INFO ] com.zaxxer.hikari.HikariDataSource - HikariPool-4 - Shutdown initiated...
+2020-11-05 15:18:21 [INFO ] com.zaxxer.hikari.HikariDataSource - HikariPool-4 - Shutdown completed.
+2020-11-05 15:18:21 [INFO ] c.sbs.example.lolHi.LolHiApplication - Starting LolHiApplication on wwifi-PC with PID 3480 (C:\work\sts-4.7.0.RELEASE-workspace\lolHi\target\classes started by wwifi in C:\work\sts-4.7.0.RELEASE-workspace\lolHi)
+2020-11-05 15:18:21 [INFO ] c.sbs.example.lolHi.LolHiApplication - The following profiles are active: local
+2020-11-05 15:18:21 [INFO ] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-11-05 15:18:21 [INFO ] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-11-05 15:18:21 [INFO ] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2020-11-05 15:18:21 [INFO ] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.38]
+2020-11-05 15:18:21 [INFO ] org.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2020-11-05 15:18:21 [INFO ] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-11-05 15:18:21 [INFO ] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 249 ms
+2020-11-05 15:18:21 [INFO ] o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-11-05 15:18:21 [INFO ] o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-11-05 15:18:21 [INFO ] o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-11-05 15:18:21 [INFO ] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-11-05 15:18:21 [INFO ] c.sbs.example.lolHi.LolHiApplication - Started LolHiApplication in 0.418 seconds (JVM running for 1786.504)
+2020-11-05 15:18:21 [INFO ] o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2020-11-05 15:20:04 [INFO ] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-11-05 15:20:04 [INFO ] o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-11-05 15:20:04 [INFO ] o.s.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+2020-11-05 15:20:04 [INFO ] com.zaxxer.hikari.HikariDataSource - HikariPool-5 - Starting...
+2020-11-05 15:20:04 [INFO ] com.zaxxer.hikari.HikariDataSource - HikariPool-5 - Start completed.
+2020-11-05 15:20:04 [DEBUG] jdbc.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+41. SELECT *
+		FROM member
+		WHERE
+		id = 4
+ {executed in 1 msec}
+2020-11-05 15:20:04 [INFO ] jdbc.resultsettable - 
+|---|--------------------|--------------------|--------|--------|-----|
+|id |regdate             |updatedate          |loginid |loginpw |name |
+|---|--------------------|--------------------|--------|--------|-----|
+|4  |2020-11-03 13:59:53 |2020-11-03 13:59:53 |ss      |ss      |이재홍  |
+|---|--------------------|--------------------|--------|--------|-----|
+
+2020-11-05 15:20:04 [DEBUG] jdbc.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+41. SELECT COUNT(*)
+		FROM article
+		WHERE 1
+ {executed in 1 msec}
+2020-11-05 15:20:04 [INFO ] jdbc.resultsettable - 
+|---------|
+|count(*) |
+|---------|
+|285      |
+|---------|
+
+2020-11-05 15:20:04 [DEBUG] jdbc.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+41. SELECT A.*,
+		M.name AS extra__writer
+		FROM article AS A
+		INNER JOIN `member`
+		AS M
+		ON A.memberId = M.id
+		WHERE 1
+
+		ORDER BY A.id DESC
+
+			LIMIT 0, 10
+ {executed in 5 msec}
+2020-11-05 15:20:04 [INFO ] jdbc.resultsettable - 
+|----|--------------------|--------------------|---------|----------------------|-----------------------|--------------|
+|id  |regdate             |updatedate          |memberid |title                 |body                   |extra__writer |
+|----|--------------------|--------------------|---------|----------------------|-----------------------|--------------|
+|298 |2020-11-03 14:19:51 |2020-11-03 14:19:51 |1        |제목0.6305766307102298  |내용0.028522001605967063 |홍길동           |
+|297 |2020-11-03 14:19:51 |2020-11-03 14:19:51 |1        |제목0.9732332331810456  |내용0.19223067927382018  |홍길동           |
+|296 |2020-11-03 14:19:51 |2020-11-03 14:19:51 |2        |제목0.9714105045156651  |내용0.16110866438700694  |홍길순           |
+|295 |2020-11-03 14:19:51 |2020-11-03 14:19:51 |2        |제목0.5088743972674705  |내용0.6183875581420842   |홍길순           |
+|294 |2020-11-03 14:19:51 |2020-11-03 14:19:51 |2        |제목0.8421682546307968  |내용0.23369991056034334  |홍길순           |
+|293 |2020-11-03 14:19:51 |2020-11-03 14:19:51 |2        |제목0.6986884285683636  |내용0.1510224772161082   |홍길순           |
+|292 |2020-11-03 14:19:51 |2020-11-03 14:19:51 |1        |제목0.11307065292547518 |내용0.29067036536584645  |홍길동           |
+|291 |2020-11-03 14:19:50 |2020-11-03 14:19:50 |2        |제목0.4572950149488589  |내용0.2260225314889313   |홍길순           |
+|290 |2020-11-03 14:19:50 |2020-11-03 14:19:50 |2        |제목0.9803900793012139  |내용0.3255975463665999   |홍길순           |
+|289 |2020-11-03 14:19:50 |2020-11-03 14:19:50 |2        |제목0.2953301084184368  |내용0.8822882509625407   |홍길순           |
+|----|--------------------|--------------------|---------|----------------------|-----------------------|--------------|
+
+2020-11-05 15:20:05 [DEBUG] jdbc.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+41. SELECT *
+		FROM member
+		WHERE
+		id = 4
+ {executed in 0 msec}
+2020-11-05 15:20:05 [INFO ] jdbc.resultsettable - 
+|---|--------------------|--------------------|--------|--------|-----|
+|id |regdate             |updatedate          |loginid |loginpw |name |
+|---|--------------------|--------------------|--------|--------|-----|
+|4  |2020-11-03 13:59:53 |2020-11-03 13:59:53 |ss      |ss      |이재홍  |
+|---|--------------------|--------------------|--------|--------|-----|
+
+2020-11-05 15:20:05 [DEBUG] jdbc.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+41. SELECT A.*,
+		M.name AS extra__writer
+		FROM article AS A
+		INNER JOIN `member` AS M
+		ON A.memberId = M.id
+		WHERE A.id = 293
+ {executed in 0 msec}
+2020-11-05 15:20:05 [INFO ] jdbc.resultsettable - 
+|----|--------------------|--------------------|---------|---------------------|---------------------|--------------|
+|id  |regdate             |updatedate          |memberid |title                |body                 |extra__writer |
+|----|--------------------|--------------------|---------|---------------------|---------------------|--------------|
+|293 |2020-11-03 14:19:51 |2020-11-03 14:19:51 |2        |제목0.6986884285683636 |내용0.1510224772161082 |홍길순           |
+|----|--------------------|--------------------|---------|---------------------|---------------------|--------------|
+
+2020-11-05 15:20:05 [DEBUG] jdbc.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+41. SELECT RE.*,
+		M.name AS extra__writer		
+		FROM reply AS RE
+		INNER JOIN member AS M
+		ON RE.memberId = M.id
+		WHERE relTypeCode = 'article'
+		AND relId = 293
+		ORDER BY id DESC
+ {executed in 3 msec}
+2020-11-05 15:20:05 [INFO ] jdbc.resultsettable - 
+|---|--------|-----------|-----|---------|------|------------|--------------|
+|id |regdate |updatedate |body |memberid |relid |reltypecode |extra__writer |
+|---|--------|-----------|-----|---------|------|------------|--------------|
+|---|--------|-----------|-----|---------|------|------------|--------------|
+
+2020-11-05 15:20:07 [DEBUG] jdbc.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+41. SELECT *
+		FROM member
+		WHERE
+		id = 4
+ {executed in 0 msec}
+2020-11-05 15:20:07 [INFO ] jdbc.resultsettable - 
+|---|--------------------|--------------------|--------|--------|-----|
+|id |regdate             |updatedate          |loginid |loginpw |name |
+|---|--------------------|--------------------|--------|--------|-----|
+|4  |2020-11-03 13:59:53 |2020-11-03 13:59:53 |ss      |ss      |이재홍  |
+|---|--------------------|--------------------|--------|--------|-----|
+
+2020-11-05 15:20:07 [DEBUG] jdbc.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+41. INSERT INTO reply
+		 SET regDate = NOW(),
+			updateDate = NOW(),
+			 `body` = 'ㅇㅇㅇㅇ',
+			 memberId = 4,
+			 `relId` = '293',
+			 `relTypeCode` = 'article'
+ {executed in 5 msec}
+2020-11-05 15:20:07 [DEBUG] jdbc.sqltiming -  com.zaxxer.hikari.pool.ProxyStatement.getGeneratedKeys(ProxyStatement.java:230)
+41. getGeneratedKeys on query: INSERT INTO reply
+		 SET regDate = NOW(),
+			updateDate = NOW(),
+			 `body` = 'ㅇㅇㅇㅇ',
+			 memberId = 4,
+			 `relId` = '293',
+			 `relTypeCode` = 'article'
+ {executed in 0 msec}
+2020-11-05 15:20:07 [INFO ] jdbc.resultsettable - 
+|--------------|
+|generated_key |
+|--------------|
+|9             |
+|--------------|
+
+2020-11-05 15:20:08 [DEBUG] jdbc.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+41. SELECT *
+		FROM member
+		WHERE
+		id = 4
+ {executed in 1 msec}
+2020-11-05 15:20:08 [INFO ] jdbc.resultsettable - 
+|---|--------------------|--------------------|--------|--------|-----|
+|id |regdate             |updatedate          |loginid |loginpw |name |
+|---|--------------------|--------------------|--------|--------|-----|
+|4  |2020-11-03 13:59:53 |2020-11-03 13:59:53 |ss      |ss      |이재홍  |
+|---|--------------------|--------------------|--------|--------|-----|
+
+2020-11-05 15:20:08 [DEBUG] jdbc.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+41. SELECT A.*,
+		M.name AS extra__writer
+		FROM article AS A
+		INNER JOIN `member` AS M
+		ON A.memberId = M.id
+		WHERE A.id = 293
+ {executed in 0 msec}
+2020-11-05 15:20:08 [INFO ] jdbc.resultsettable - 
+|----|--------------------|--------------------|---------|---------------------|---------------------|--------------|
+|id  |regdate             |updatedate          |memberid |title                |body                 |extra__writer |
+|----|--------------------|--------------------|---------|---------------------|---------------------|--------------|
+|293 |2020-11-03 14:19:51 |2020-11-03 14:19:51 |2        |제목0.6986884285683636 |내용0.1510224772161082 |홍길순           |
+|----|--------------------|--------------------|---------|---------------------|---------------------|--------------|
+
+2020-11-05 15:20:08 [DEBUG] jdbc.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+41. SELECT RE.*,
+		M.name AS extra__writer		
+		FROM reply AS RE
+		INNER JOIN member AS M
+		ON RE.memberId = M.id
+		WHERE relTypeCode = 'article'
+		AND relId = 293
+		ORDER BY id DESC
+ {executed in 3 msec}
+2020-11-05 15:20:08 [INFO ] jdbc.resultsettable - 
+|---|--------------------|--------------------|-----|---------|------|------------|--------------|
+|id |regdate             |updatedate          |body |memberid |relid |reltypecode |extra__writer |
+|---|--------------------|--------------------|-----|---------|------|------------|--------------|
+|9  |2020-11-05 15:20:07 |2020-11-05 15:20:07 |ㅇㅇㅇㅇ |4        |293   |article     |이재홍           |
+|---|--------------------|--------------------|-----|---------|------|------------|--------------|
+
+2020-11-05 15:20:10 [DEBUG] jdbc.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+41. SELECT *
+		FROM member
+		WHERE
+		id = 4
+ {executed in 1 msec}
+2020-11-05 15:20:10 [INFO ] jdbc.resultsettable - 
+|---|--------------------|--------------------|--------|--------|-----|
+|id |regdate             |updatedate          |loginid |loginpw |name |
+|---|--------------------|--------------------|--------|--------|-----|
+|4  |2020-11-03 13:59:53 |2020-11-03 13:59:53 |ss      |ss      |이재홍  |
+|---|--------------------|--------------------|--------|--------|-----|
+
+2020-11-05 15:20:10 [DEBUG] jdbc.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+41. SELECT *
+		FROM reply
+		WHERE id =
+		9
+ {executed in 1 msec}
+2020-11-05 15:20:10 [INFO ] jdbc.resultsettable - 
+|---|--------------------|--------------------|-----|---------|------|------------|
+|id |regdate             |updatedate          |body |memberid |relid |reltypecode |
+|---|--------------------|--------------------|-----|---------|------|------------|
+|9  |2020-11-05 15:20:07 |2020-11-05 15:20:07 |ㅇㅇㅇㅇ |4        |293   |article     |
+|---|--------------------|--------------------|-----|---------|------|------------|
+
+2020-11-05 15:20:10 [DEBUG] jdbc.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+41. DELETE FROM reply
+		WHERE id =9
+ {executed in 4 msec}
+2020-11-05 15:20:10 [DEBUG] jdbc.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+41. SELECT *
+		FROM member
+		WHERE
+		id = 4
+ {executed in 0 msec}
+2020-11-05 15:20:10 [INFO ] jdbc.resultsettable - 
+|---|--------------------|--------------------|--------|--------|-----|
+|id |regdate             |updatedate          |loginid |loginpw |name |
+|---|--------------------|--------------------|--------|--------|-----|
+|4  |2020-11-03 13:59:53 |2020-11-03 13:59:53 |ss      |ss      |이재홍  |
+|---|--------------------|--------------------|--------|--------|-----|
+
+2020-11-05 15:20:10 [DEBUG] jdbc.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+41. SELECT A.*,
+		M.name AS extra__writer
+		FROM article AS A
+		INNER JOIN `member` AS M
+		ON A.memberId = M.id
+		WHERE A.id = 293
+ {executed in 1 msec}
+2020-11-05 15:20:10 [INFO ] jdbc.resultsettable - 
+|----|--------------------|--------------------|---------|---------------------|---------------------|--------------|
+|id  |regdate             |updatedate          |memberid |title                |body                 |extra__writer |
+|----|--------------------|--------------------|---------|---------------------|---------------------|--------------|
+|293 |2020-11-03 14:19:51 |2020-11-03 14:19:51 |2        |제목0.6986884285683636 |내용0.1510224772161082 |홍길순           |
+|----|--------------------|--------------------|---------|---------------------|---------------------|--------------|
+
+2020-11-05 15:20:10 [DEBUG] jdbc.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+41. SELECT RE.*,
+		M.name AS extra__writer		
+		FROM reply AS RE
+		INNER JOIN member AS M
+		ON RE.memberId = M.id
+		WHERE relTypeCode = 'article'
+		AND relId = 293
+		ORDER BY id DESC
+ {executed in 3 msec}
+2020-11-05 15:20:10 [INFO ] jdbc.resultsettable - 
+|---|--------|-----------|-----|---------|------|------------|--------------|
+|id |regdate |updatedate |body |memberid |relid |reltypecode |extra__writer |
+|---|--------|-----------|-----|---------|------|------------|--------------|
+|---|--------|-----------|-----|---------|------|------------|--------------|
+
+2020-11-05 15:20:13 [DEBUG] jdbc.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+41. SELECT *
+		FROM member
+		WHERE
+		id = 4
+ {executed in 0 msec}
+2020-11-05 15:20:13 [INFO ] jdbc.resultsettable - 
+|---|--------------------|--------------------|--------|--------|-----|
+|id |regdate             |updatedate          |loginid |loginpw |name |
+|---|--------------------|--------------------|--------|--------|-----|
+|4  |2020-11-03 13:59:53 |2020-11-03 13:59:53 |ss      |ss      |이재홍  |
+|---|--------------------|--------------------|--------|--------|-----|
+
+2020-11-05 15:20:13 [DEBUG] jdbc.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+41. SELECT COUNT(*)
+		FROM article
+		WHERE 1
+ {executed in 0 msec}
+2020-11-05 15:20:13 [INFO ] jdbc.resultsettable - 
+|---------|
+|count(*) |
+|---------|
+|285      |
+|---------|
+
+2020-11-05 15:20:13 [DEBUG] jdbc.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+41. SELECT A.*,
+		M.name AS extra__writer
+		FROM article AS A
+		INNER JOIN `member`
+		AS M
+		ON A.memberId = M.id
+		WHERE 1
+
+		ORDER BY A.id DESC
+
+			LIMIT 0, 10
+ {executed in 6 msec}
+2020-11-05 15:20:13 [INFO ] jdbc.resultsettable - 
+|----|--------------------|--------------------|---------|----------------------|-----------------------|--------------|
+|id  |regdate             |updatedate          |memberid |title                 |body                   |extra__writer |
+|----|--------------------|--------------------|---------|----------------------|-----------------------|--------------|
+|298 |2020-11-03 14:19:51 |2020-11-03 14:19:51 |1        |제목0.6305766307102298  |내용0.028522001605967063 |홍길동           |
+|297 |2020-11-03 14:19:51 |2020-11-03 14:19:51 |1        |제목0.9732332331810456  |내용0.19223067927382018  |홍길동           |
+|296 |2020-11-03 14:19:51 |2020-11-03 14:19:51 |2        |제목0.9714105045156651  |내용0.16110866438700694  |홍길순           |
+|295 |2020-11-03 14:19:51 |2020-11-03 14:19:51 |2        |제목0.5088743972674705  |내용0.6183875581420842   |홍길순           |
+|294 |2020-11-03 14:19:51 |2020-11-03 14:19:51 |2        |제목0.8421682546307968  |내용0.23369991056034334  |홍길순           |
+|293 |2020-11-03 14:19:51 |2020-11-03 14:19:51 |2        |제목0.6986884285683636  |내용0.1510224772161082   |홍길순           |
+|292 |2020-11-03 14:19:51 |2020-11-03 14:19:51 |1        |제목0.11307065292547518 |내용0.29067036536584645  |홍길동           |
+|291 |2020-11-03 14:19:50 |2020-11-03 14:19:50 |2        |제목0.4572950149488589  |내용0.2260225314889313   |홍길순           |
+|290 |2020-11-03 14:19:50 |2020-11-03 14:19:50 |2        |제목0.9803900793012139  |내용0.3255975463665999   |홍길순           |
+|289 |2020-11-03 14:19:50 |2020-11-03 14:19:50 |2        |제목0.2953301084184368  |내용0.8822882509625407   |홍길순           |
+|----|--------------------|--------------------|---------|----------------------|-----------------------|--------------|
+
+2020-11-05 15:20:19 [DEBUG] jdbc.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+41. SELECT *
+		FROM member
+		WHERE
+		id = 4
+ {executed in 1 msec}
+2020-11-05 15:20:19 [INFO ] jdbc.resultsettable - 
+|---|--------------------|--------------------|--------|--------|-----|
+|id |regdate             |updatedate          |loginid |loginpw |name |
+|---|--------------------|--------------------|--------|--------|-----|
+|4  |2020-11-03 13:59:53 |2020-11-03 13:59:53 |ss      |ss      |이재홍  |
+|---|--------------------|--------------------|--------|--------|-----|
+
+2020-11-05 15:20:19 [DEBUG] jdbc.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+41. SELECT COUNT(*)
+		FROM article
+		WHERE 1
+
+			AND title LIKE CONCAT('%','3','%')
+ {executed in 1 msec}
+2020-11-05 15:20:19 [INFO ] jdbc.resultsettable - 
+|---------|
+|count(*) |
+|---------|
+|219      |
+|---------|
+
+2020-11-05 15:20:19 [DEBUG] jdbc.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+41. SELECT A.*,
+		M.name AS extra__writer
+		FROM article AS A
+		INNER JOIN `member`
+		AS M
+		ON A.memberId = M.id
+		WHERE 1
+
+			AND A.title LIKE CONCAT('%','3','%')
+
+		ORDER BY A.id DESC
+
+			LIMIT 0, 10
+ {executed in 5 msec}
+2020-11-05 15:20:19 [INFO ] jdbc.resultsettable - 
+|----|--------------------|--------------------|---------|----------------------|-----------------------|--------------|
+|id  |regdate             |updatedate          |memberid |title                 |body                   |extra__writer |
+|----|--------------------|--------------------|---------|----------------------|-----------------------|--------------|
+|298 |2020-11-03 14:19:51 |2020-11-03 14:19:51 |1        |제목0.6305766307102298  |내용0.028522001605967063 |홍길동           |
+|297 |2020-11-03 14:19:51 |2020-11-03 14:19:51 |1        |제목0.9732332331810456  |내용0.19223067927382018  |홍길동           |
+|295 |2020-11-03 14:19:51 |2020-11-03 14:19:51 |2        |제목0.5088743972674705  |내용0.6183875581420842   |홍길순           |
+|294 |2020-11-03 14:19:51 |2020-11-03 14:19:51 |2        |제목0.8421682546307968  |내용0.23369991056034334  |홍길순           |
+|293 |2020-11-03 14:19:51 |2020-11-03 14:19:51 |2        |제목0.6986884285683636  |내용0.1510224772161082   |홍길순           |
+|292 |2020-11-03 14:19:51 |2020-11-03 14:19:51 |1        |제목0.11307065292547518 |내용0.29067036536584645  |홍길동           |
+|290 |2020-11-03 14:19:50 |2020-11-03 14:19:50 |2        |제목0.9803900793012139  |내용0.3255975463665999   |홍길순           |
+|289 |2020-11-03 14:19:50 |2020-11-03 14:19:50 |2        |제목0.2953301084184368  |내용0.8822882509625407   |홍길순           |
+|288 |2020-11-03 14:19:50 |2020-11-03 14:19:50 |2        |제목0.7276303774934545  |내용0.009535708473562924 |홍길순           |
+|286 |2020-11-03 14:19:50 |2020-11-03 14:19:50 |2        |제목0.1996737422418536  |내용0.89189050895338     |홍길순           |
+|----|--------------------|--------------------|---------|----------------------|-----------------------|--------------|
+
+2020-11-05 15:20:22 [DEBUG] jdbc.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+41. SELECT *
+		FROM member
+		WHERE
+		id = 4
+ {executed in 0 msec}
+2020-11-05 15:20:22 [INFO ] jdbc.resultsettable - 
+|---|--------------------|--------------------|--------|--------|-----|
+|id |regdate             |updatedate          |loginid |loginpw |name |
+|---|--------------------|--------------------|--------|--------|-----|
+|4  |2020-11-03 13:59:53 |2020-11-03 13:59:53 |ss      |ss      |이재홍  |
+|---|--------------------|--------------------|--------|--------|-----|
+
+2020-11-05 15:20:22 [DEBUG] jdbc.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+41. SELECT COUNT(*)
+		FROM article
+		WHERE 1
+
+			AND title LIKE CONCAT('%','3','%')
+ {executed in 1 msec}
+2020-11-05 15:20:22 [INFO ] jdbc.resultsettable - 
+|---------|
+|count(*) |
+|---------|
+|219      |
+|---------|
+
+2020-11-05 15:20:22 [DEBUG] jdbc.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+41. SELECT A.*,
+		M.name AS extra__writer
+		FROM article AS A
+		INNER JOIN `member`
+		AS M
+		ON A.memberId = M.id
+		WHERE 1
+
+			AND A.title LIKE CONCAT('%','3','%')
+
+		ORDER BY A.id DESC
+
+			LIMIT 60, 10
+ {executed in 5 msec}
+2020-11-05 15:20:22 [INFO ] jdbc.resultsettable - 
+|----|--------------------|--------------------|---------|----------------------|-----------------------|--------------|
+|id  |regdate             |updatedate          |memberid |title                 |body                   |extra__writer |
+|----|--------------------|--------------------|---------|----------------------|-----------------------|--------------|
+|218 |2020-11-03 14:19:48 |2020-11-03 14:19:48 |1        |제목0.5242142775321512  |내용0.9739147992561709   |홍길동           |
+|217 |2020-11-03 14:19:48 |2020-11-03 14:19:48 |2        |제목0.31015674798763987 |내용0.9625711505884036   |홍길순           |
+|216 |2020-11-03 14:19:48 |2020-11-03 14:19:48 |1        |제목0.5291973022084658  |내용0.5567325498505798   |홍길동           |
+|215 |2020-11-03 14:19:48 |2020-11-03 14:19:48 |2        |제목0.741689963957006   |내용0.9842975716891675   |홍길순           |
+|213 |2020-11-03 14:19:48 |2020-11-03 14:19:48 |1        |제목0.4848484597027753  |내용0.35718791685736545  |홍길동           |
+|212 |2020-11-03 14:19:48 |2020-11-03 14:19:48 |1        |제목0.00749892276478831 |내용0.20896964167148774  |홍길동           |
+|211 |2020-11-03 14:19:47 |2020-11-03 14:19:47 |2        |제목0.3005580355418455  |내용0.5689031487041183   |홍길순           |
+|210 |2020-11-03 14:19:47 |2020-11-03 14:19:47 |2        |제목0.2235979821752738  |내용0.5297512538076856   |홍길순           |
+|209 |2020-11-03 14:19:47 |2020-11-03 14:19:47 |2        |제목0.09582526431961476 |내용0.030044398298528417 |홍길순           |
+|208 |2020-11-03 14:19:47 |2020-11-03 14:19:47 |2        |제목0.49786758376086837 |내용0.6619926743786714   |홍길순           |
+|----|--------------------|--------------------|---------|----------------------|-----------------------|--------------|
+
+2020-11-05 15:20:23 [DEBUG] jdbc.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+41. SELECT *
+		FROM member
+		WHERE
+		id = 4
+ {executed in 0 msec}
+2020-11-05 15:20:23 [INFO ] jdbc.resultsettable - 
+|---|--------------------|--------------------|--------|--------|-----|
+|id |regdate             |updatedate          |loginid |loginpw |name |
+|---|--------------------|--------------------|--------|--------|-----|
+|4  |2020-11-03 13:59:53 |2020-11-03 13:59:53 |ss      |ss      |이재홍  |
+|---|--------------------|--------------------|--------|--------|-----|
+
+2020-11-05 15:20:23 [DEBUG] jdbc.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+41. SELECT A.*,
+		M.name AS extra__writer
+		FROM article AS A
+		INNER JOIN `member` AS M
+		ON A.memberId = M.id
+		WHERE A.id = 213
+ {executed in 0 msec}
+2020-11-05 15:20:23 [INFO ] jdbc.resultsettable - 
+|----|--------------------|--------------------|---------|---------------------|----------------------|--------------|
+|id  |regdate             |updatedate          |memberid |title                |body                  |extra__writer |
+|----|--------------------|--------------------|---------|---------------------|----------------------|--------------|
+|213 |2020-11-03 14:19:48 |2020-11-03 14:19:48 |1        |제목0.4848484597027753 |내용0.35718791685736545 |홍길동           |
+|----|--------------------|--------------------|---------|---------------------|----------------------|--------------|
+
+2020-11-05 15:20:23 [DEBUG] jdbc.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+41. SELECT RE.*,
+		M.name AS extra__writer		
+		FROM reply AS RE
+		INNER JOIN member AS M
+		ON RE.memberId = M.id
+		WHERE relTypeCode = 'article'
+		AND relId = 213
+		ORDER BY id DESC
+ {executed in 3 msec}
+2020-11-05 15:20:23 [INFO ] jdbc.resultsettable - 
+|---|--------|-----------|-----|---------|------|------------|--------------|
+|id |regdate |updatedate |body |memberid |relid |reltypecode |extra__writer |
+|---|--------|-----------|-----|---------|------|------------|--------------|
+|---|--------|-----------|-----|---------|------|------------|--------------|
+
+2020-11-05 15:20:25 [DEBUG] jdbc.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+41. SELECT *
+		FROM member
+		WHERE
+		id = 4
+ {executed in 1 msec}
+2020-11-05 15:20:25 [INFO ] jdbc.resultsettable - 
+|---|--------------------|--------------------|--------|--------|-----|
+|id |regdate             |updatedate          |loginid |loginpw |name |
+|---|--------------------|--------------------|--------|--------|-----|
+|4  |2020-11-03 13:59:53 |2020-11-03 13:59:53 |ss      |ss      |이재홍  |
+|---|--------------------|--------------------|--------|--------|-----|
+
+2020-11-05 15:20:25 [DEBUG] jdbc.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+41. INSERT INTO reply
+		 SET regDate = NOW(),
+			updateDate = NOW(),
+			 `body` = 'ㄴㄴㄴ',
+			 memberId = 4,
+			 `relId` = '213',
+			 `relTypeCode` = 'article'
+ {executed in 4 msec}
+2020-11-05 15:20:25 [DEBUG] jdbc.sqltiming -  com.zaxxer.hikari.pool.ProxyStatement.getGeneratedKeys(ProxyStatement.java:230)
+41. getGeneratedKeys on query: INSERT INTO reply
+		 SET regDate = NOW(),
+			updateDate = NOW(),
+			 `body` = 'ㄴㄴㄴ',
+			 memberId = 4,
+			 `relId` = '213',
+			 `relTypeCode` = 'article'
+ {executed in 0 msec}
+2020-11-05 15:20:25 [INFO ] jdbc.resultsettable - 
+|--------------|
+|generated_key |
+|--------------|
+|10            |
+|--------------|
+
+2020-11-05 15:20:26 [DEBUG] jdbc.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+41. SELECT *
+		FROM member
+		WHERE
+		id = 4
+ {executed in 1 msec}
+2020-11-05 15:20:26 [INFO ] jdbc.resultsettable - 
+|---|--------------------|--------------------|--------|--------|-----|
+|id |regdate             |updatedate          |loginid |loginpw |name |
+|---|--------------------|--------------------|--------|--------|-----|
+|4  |2020-11-03 13:59:53 |2020-11-03 13:59:53 |ss      |ss      |이재홍  |
+|---|--------------------|--------------------|--------|--------|-----|
+
+2020-11-05 15:20:26 [DEBUG] jdbc.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+41. SELECT A.*,
+		M.name AS extra__writer
+		FROM article AS A
+		INNER JOIN `member` AS M
+		ON A.memberId = M.id
+		WHERE A.id = 213
+ {executed in 0 msec}
+2020-11-05 15:20:26 [INFO ] jdbc.resultsettable - 
+|----|--------------------|--------------------|---------|---------------------|----------------------|--------------|
+|id  |regdate             |updatedate          |memberid |title                |body                  |extra__writer |
+|----|--------------------|--------------------|---------|---------------------|----------------------|--------------|
+|213 |2020-11-03 14:19:48 |2020-11-03 14:19:48 |1        |제목0.4848484597027753 |내용0.35718791685736545 |홍길동           |
+|----|--------------------|--------------------|---------|---------------------|----------------------|--------------|
+
+2020-11-05 15:20:26 [DEBUG] jdbc.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+41. SELECT RE.*,
+		M.name AS extra__writer		
+		FROM reply AS RE
+		INNER JOIN member AS M
+		ON RE.memberId = M.id
+		WHERE relTypeCode = 'article'
+		AND relId = 213
+		ORDER BY id DESC
+ {executed in 3 msec}
+2020-11-05 15:20:26 [INFO ] jdbc.resultsettable - 
+|---|--------------------|--------------------|-----|---------|------|------------|--------------|
+|id |regdate             |updatedate          |body |memberid |relid |reltypecode |extra__writer |
+|---|--------------------|--------------------|-----|---------|------|------------|--------------|
+|10 |2020-11-05 15:20:25 |2020-11-05 15:20:25 |ㄴㄴㄴ  |4        |213   |article     |이재홍           |
+|---|--------------------|--------------------|-----|---------|------|------------|--------------|
+
+2020-11-05 15:20:31 [DEBUG] jdbc.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+41. SELECT *
+		FROM member
+		WHERE
+		id = 4
+ {executed in 1 msec}
+2020-11-05 15:20:31 [INFO ] jdbc.resultsettable - 
+|---|--------------------|--------------------|--------|--------|-----|
+|id |regdate             |updatedate          |loginid |loginpw |name |
+|---|--------------------|--------------------|--------|--------|-----|
+|4  |2020-11-03 13:59:53 |2020-11-03 13:59:53 |ss      |ss      |이재홍  |
+|---|--------------------|--------------------|--------|--------|-----|
+
+2020-11-05 15:20:31 [DEBUG] jdbc.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+41. SELECT COUNT(*)
+		FROM article
+		WHERE 1
+ {executed in 1 msec}
+2020-11-05 15:20:31 [INFO ] jdbc.resultsettable - 
+|---------|
+|count(*) |
+|---------|
+|285      |
+|---------|
+
+2020-11-05 15:20:31 [DEBUG] jdbc.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+41. SELECT A.*,
+		M.name AS extra__writer
+		FROM article AS A
+		INNER JOIN `member`
+		AS M
+		ON A.memberId = M.id
+		WHERE 1
+
+		ORDER BY A.id DESC
+
+			LIMIT 0, 10
+ {executed in 5 msec}
+2020-11-05 15:20:31 [INFO ] jdbc.resultsettable - 
+|----|--------------------|--------------------|---------|----------------------|-----------------------|--------------|
+|id  |regdate             |updatedate          |memberid |title                 |body                   |extra__writer |
+|----|--------------------|--------------------|---------|----------------------|-----------------------|--------------|
+|298 |2020-11-03 14:19:51 |2020-11-03 14:19:51 |1        |제목0.6305766307102298  |내용0.028522001605967063 |홍길동           |
+|297 |2020-11-03 14:19:51 |2020-11-03 14:19:51 |1        |제목0.9732332331810456  |내용0.19223067927382018  |홍길동           |
+|296 |2020-11-03 14:19:51 |2020-11-03 14:19:51 |2        |제목0.9714105045156651  |내용0.16110866438700694  |홍길순           |
+|295 |2020-11-03 14:19:51 |2020-11-03 14:19:51 |2        |제목0.5088743972674705  |내용0.6183875581420842   |홍길순           |
+|294 |2020-11-03 14:19:51 |2020-11-03 14:19:51 |2        |제목0.8421682546307968  |내용0.23369991056034334  |홍길순           |
+|293 |2020-11-03 14:19:51 |2020-11-03 14:19:51 |2        |제목0.6986884285683636  |내용0.1510224772161082   |홍길순           |
+|292 |2020-11-03 14:19:51 |2020-11-03 14:19:51 |1        |제목0.11307065292547518 |내용0.29067036536584645  |홍길동           |
+|291 |2020-11-03 14:19:50 |2020-11-03 14:19:50 |2        |제목0.4572950149488589  |내용0.2260225314889313   |홍길순           |
+|290 |2020-11-03 14:19:50 |2020-11-03 14:19:50 |2        |제목0.9803900793012139  |내용0.3255975463665999   |홍길순           |
+|289 |2020-11-03 14:19:50 |2020-11-03 14:19:50 |2        |제목0.2953301084184368  |내용0.8822882509625407   |홍길순           |
+|----|--------------------|--------------------|---------|----------------------|-----------------------|--------------|
+
+2020-11-05 15:20:54 [INFO ] o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-11-05 15:20:54 [INFO ] com.zaxxer.hikari.HikariDataSource - HikariPool-5 - Shutdown initiated...
+2020-11-05 15:20:54 [INFO ] com.zaxxer.hikari.HikariDataSource - HikariPool-5 - Shutdown completed.
+2020-11-05 15:20:54 [INFO ] c.sbs.example.lolHi.LolHiApplication - Starting LolHiApplication on wwifi-PC with PID 3480 (C:\work\sts-4.7.0.RELEASE-workspace\lolHi\target\classes started by wwifi in C:\work\sts-4.7.0.RELEASE-workspace\lolHi)
+2020-11-05 15:20:54 [INFO ] c.sbs.example.lolHi.LolHiApplication - The following profiles are active: local
+2020-11-05 15:20:54 [INFO ] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-11-05 15:20:54 [INFO ] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-11-05 15:20:54 [INFO ] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2020-11-05 15:20:54 [INFO ] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.38]
+2020-11-05 15:20:54 [INFO ] org.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2020-11-05 15:20:54 [INFO ] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-11-05 15:20:54 [INFO ] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 245 ms
+2020-11-05 15:20:54 [INFO ] o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-11-05 15:20:54 [INFO ] o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-11-05 15:20:54 [INFO ] o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-11-05 15:20:54 [INFO ] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-11-05 15:20:54 [INFO ] c.sbs.example.lolHi.LolHiApplication - Started LolHiApplication in 0.413 seconds (JVM running for 1939.592)
+2020-11-05 15:20:54 [INFO ] o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2020-11-05 15:21:40 [INFO ] o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-11-05 15:21:40 [INFO ] c.sbs.example.lolHi.LolHiApplication - Starting LolHiApplication on wwifi-PC with PID 3480 (C:\work\sts-4.7.0.RELEASE-workspace\lolHi\target\classes started by wwifi in C:\work\sts-4.7.0.RELEASE-workspace\lolHi)
+2020-11-05 15:21:40 [INFO ] c.sbs.example.lolHi.LolHiApplication - The following profiles are active: local
+2020-11-05 15:21:41 [INFO ] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-11-05 15:21:41 [INFO ] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-11-05 15:21:41 [INFO ] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2020-11-05 15:21:41 [INFO ] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.38]
+2020-11-05 15:21:41 [INFO ] org.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2020-11-05 15:21:41 [INFO ] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-11-05 15:21:41 [INFO ] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 252 ms
+2020-11-05 15:21:41 [INFO ] o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-11-05 15:21:41 [INFO ] o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-11-05 15:21:41 [INFO ] o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-11-05 15:21:41 [INFO ] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-11-05 15:21:41 [INFO ] c.sbs.example.lolHi.LolHiApplication - Started LolHiApplication in 0.426 seconds (JVM running for 1985.944)
+2020-11-05 15:21:41 [INFO ] o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2020-11-05 15:21:59 [INFO ] o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-11-05 15:21:59 [INFO ] c.sbs.example.lolHi.LolHiApplication - Starting LolHiApplication on wwifi-PC with PID 3480 (C:\work\sts-4.7.0.RELEASE-workspace\lolHi\target\classes started by wwifi in C:\work\sts-4.7.0.RELEASE-workspace\lolHi)
+2020-11-05 15:21:59 [INFO ] c.sbs.example.lolHi.LolHiApplication - The following profiles are active: local
+2020-11-05 15:22:00 [INFO ] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-11-05 15:22:00 [INFO ] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-11-05 15:22:00 [INFO ] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2020-11-05 15:22:00 [INFO ] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.38]
+2020-11-05 15:22:00 [INFO ] org.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2020-11-05 15:22:00 [INFO ] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-11-05 15:22:00 [INFO ] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 270 ms
+2020-11-05 15:22:00 [INFO ] o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-11-05 15:22:00 [INFO ] o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-11-05 15:22:00 [INFO ] o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-11-05 15:22:00 [INFO ] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-11-05 15:22:00 [INFO ] c.sbs.example.lolHi.LolHiApplication - Started LolHiApplication in 0.462 seconds (JVM running for 2005.142)
+2020-11-05 15:22:00 [INFO ] o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2020-11-05 15:22:42 [INFO ] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-11-05 15:22:42 [INFO ] o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-11-05 15:22:42 [INFO ] o.s.web.servlet.DispatcherServlet - Completed initialization in 4 ms

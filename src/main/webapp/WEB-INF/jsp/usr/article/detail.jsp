@@ -22,8 +22,8 @@
 
 <h2>댓글 작성</h2>
 <form action="/usr/reply/doWrite">
-
-	<input type="hidden" name="relTypeCode" value="article" /> <input
+	<input type="hidden" name="redirectUrl" value="${currentUri}" /> <input
+		type="hidden" name="relTypeCode" value="article" /> <input
 		type="hidden" name="relId" value="${param.id }" />
 	<div>
 		<textarea name="body" rows="10" placeholder="내용"></textarea>
@@ -44,7 +44,8 @@
 	<div>내용 : ${reply.body}</div>
 	<div>작성자 : ${reply.extra.writer}</div>
 	<div>
-		<a href="/usr/reply/doDelete?id=${reply.id}">삭제</a>
+		<a
+			href="/usr/reply/doDelete?id=${reply.id}&redirctUrl=${encodedCurrntUri}">삭제</a>
 	</div>
 	<hr />
 	<hr />
