@@ -63,9 +63,9 @@ public class ArticleController {
 	}
 
 	@RequestMapping("/usr/article/detail")
-	public String showDetail(Model model, int id, String listUrl) {
-
-		Article article = articleService.getArticleById(id);
+	public String showDetail(HttpServletRequest req, Model model, int id, String listUrl) {
+		Member loginedMember = (Member) req.getAttribute("loginedMember");
+		Article article = articleService.getArticleById(loginedMember,id);
 		model.addAttribute("article", article);
 		
 		List<Reply> replies = replyService.getForPrintReplies("article",id);		
@@ -81,13 +81,13 @@ public class ArticleController {
 	}
 
 	@RequestMapping("/usr/article/doDelete")
-	public String showdoDelete(int id, Model model, HttpServletRequest req) {
+	public String showdoDelete(HttpServletRequest req,int id, Model model) {
 
-		int loginedMemberId = (int) req.getAttribute("loginedMemberId");
+		Member loginedMember = (Member) req.getAttribute("loginedMember");
 
-		Article article = articleService.getArticleById(id);
+		Article article = articleService.getArticleById(loginedMember,id);
 
-		if (article.getMemberId() != loginedMemberId) {
+		if ((boolean) article.getExtra().get("actorCanModify")==false) {
 			model.addAttribute("msg", "권한이 없습니다.");
 			model.addAttribute("historyBack", true);
 			return "common/redirect";
@@ -103,11 +103,11 @@ public class ArticleController {
 	@RequestMapping("/usr/article/modify")
 	public String showModify(Model model, int id,  HttpServletRequest req) {
 
-		int loginedMemberId = (int) req.getAttribute("loginedMemberId");
+		Member loginedMember = (Member) req.getAttribute("loginedMember");
+		
+		Article article = articleService.getArticleById(loginedMember,id);
 
-		Article article = articleService.getArticleById(id);
-
-		if (article.getMemberId() != loginedMemberId) {
+		if ((boolean) article.getExtra().get("actorCanModify") == false) {
 			model.addAttribute("msg", "권한이 없습니다.");
 			model.addAttribute("historyBack", true);
 			return "common/redirect";
@@ -121,11 +121,11 @@ public class ArticleController {
 	@RequestMapping("/usr/article/doModify")
 	public String doModify(int id, String title, String body, HttpServletRequest req, Model model) {
 
-		int loginedMemberId = (int) req.getAttribute("loginedMemberId");
+		Member loginedMember = (Member) req.getAttribute("loginedMember");
 
-		Article article = articleService.getArticleById(id);
+		Article article = articleService.getArticleById(loginedMember,id);
 
-		if (article.getMemberId() != loginedMemberId) {
+		if ((boolean) article.getExtra().get("actorCanModify") == false) {
 			model.addAttribute("msg", "권한이 없습니다.");
 			model.addAttribute("historyBack", true);
 			return "common/redirect";

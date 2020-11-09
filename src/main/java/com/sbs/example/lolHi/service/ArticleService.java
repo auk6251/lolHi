@@ -52,9 +52,21 @@ public class ArticleService {
 		return articles;
 	}
 
-	public Article getArticleById(int id) {
+	public Article getArticleById(Member actorMember, int id) {
 
-		return articledao.getArticleById(id);
+		Article article = articledao.getArticleById(id);
+		
+		if(article.getExtra() == null) {
+			article.setExtra(new HashMap<>());
+		}
+		
+		boolean actorCanDelete = actorMember.getId() == article.getMemberId();
+		boolean actorCanModify = actorCanDelete;
+		
+		article.getExtra().put("actorCanDelete", actorCanModify);
+		article.getExtra().put("actorCanDelete", actorCanModify);
+		
+		return article;
 	}
 
 	public void deleteArticleById(int id) {

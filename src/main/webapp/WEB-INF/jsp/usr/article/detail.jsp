@@ -14,10 +14,14 @@
 <div>작성자 : ${article.extra.writer}</div>
 <hr />
 <div>
-	<a href="${listUrl}">리스트</a> <a
-		onclick="if ( confirm('삭제하시겠습니까?') == false ) return false;"
-		href="doDelete?id=${article.id}">삭제</a> <a
-		href="modify?id=${article.id}">수정</a>
+	<a href="${listUrl}">리스트</a>
+	<c:if test="${article.extra.actorCanDelete }">
+		<a onclick="if ( confirm('삭제하시겠습니까?') == false ) return false;"
+			href="doDelete?id=${article.id}">삭제</a>
+	</c:if>
+	<c:if test="${article.extra.actorCanModify }">
+		<a href="modify?id=${article.id}">수정</a>
+	</c:if>
 </div>
 
 <h2>댓글 작성</h2>
@@ -46,7 +50,7 @@
 	<div>
 		<a
 			href="/usr/reply/doDelete?id=${reply.id}&redirctUrl=${encodedCurrntUri}">삭제</a>
-			<a
+		<a
 			href="/usr/reply/modify?id=${reply.id}&redirctUrl=${encodedCurrntUri}">수정</a>
 	</div>
 	<hr />
