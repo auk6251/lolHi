@@ -76,4 +76,47 @@ public class ReplyController {
 		return "common/redirect";
 	}
 
+	@RequestMapping("/usr/reply/modify")
+	public String modify(Model model, int id,  HttpServletRequest req) {
+
+		int loginedMemberId = (int) req.getAttribute("loginedMemberId");
+
+		Reply reply = replyService.getReply(id);
+
+		if (reply.getMemberId() != loginedMemberId) {
+			model.addAttribute("msg", "권한이 없습니다.");
+			model.addAttribute("historyBack", true);
+			return "common/redirect";
+		}
+
+		model.addAttribute("reply", reply);
+
+		return "usr/reply/modify";
+		
+	}
+			
+	@RequestMapping("/usr/reply/doModify")
+	public String doModify(HttpServletRequest req, Model model,String body, int id, String redirectUrl) {
+		int loginedMemberId = (int) req.getAttribute("loginedMemberId");
+
+		Reply reply = replyService.getReply(id);
+		
+		if(redirectUrl == null || redirectUrl.length() == 0 ) {
+			redirectUrl = String.format("/usr/%s/detail?id=%d",reply.getRelTypeCode(), reply.getRelId());
+		}
+
+
+		if (loginedMemberId != reply.getMemberId()) {
+			model.addAttribute("msg", "권한이 없습니다.");
+			model.addAttribute("historyBack", true);
+			return "common/redirect";
+		}
+		replyService.ModifyReply(id,body);
+
+		model.addAttribute("msg", String.format("%d번 댓글이 삭제되었습니다.", id));
+		model.addAttribute("replaceUri",redirectUrl);
+
+		return "common/redirect";
+	}
+
 }
