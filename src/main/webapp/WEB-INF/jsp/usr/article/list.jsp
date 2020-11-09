@@ -12,7 +12,7 @@
 
 <div>
 	<form>
-	
+
 		<input type="text" name="searchKeyword" placeholder="검색어를 입력해주세요"
 			value="${param.searchKeyword}" /> <input type="submit" value="검색" />
 	</form>
@@ -22,7 +22,8 @@
 <br />
 
 <c:forEach items="${articles}" var="article">
-	<c:set var="detailUri" value="/usr/article/detail?id=${article.id}&listUrl=${edcodedCurrentUri}"/>
+	<c:set var="detailUri"
+		value="/usr/article/detail?id=${article.id}&listUrl=${edcodedCurrentUri}" />
 	<div>
 		번호 : <a href="${detailUri}">${article.id}</a>
 	</div>
@@ -31,9 +32,13 @@
 	</div>
 	<div>작성자 :${article.extra.writer}</div>
 	<div>
-		작업 : <a onclick="if ( confirm('삭제하시겠습니까?') == false ) return false;"
-			href="doDelete?id=${article.id}">삭제</a> <a
-			href="modify?id=${article.id}">수정</a>
+		작업 :
+		<c:if test="${article.extra.actorCanDelete}">
+			<a onclick="if ( confirm('삭제하시겠습니까?') == false ) return false;"
+				href="doDelete?id=${article.id}">삭제</a>
+		</c:if>
+		<c:if test="${article.extra.actorCanModify}">
+		<a href="modify?id=${article.id}">수정</a></c:if>
 	</div>
 	<hr />
 </c:forEach>

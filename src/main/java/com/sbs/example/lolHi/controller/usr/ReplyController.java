@@ -113,7 +113,7 @@ public class ReplyController {
 		}
 		replyService.ModifyReply(id,body);
 
-		model.addAttribute("msg", String.format("%d번 댓글이 삭제되었습니다.", id));
+		model.addAttribute("msg", String.format("%d번 댓글이 수정되었습니다.", id));
 		model.addAttribute("replaceUri",redirectUrl);
 
 		return "common/redirect";
