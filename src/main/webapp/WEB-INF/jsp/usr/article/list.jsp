@@ -38,7 +38,8 @@
 				href="doDelete?id=${article.id}">삭제</a>
 		</c:if>
 		<c:if test="${article.extra.actorCanModify}">
-		<a href="modify?id=${article.id}">수정</a></c:if>
+			<a href="modify?id=${article.id}">수정</a>
+		</c:if>
 	</div>
 	<hr />
 </c:forEach>

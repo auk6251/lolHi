@@ -48,10 +48,14 @@
 	<div>내용 : ${reply.body}</div>
 	<div>작성자 : ${reply.extra.writer}</div>
 	<div>
-		<a
-			href="/usr/reply/doDelete?id=${reply.id}&redirctUrl=${encodedCurrntUri}">삭제</a>
-		<a
-			href="/usr/reply/modify?id=${reply.id}&redirctUrl=${encodedCurrntUri}">수정</a>
+		<c:if test="${reply.extra.actorCanDelete }">
+			<a
+				href="/usr/reply/doDelete?id=${reply.id}&redirctUrl=${encodedCurrntUri}">삭제</a>
+		</c:if>
+		<c:if test="${reply.extra.actorCanModify }">
+			<a
+				href="/usr/reply/modify?id=${reply.id}&redirctUrl=${encodedCurrntUri}">수정</a>
+		</c:if>
 	</div>
 	<hr />
 	<hr />

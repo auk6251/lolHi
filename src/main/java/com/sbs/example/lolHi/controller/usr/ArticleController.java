@@ -68,7 +68,7 @@ public class ArticleController {
 		Article article = articleService.getArticleById(loginedMember,id);
 		model.addAttribute("article", article);
 		
-		List<Reply> replies = replyService.getForPrintReplies("article",id);		
+		List<Reply> replies = replyService.getForPrintReplies("article",id,loginedMember);		
 		model.addAttribute("replies", replies);
 		
 		if(listUrl == null) {
