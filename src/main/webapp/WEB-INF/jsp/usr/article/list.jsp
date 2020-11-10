@@ -40,6 +40,7 @@
 		<c:if test="${article.extra.actorCanModify}">
 			<a href="modify?id=${article.id}">수정</a>
 		</c:if>
+		${article.boardId}
 	</div>
 	<hr />
 </c:forEach>
