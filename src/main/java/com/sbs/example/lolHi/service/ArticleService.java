@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import com.sbs.example.lolHi.dao.ArticleDao;
 import com.sbs.example.lolHi.dto.Article;
+import com.sbs.example.lolHi.dto.Board;
 import com.sbs.example.lolHi.dto.Member;
 import com.sbs.example.lolHi.util.Util;
 
@@ -100,4 +101,10 @@ public class ArticleService {
 		return articledao.getTotalCount(param);
 	}
 
+	public Board getBoardByCode(String boardCode) {
+
+		return articledao.getBoardByCode(boardCode);
+	}
+
+	
 }

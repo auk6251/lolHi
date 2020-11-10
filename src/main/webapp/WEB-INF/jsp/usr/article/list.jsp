@@ -3,7 +3,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 
-<c:set var="title" value="게시물 리스트" />
+<c:set var="title" value="${board.name} 게시물 리스트" />
 <%@ include file="../part/head.jspf"%>
 
 
