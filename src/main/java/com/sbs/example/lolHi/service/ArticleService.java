@@ -48,6 +48,7 @@ public class ArticleService {
 			if (actorMember != null) {
 				actorCanDelete = actorMember.getId() == article.getMemberId();
 			}
+
 			boolean actorCanModify = actorCanDelete;
 
 			article.getExtra().put("actorCanDelete", actorCanDelete);
@@ -60,20 +61,20 @@ public class ArticleService {
 	public Article getArticleById(Member actorMember, int id) {
 
 		Article article = articledao.getArticleById(id);
-		
-		if(article.getExtra() == null) {
+
+		if (article.getExtra() == null) {
 			article.setExtra(new HashMap<>());
 		}
-		
-		boolean actorCanDelete =false;
-		 if(actorMember != null) {
-			 actorCanDelete = actorMember.getId() == article.getMemberId();
-		 }
+
+		boolean actorCanDelete = false;
+		if (actorMember != null) {
+			actorCanDelete = actorMember.getId() == article.getMemberId();
+		}
 		boolean actorCanModify = actorCanDelete;
-		
-		article.getExtra().put("actorCanDelete", actorCanModify);
-		article.getExtra().put("actorCanDelete", actorCanModify);
-		
+
+		article.getExtra().put("actorCanDelete", actorCanDelete);
+		article.getExtra().put("actorCanModify", actorCanModify);
+
 		return article;
 	}
 
@@ -106,5 +107,4 @@ public class ArticleService {
 		return articledao.getBoardByCode(boardCode);
 	}
 
-	
 }
