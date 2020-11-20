@@ -59,7 +59,7 @@ public class MemberService {
 		
 		Member member = memberDao.getMemberNameAndEmail(name,email);
 		
-		return false;
+		return member == null;
 	}
 
 }
