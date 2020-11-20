@@ -30,9 +30,10 @@ public class WebMvcConfig implements WebMvcConfigurer {
 		registry.addInterceptor(needToLoginInterceptor).addPathPatterns("/**").excludePathPatterns("/")
 				.excludePathPatterns("/gen/**").excludePathPatterns("/resource/**")
 				.excludePathPatterns("/usr/home/main").excludePathPatterns("/usr/member/login")
+				.excludePathPatterns("/usr/member/findLogindId").excludePathPatterns("/usr/member/doFindLogindId")
 				.excludePathPatterns("/usr/member/doLogin").excludePathPatterns("/usr/member/join")
 				.excludePathPatterns("/usr/member/doJoin").excludePathPatterns("/usr/article-*/list")
-				.excludePathPatterns("/usr/article/detail").excludePathPatterns("/error");
+				.excludePathPatterns("/usr/article-*/detail").excludePathPatterns("/error");
 	}
 
 }
