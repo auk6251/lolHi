@@ -4,6 +4,7 @@
 
 <c:set var="title" value="회원가입" />
 <%@ include file="../part/head.jspf"%>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/js-sha256/0.9.0/sha256.min.js"></script>
 
 	<script>
 		var joinFormSubmitDone = false;
@@ -51,6 +52,10 @@
 				form.email.focus();
 				return;
 			}
+
+			form.loginPw.value = sha256(form.loginPw.value);
+			form.loginPwConfirm.value = '';
+			 
 			form.submit();
 			joinFormSubmitDone = true;
 		}
