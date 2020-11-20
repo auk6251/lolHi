@@ -18,6 +18,8 @@ public interface MemberDao {
 
 	void modify(Map<String, Object> param);
 
+	Member getMemberNameAndEmail(@Param("name") String name,@Param("email") String email);
+
 
 
 

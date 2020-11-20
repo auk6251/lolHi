@@ -32,6 +32,8 @@ public class MemberController {
 	@RequestMapping("/usr/member/doJoin")
 	public String Join(@RequestParam Map<String, Object> param, Model model) {
 		String loginId = Util.getAsStr(param.get("loginId"), "");
+		String name = Util.getAsStr(param.get("name"), "");
+		String email = Util.getAsStr(param.get("email"), "");
 
 		if (loginId.length() == 0) {
 			model.addAttribute("msg", String.format("로그인 아이디를 입력해주세요"));
@@ -39,7 +41,15 @@ public class MemberController {
 			return "common/redirect";
 
 		}
+		boolean isJoinAvailableNameAndEmail= memberService.isJoinAvailableNameAndEmail(name,email);
 
+		if (isJoinAvailableNameAndEmail == false) {
+			model.addAttribute("msg", String.format("이미 가입된 회원 정보입니다"));
+			model.addAttribute("replaceUri", "/usr/member/findLgoidId");
+			return "common/redirect";
+
+		}
+		
 		boolean isJoinAvailableLoginId = memberService.isJoinAvailableLoginId(loginId);
 
 		if (isJoinAvailableLoginId == false) {

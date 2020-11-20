@@ -49,4 +49,17 @@ public class MemberService {
 		
 	}
 
+	public boolean isJoinAvailableNameAndEmail(String name, String email) {
+		if(name == null || name.length() == 0) {
+			return false;
+		}
+		if(email == null || email.length() == 0) {
+			return false;
+		}
+		
+		Member member = memberDao.getMemberNameAndEmail(name,email);
+		
+		return false;
+	}
+
 }
