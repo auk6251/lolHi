@@ -77,8 +77,11 @@ public class ArticleController {
 		return "usr/article/list";
 	}
 
-	@RequestMapping("/usr/article/detail")
-	public String showDetail(HttpServletRequest req, Model model, int id, String listUrl) {
+	@RequestMapping("/usr/article-{boardCode}/detail")
+	public String showDetail(HttpServletRequest req, Model model, int id, String listUrl,
+			@PathVariable("boardCode") String boardCode) {
+		Board board = articleService.getBoardByCode(boardCode);
+		
 		Member loginedMember = (Member) req.getAttribute("loginedMember");
 		Article article = articleService.getArticleById(loginedMember, id);
 		model.addAttribute("article", article);
@@ -91,6 +94,7 @@ public class ArticleController {
 		}
 
 		model.addAttribute("listUrl", listUrl);
+		model.addAttribute("board", board);
 
 		return "usr/article/detail";
 	}
@@ -155,19 +159,20 @@ public class ArticleController {
 	}
 
 	@RequestMapping("/usr/article-{boardCode}/write")
-	public String showWrite(HttpSession session, Model model,@PathVariable("boardCode") String boardCode) {
+	public String showWrite(HttpSession session, Model model, @PathVariable("boardCode") String boardCode) {
 		Board board = articleService.getBoardByCode(boardCode);
-		
-		model.addAttribute("board",board);
-		
+
+		model.addAttribute("board", board);
+
 		return "usr/article/write";
 	}
 
 	@RequestMapping("/usr/article-{boardCode}/doWrite")
-	public String doWrite(@RequestParam Map<String, Object> param, Model model, HttpServletRequest req,@PathVariable("boardCode") String boardCode) {
+	public String doWrite(@RequestParam Map<String, Object> param, Model model, HttpServletRequest req,
+			@PathVariable("boardCode") String boardCode) {
 		Board board = articleService.getBoardByCode(boardCode);
 		param.put("boardId", board.getId());
-		
+
 		int loginedMemberId = (int) req.getAttribute("loginedMemberId");
 
 		param.put("memberId", loginedMemberId);

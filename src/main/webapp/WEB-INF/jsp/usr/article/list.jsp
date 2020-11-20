@@ -23,7 +23,7 @@
 
 <c:forEach items="${articles}" var="article">
 	<c:set var="detailUri"
-		value="/usr/article/detail?id=${article.id}&listUrl=${edcodedCurrentUri}" />
+		value="/usr/article-${board.code}/detail?id=${article.id}&listUrl=${edcodedCurrentUri}" />
 	<div>
 		번호 : <a href="${detailUri}">${article.id}</a>
 	</div>
@@ -40,12 +40,12 @@
 		<c:if test="${article.extra.actorCanModify}">
 			<a href="modify?id=${article.id}">수정</a>
 		</c:if>
-		${article.boardId}
+		
 	</div>
 	<hr />
 </c:forEach>
 <div>
-	<a href="write">글쓰기</a>
+	<a href="/usr/article-${boardCode}/write">글쓰기</a>
 </div>
 
 <style>
