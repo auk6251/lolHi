@@ -9125,3 +9125,189 @@ Unconditional classes:
 2020-11-20 14:48:54 [INFO ] o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
 2020-11-20 14:48:54 [INFO ] com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Shutdown initiated...
 2020-11-20 14:48:54 [INFO ] com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Shutdown completed.
+2020-11-20 14:48:54 [INFO ] c.sbs.example.lolHi.LolHiApplication - Starting LolHiApplication on wwifi-PC with PID 4228 (C:\work\sts-4.7.0.RELEASE-workspace\lolHi\target\classes started by wwifi in C:\work\sts-4.7.0.RELEASE-workspace\lolHi)
+2020-11-20 14:48:54 [INFO ] c.sbs.example.lolHi.LolHiApplication - The following profiles are active: local
+2020-11-20 14:48:55 [INFO ] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-11-20 14:48:55 [INFO ] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-11-20 14:48:55 [INFO ] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2020-11-20 14:48:55 [INFO ] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.38]
+2020-11-20 14:48:55 [INFO ] org.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2020-11-20 14:48:55 [INFO ] o.a.c.c.C.[Tomcat-4].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-11-20 14:48:55 [INFO ] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 267 ms
+2020-11-20 14:48:55 [INFO ] o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-11-20 14:48:55 [INFO ] o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-11-20 14:48:55 [INFO ] o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-11-20 14:48:55 [INFO ] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-11-20 14:48:55 [INFO ] c.sbs.example.lolHi.LolHiApplication - Started LolHiApplication in 0.464 seconds (JVM running for 386.222)
+2020-11-20 14:48:55 [INFO ] o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2020-11-20 14:49:09 [INFO ] o.a.c.c.C.[Tomcat-4].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-11-20 14:49:09 [INFO ] o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-11-20 14:49:09 [INFO ] o.s.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+2020-11-20 14:49:09 [INFO ] com.zaxxer.hikari.HikariDataSource - HikariPool-3 - Starting...
+2020-11-20 14:49:09 [INFO ] com.zaxxer.hikari.HikariDataSource - HikariPool-3 - Start completed.
+2020-11-20 14:49:09 [DEBUG] jdbc.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+21. SELECT *
+		FROM board
+		WHERE
+		`code`='free'
+ {executed in 0 msec}
+2020-11-20 14:49:09 [INFO ] jdbc.resultsettable - 
+|---|--------------------|--------------------|-----|-----|
+|id |regdate             |updatedate          |name |code |
+|---|--------------------|--------------------|-----|-----|
+|2  |2020-11-10 14:27:01 |2020-11-10 14:27:01 |자유   |free |
+|---|--------------------|--------------------|-----|-----|
+
+2020-11-20 14:49:09 [DEBUG] jdbc.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+21. SELECT COUNT(*)
+		FROM article
+		WHERE 1
+
+			AND boardId = 2
+ {executed in 1 msec}
+2020-11-20 14:49:09 [INFO ] jdbc.resultsettable - 
+|---------|
+|count(*) |
+|---------|
+|284      |
+|---------|
+
+2020-11-20 14:49:09 [DEBUG] jdbc.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+21. SELECT A.*,
+		M.name AS extra__writer
+		FROM article AS A
+		INNER JOIN `member`
+		AS M
+		ON A.memberId = M.id
+		WHERE 1
+
+			AND A.boardId = 2
+
+		ORDER BY A.id DESC
+
+			LIMIT 0, 10
+ {executed in 0 msec}
+2020-11-20 14:49:09 [INFO ] jdbc.resultsettable - 
+|----|--------------------|--------------------|--------|---------|----------------------|-----------------------|--------------|
+|id  |regdate             |updatedate          |boardid |memberid |title                 |body                   |extra__writer |
+|----|--------------------|--------------------|--------|---------|----------------------|-----------------------|--------------|
+|299 |2020-11-09 14:49:37 |2020-11-09 14:49:37 |2       |3        |as                    |as                     | 이재홍23        |
+|298 |2020-11-03 14:19:51 |2020-11-03 14:19:51 |2       |1        |제목0.6305766307102298  |내용0.028522001605967063 |홍길동           |
+|297 |2020-11-03 14:19:51 |2020-11-03 14:19:51 |2       |1        |제목0.9732332331810456  |내용0.19223067927382018  |홍길동           |
+|296 |2020-11-03 14:19:51 |2020-11-03 14:19:51 |2       |2        |제목0.9714105045156651  |내용0.16110866438700694  |홍길순           |
+|295 |2020-11-03 14:19:51 |2020-11-03 14:19:51 |2       |2        |제목0.5088743972674705  |내용0.6183875581420842   |홍길순           |
+|294 |2020-11-03 14:19:51 |2020-11-03 14:19:51 |2       |2        |제목0.8421682546307968  |내용0.23369991056034334  |홍길순           |
+|293 |2020-11-03 14:19:51 |2020-11-03 14:19:51 |2       |2        |제목0.6986884285683636  |내용0.1510224772161082   |홍길순           |
+|292 |2020-11-03 14:19:51 |2020-11-03 14:19:51 |2       |1        |제목0.11307065292547518 |내용0.29067036536584645  |홍길동           |
+|291 |2020-11-03 14:19:50 |2020-11-03 14:19:50 |2       |2        |제목0.4572950149488589  |내용0.2260225314889313   |홍길순           |
+|290 |2020-11-03 14:19:50 |2020-11-03 14:19:50 |2       |2        |제목0.9803900793012139  |내용0.3255975463665999   |홍길순           |
+|----|--------------------|--------------------|--------|---------|----------------------|-----------------------|--------------|
+
+2020-11-20 14:49:17 [DEBUG] jdbc.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+21. SELECT *
+		FROM
+		member
+		WHERE `name` = 'aaa'
+		AND email = 'auk6251@naver.com'
+		LIMIT 1
+ {executed in 1 msec}
+2020-11-20 14:49:17 [INFO ] jdbc.resultsettable - 
+|---|--------|-----------|--------|--------|-----|------|
+|id |regdate |updatedate |loginid |loginpw |name |email |
+|---|--------|-----------|--------|--------|-----|------|
+|---|--------|-----------|--------|--------|-----|------|
+
+2020-11-20 14:49:17 [DEBUG] jdbc.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+21. SELECT *
+		FROM member
+		WHERE loginId = 'aaa'
+ {executed in 1 msec}
+2020-11-20 14:49:17 [INFO ] jdbc.resultsettable - 
+|---|--------|-----------|--------|--------|-----|------|
+|id |regdate |updatedate |loginid |loginpw |name |email |
+|---|--------|-----------|--------|--------|-----|------|
+|---|--------|-----------|--------|--------|-----|------|
+
+2020-11-20 14:49:17 [DEBUG] jdbc.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+21. INSERT INTO member
+		 SET regDate = NOW(),
+			updateDate = NOW(),
+			 loginId = 'aaa',
+			 loginPw = 'aaa',
+			 `name` = 'aaa',
+			 email = 'auk6251@naver.com'
+ {executed in 5 msec}
+2020-11-20 14:49:17 [DEBUG] jdbc.sqltiming -  com.zaxxer.hikari.pool.ProxyStatement.getGeneratedKeys(ProxyStatement.java:230)
+21. getGeneratedKeys on query: INSERT INTO member
+		 SET regDate = NOW(),
+			updateDate = NOW(),
+			 loginId = 'aaa',
+			 loginPw = 'aaa',
+			 `name` = 'aaa',
+			 email = 'auk6251@naver.com'
+ {executed in 0 msec}
+2020-11-20 14:49:17 [INFO ] jdbc.resultsettable - 
+|--------------|
+|generated_key |
+|--------------|
+|7             |
+|--------------|
+
+2020-11-20 14:49:25 [DEBUG] jdbc.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+21. SELECT *
+		FROM board
+		WHERE
+		`code`='free'
+ {executed in 1 msec}
+2020-11-20 14:49:25 [INFO ] jdbc.resultsettable - 
+|---|--------------------|--------------------|-----|-----|
+|id |regdate             |updatedate          |name |code |
+|---|--------------------|--------------------|-----|-----|
+|2  |2020-11-10 14:27:01 |2020-11-10 14:27:01 |자유   |free |
+|---|--------------------|--------------------|-----|-----|
+
+2020-11-20 14:49:25 [DEBUG] jdbc.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+21. SELECT COUNT(*)
+		FROM article
+		WHERE 1
+
+			AND boardId = 2
+ {executed in 2 msec}
+2020-11-20 14:49:25 [INFO ] jdbc.resultsettable - 
+|---------|
+|count(*) |
+|---------|
+|284      |
+|---------|
+
+2020-11-20 14:49:25 [DEBUG] jdbc.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+21. SELECT A.*,
+		M.name AS extra__writer
+		FROM article AS A
+		INNER JOIN `member`
+		AS M
+		ON A.memberId = M.id
+		WHERE 1
+
+			AND A.boardId = 2
+
+		ORDER BY A.id DESC
+
+			LIMIT 0, 10
+ {executed in 1 msec}
+2020-11-20 14:49:25 [INFO ] jdbc.resultsettable - 
+|----|--------------------|--------------------|--------|---------|----------------------|-----------------------|--------------|
+|id  |regdate             |updatedate          |boardid |memberid |title                 |body                   |extra__writer |
+|----|--------------------|--------------------|--------|---------|----------------------|-----------------------|--------------|
+|299 |2020-11-09 14:49:37 |2020-11-09 14:49:37 |2       |3        |as                    |as                     | 이재홍23        |
+|298 |2020-11-03 14:19:51 |2020-11-03 14:19:51 |2       |1        |제목0.6305766307102298  |내용0.028522001605967063 |홍길동           |
+|297 |2020-11-03 14:19:51 |2020-11-03 14:19:51 |2       |1        |제목0.9732332331810456  |내용0.19223067927382018  |홍길동           |
+|296 |2020-11-03 14:19:51 |2020-11-03 14:19:51 |2       |2        |제목0.9714105045156651  |내용0.16110866438700694  |홍길순           |
+|295 |2020-11-03 14:19:51 |2020-11-03 14:19:51 |2       |2        |제목0.5088743972674705  |내용0.6183875581420842   |홍길순           |
+|294 |2020-11-03 14:19:51 |2020-11-03 14:19:51 |2       |2        |제목0.8421682546307968  |내용0.23369991056034334  |홍길순           |
+|293 |2020-11-03 14:19:51 |2020-11-03 14:19:51 |2       |2        |제목0.6986884285683636  |내용0.1510224772161082   |홍길순           |
+|292 |2020-11-03 14:19:51 |2020-11-03 14:19:51 |2       |1        |제목0.11307065292547518 |내용0.29067036536584645  |홍길동           |
+|291 |2020-11-03 14:19:50 |2020-11-03 14:19:50 |2       |2        |제목0.4572950149488589  |내용0.2260225314889313   |홍길순           |
+|290 |2020-11-03 14:19:50 |2020-11-03 14:19:50 |2       |2        |제목0.9803900793012139  |내용0.3255975463665999   |홍길순           |
+|----|--------------------|--------------------|--------|---------|----------------------|-----------------------|--------------|
+
