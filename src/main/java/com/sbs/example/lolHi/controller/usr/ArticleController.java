@@ -87,7 +87,7 @@ public class ArticleController {
 		model.addAttribute("replies", replies);
 
 		if (listUrl == null) {
-			listUrl = "/usr/article/list";
+			listUrl = "/usr/article-free/list";
 		}
 
 		model.addAttribute("listUrl", listUrl);
@@ -110,7 +110,7 @@ public class ArticleController {
 
 		articleService.deleteArticleById(id);
 		model.addAttribute("msg", String.format("%d 번 글이 삭제 하였습니다.", id));
-		model.addAttribute("replaceUri", String.format("/usr/article/list"));
+		model.addAttribute("replaceUri", String.format("/usr/article-free/list"));
 
 		return "common/redirect";
 	}
@@ -154,15 +154,20 @@ public class ArticleController {
 		return "common/redirect";
 	}
 
-	@RequestMapping("/usr/article/write")
-	public String showWrite(HttpSession session, Model model) {
-
+	@RequestMapping("/usr/article-{boardCode}/write")
+	public String showWrite(HttpSession session, Model model,@PathVariable("boardCode") String boardCode) {
+		Board board = articleService.getBoardByCode(boardCode);
+		
+		model.addAttribute("board",board);
+		
 		return "usr/article/write";
 	}
 
-	@RequestMapping("/usr/article/doWrite")
-	public String doWrite(@RequestParam Map<String, Object> param, Model model, HttpServletRequest req) {
-
+	@RequestMapping("/usr/article-{boardCode}/doWrite")
+	public String doWrite(@RequestParam Map<String, Object> param, Model model, HttpServletRequest req,@PathVariable("boardCode") String boardCode) {
+		Board board = articleService.getBoardByCode(boardCode);
+		param.put("boardId", board.getId());
+		
 		int loginedMemberId = (int) req.getAttribute("loginedMemberId");
 
 		param.put("memberId", loginedMemberId);

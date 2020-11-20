@@ -72,7 +72,9 @@
 			updateDate = NOW(),
 			<if test="title != null"> title = #{title},</if>
 			<if test="body != null"> `body` = #{body},</if>
+			<if test="boardId != null"> `boardId` = #{boardId},</if>
 			<if test="memberId != null"> `memberId` = #{memberId},</if>
+			
 		</set>
 
 	</insert>
